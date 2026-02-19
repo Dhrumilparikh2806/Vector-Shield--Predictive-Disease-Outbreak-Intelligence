@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+.env
+backend/data/live_pod.csv
+backend/ml_outputs/
+dist/
+.vscode/
+.idea/
+.venv/
+*.db
+backend/vectorshield.db

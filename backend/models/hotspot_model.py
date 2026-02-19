@@ -1,0 +1,1 @@
+# Hotspot identification model placeholder

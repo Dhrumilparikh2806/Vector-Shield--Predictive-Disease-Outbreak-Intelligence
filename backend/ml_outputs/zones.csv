@@ -1,0 +1,4 @@
+zone_id,cluster_center_lat,cluster_center_lng,avg_risk,cluster_size
+ZONE_0,12.9716,77.5946,23.507472853702286,3
+ZONE_1,28.5753,77.1634,14.90221881989658,8
+ZONE_2,19.076,72.8777,11.408895179638016,4

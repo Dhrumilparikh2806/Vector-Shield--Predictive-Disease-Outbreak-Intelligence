@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #F8FAFB;
+  --bg-card: #FFFFFF;
+  --bg-sidebar: #E6FFE0;
+
+  --primary: #159A7E;
+  --accent: #0B5C78;
+  --mint: #D7F2F2;
+
+  --text-main: #0F172A;
+  --text-muted: #475569;
+
+  --border: #E2E8F0;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* General utility overrides to enforce light theme colors (minimal layout impact) */
+
+/* Convert existing dark slate backgrounds to card/white surfaces */
+[class*="bg-slate-"] {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+}
+
+/* Muted text mapping */
+[class*="text-slate-"] {
+  color: var(--text-muted) !important;
+}
+
+/* Replace explicit white text usages with dark text on light backgrounds */
+[class*="text-white"] {
+  color: var(--text-main) !important;
+}
+
+/* Borders */
+[class*="border-slate-"] {
+  border-color: var(--border) !important;
+}
+
+/* Remove glassmorphism/backdrop filters */
+[class*="backdrop"] {
+  backdrop-filter: none !important;
+}
+.backdrop-blur,
+.backdrop-filter {
+  backdrop-filter: none !important;
+}
+
+/* Prevent faded/opaque text for readability */
+.opacity-20, .opacity-40, .opacity-50, .opacity-60 {
+  opacity: 1 !important;
+}
+
+/* Sidebar specific */
+aside {
+  background: var(--bg-sidebar) !important;
+  border-right: 1px solid var(--border) !important;
+}
+aside .text-lg.font-bold,
+aside .text-lg {
+  color: var(--accent) !important;
+}
+aside svg {
+  stroke: var(--text-main) !important;
+  fill: var(--text-main) !important;
+}
+aside nav a {
+  color: var(--text-main) !important;
+}
+aside nav a:hover {
+  background: var(--mint) !important;
+  color: var(--text-main) !important;
+}
+/* Active menu item override */
+aside nav a[class*="text-primary"],
+aside nav a[class*="bg-primary"] {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+/* Card / stat styles */
+.card, .stat-card, .p-4, .rounded-xl, .rounded-lg {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  color: var(--text-main) !important;
+}
+
+/* Map wrapper */
+.h-full.w-full.rounded-xl.overflow-hidden.border,
+.map-wrapper,
+.map-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Leaflet popup and markers: ensure popups are light */
+.custom-popup .bg-slate-900,
+.leaflet-popup-content, .leaflet-popup-content-wrapper {
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* Right analytics panel */
+.bg-slate-900,
+.bg-slate-900\/50,
+.bg-slate-800\/40 {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-main) !important;
+}
+
+/* Buttons */
+button[class*="bg-primary"], .btn-primary {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--primary) !important;
+}
+
+/* Alerts */
+.alert-card {
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-left: 4px solid transparent !important;
+}
+.alert-card[data-severity="Critical"] { border-left-color: #DC2626 !important; }
+.alert-card[data-severity="High"] { border-left-color: #EA580C !important; }
+
+/* Ensure Tailwind red/orange borders and subtle backgrounds match tokens */
+.border-red-500 { border-color: #DC2626 !important; }
+.text-red-500 { color: #DC2626 !important; }
+.bg-red-500\/8, .bg-red-500\\/8, .bg-red-500\@8 { background-color: rgba(220,38,38,0.06) !important; }
+.border-orange-500 { border-color: #EA580C !important; }
+.text-orange-500 { color: #EA580C !important; }
+.bg-orange-500\/8, .bg-orange-500\\/8, .bg-orange-500\@8 { background-color: rgba(234,88,12,0.06) !important; }
+
+/* Scenario simulator upload boxes */
+.upload-box, .dropzone, [class*="upload"] {
+  background: var(--mint) !important;
+  border: 2px dashed var(--primary) !important;
+}
+
+/* Prediction cards */
+.prediction-card {
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+}
+
+/* Charts */
+.recharts-text, .axis-label, .tick text, .chart-label {
+  fill: var(--text-main) !important;
+  color: var(--text-main) !important;
+}
+.recharts-cartesian-grid line, .chart-grid-line {
+  stroke: var(--border) !important;
+}
+.tooltip, .recharts-default-tooltip {
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 { color: var(--text-main) !important; font-family: Inter, system-ui !important; }
+label, .text-muted { color: var(--text-muted) !important; }
+
+/* Ensure icons generally appear dark for visibility */
+svg { stroke: var(--text-main) !important; fill: var(--text-main) !important; }
+
+/* Remove gradients and dark overlays */
+[style*="gradient"], [class*="gradient"], [class*="overlay"], .dark-overlay { background: none !important; }
+
