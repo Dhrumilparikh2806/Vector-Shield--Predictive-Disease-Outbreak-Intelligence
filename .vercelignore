@@ -1,0 +1,10 @@
+# Vercel Ignore
+.venv
+node_modules
+dist
+.git
+.gitignore
+backend/__pycache__
+*.pyc
+vectorshield.db
+local_data.csv

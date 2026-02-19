@@ -78,10 +78,12 @@ const DashboardRightPanel = ({ summary, alerts, podData }) => {
                         <EnvironmentalPanel data={podData} />
                         <div className="mt-4 p-4 bg-primary/5 border border-primary/10 rounded-xl text-[11px] text-slate-400 leading-relaxed shadow-inner">
                             <div className="font-bold mb-2 flex items-center text-primary uppercase tracking-widest"><Wind className="w-3 h-3 mr-2" /> IoT Pod Status</div>
-                            All distributed sensor nodes are currently synchronized. Atmospheric and aquatic telemetry stream active. Last sync: Just now.
+                            All distributed sensor nodes are currently synchronized. Atmospheric and aquatic telemetry stream active.{' '}
+                            Last sync: <span className="text-green-400 font-bold">{podData?.status === 'live' ? new Date().toLocaleTimeString() : 'Waiting...'}</span>
                         </div>
                     </div>
                 )}
+
 
                 {activeTab === 'alerts' && (
                     <div className="space-y-3 animate-in fade-in slide-in-from-right-2 duration-300">

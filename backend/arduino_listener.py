@@ -45,7 +45,7 @@ while True:
             temp = 25 + random.uniform(-2, 2)
             humidity = 60 + random.uniform(-10, 10)
             moisture = 45 + random.uniform(-15, 15)
-            rainfall = max(0, 2 + random.uniform(-1.5, 3))
+            rainfall = 0.0 # Stagnant rainfall
             time.sleep(3)  # Simulate reading every 3 seconds
 
         row = {

@@ -50,10 +50,24 @@ const DashboardPage = () => {
         }
     };
 
+    // Full dashboard refresh every 10s
     useEffect(() => {
         loadData();
-        const interval = setInterval(loadData, 10000); // 10s for live updates
+        const interval = setInterval(loadData, 10000);
         return () => clearInterval(interval);
+    }, []);
+
+    // Dedicated pod data refresh every 5s (faster than full reload)
+    useEffect(() => {
+        const podInterval = setInterval(async () => {
+            try {
+                const freshPod = await getLivePodData();
+                setPodData(freshPod || {});
+            } catch (e) {
+                console.warn('Pod poll failed:', e);
+            }
+        }, 5000);
+        return () => clearInterval(podInterval);
     }, []);
 
     if (loading && !summary) {

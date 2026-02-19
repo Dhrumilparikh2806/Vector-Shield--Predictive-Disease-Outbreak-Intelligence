@@ -4,6 +4,10 @@ from schemas import DashboardSummary
 import pandas as pd
 import os
 
+# Resolve paths relative to this file so they work regardless of CWD
+_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LIVE_POD_PATH = os.path.join(_BACKEND_DIR, "data", "live_pod.csv")
+
 router = APIRouter()
 
 @router.get("/summary", response_model=DashboardSummary)
@@ -44,7 +48,7 @@ def get_dashboard_summary():
 def get_live_pod_data():
     """Get the latest sensor data from live_pod.csv"""
     try:
-        pod_path = "backend/data/live_pod.csv"
+        pod_path = LIVE_POD_PATH
         if not os.path.exists(pod_path):
             return {
                 "temperature": 0,
