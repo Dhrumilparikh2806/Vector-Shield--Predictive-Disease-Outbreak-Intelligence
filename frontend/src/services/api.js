@@ -1,13 +1,29 @@
 import axios from 'axios';
 
-const isProduction = import.meta.env.PROD;
-const API_BASE_URL = isProduction
-  ? '/api/v1'
-  : 'http://localhost:8000/api/v1';
+// Detect environment more reliably
+const isDev = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+const API_BASE_URL = isDev
+  ? 'http://localhost:8000/api/v1'
+  : '/api/v1';
+
+console.log(`API Base URL: ${API_BASE_URL}, Environment: ${isDev ? 'development' : 'production'}`);
 
 const api = axios.create({
   baseURL: API_BASE_URL,
+  timeout: 10000
 });
+
+// Response interceptor for better error handling
+api.interceptors.response.use(
+  response => response,
+  error => {
+    console.error('API Error:', error.message);
+    if (error.response?.status === 404) {
+      console.error('API endpoint not found. Check backend is running.');
+    }
+    return Promise.reject(error);
+  }
+);
 
 export const getDashboardSummary = async () => {
   const response = await api.get('/dashboard/summary');
