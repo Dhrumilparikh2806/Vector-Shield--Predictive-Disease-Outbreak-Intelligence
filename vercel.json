@@ -1,36 +1,47 @@
 {
     "version": 2,
+    "buildCommand": "cd frontend && npm install && npm run build",
+    "outputDirectory": "frontend/dist",
+    "env": {
+        "PYTHONUNBUFFERED": "1"
+    },
+    "functions": {
+        "api/index.py": {
+            "memory": 3008,
+            "maxDuration": 60
+        }
+    },
     "builds": [
         {
-            "src": "backend/main.py",
-            "use": "@vercel/python"
+            "src": "api/index.py",
+            "use": "@vercel/python",
+            "config": {
+                "pythonVersion": "3.11"
+            }
         },
         {
             "src": "frontend/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist"
+                "distDir": "frontend/dist"
             }
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/backend/main.py"
+            "src": "/api/v1/(.*)",
+            "dest": "api/index.py"
         },
         {
-            "src": "/(.*)",
-            "dest": "/frontend/$1",
-            "headers": {
-                "Cache-Control": "public, max-age=0, must-revalidate"
-            }
+            "src": "/api/(.*)",
+            "dest": "api/index.py"
         },
         {
             "handle": "filesystem"
         },
         {
             "src": "/(.*)",
-            "dest": "/frontend/index.html"
+            "dest": "frontend/index.html"
         }
     ]
 }

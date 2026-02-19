@@ -1,8 +1,12 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pandas
 numpy
 scikit-learn
 sqlalchemy
 python-multipart
 pyserial
+python-dotenv
+pydantic
+pydantic-settings
+aiofiles
