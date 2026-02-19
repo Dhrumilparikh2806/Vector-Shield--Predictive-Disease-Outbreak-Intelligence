@@ -10,9 +10,17 @@ export default defineConfig({
   build: {
     sourcemap: false,
     minify: 'terser',
+    chunkSizeWarningLimit: 1000,
     terserOptions: {
+      compress: {
+        passes: 2
+      },
       mangle: {
-        keep_fnames: true
+        keep_fnames: true,
+        keep_classnames: true
+      },
+      output: {
+        comments: false
       }
     }
   },
@@ -24,4 +32,5 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '/api')
       }
     }
-  }})
+  }
+})

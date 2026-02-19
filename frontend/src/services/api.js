@@ -1,7 +1,15 @@
 import axios from 'axios';
 
 // Detect environment more reliably
-const isDev = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+function detectEnvironment() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  const hostname = window.location?.hostname || '';
+  return hostname === 'localhost' || hostname === '127.0.0.1';
+}
+
+const isDev = detectEnvironment();
 const API_BASE_URL = isDev
   ? 'http://localhost:8000/api/v1'
   : '/api/v1';
@@ -10,15 +18,20 @@ console.log(`API Base URL: ${API_BASE_URL}, Environment: ${isDev ? 'development'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });
 
 // Response interceptor for better error handling
 api.interceptors.response.use(
-  response => response,
-  error => {
-    console.error('API Error:', error.message);
-    if (error.response?.status === 404) {
+  function onSuccess(response) {
+    return response;
+  },
+  function onError(error) {
+    console.error('API Error:', error?.message);
+    if (error?.response?.status === 404) {
       console.error('API endpoint not found. Check backend is running.');
     }
     return Promise.reject(error);
