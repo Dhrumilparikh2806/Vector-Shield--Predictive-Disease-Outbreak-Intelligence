@@ -10,6 +10,13 @@ from .data_loader import data_loader
 from utils.paths import get_base_path, get_user_data_path, get_data_path
 
 class SimulationService:
+    # simulate_tick() appends a new synthetic day on every poll (every 2.5s per
+    # open dashboard) and nothing ever trimmed the result, so the in-memory
+    # "merged" dataframe grew without bound - the actual cause of Render's
+    # memory-limit restarts. Nothing downstream (rolling stats need 3 days,
+    # inventory_engine needs 14) uses more than a few weeks of trailing history.
+    RETENTION_DAYS = 30
+
     def __init__(self):
         self.base_path = get_base_path()
         # Models are in user_data since they are generated/updated there
@@ -151,7 +158,12 @@ class SimulationService:
 
         new_day_df = pd.DataFrame(new_rows)
         df_extended = pd.concat([df, new_day_df], ignore_index=True)
-        
+
+        # Bound memory growth: drop anything older than RETENTION_DAYS before
+        # it ever gets stored back into data_loader.data.
+        cutoff = next_date - timedelta(days=self.RETENTION_DAYS)
+        df_extended = df_extended[df_extended['date'] >= cutoff].reset_index(drop=True)
+
         for city in df_extended['city'].unique():
             city_mask = df_extended['city'] == city
             city_indices = df_extended[city_mask].index.tolist()
