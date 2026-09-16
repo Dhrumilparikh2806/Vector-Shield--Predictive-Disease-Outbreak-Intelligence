@@ -7,10 +7,13 @@ import pickle
 from datetime import datetime, timedelta
 from .data_loader import data_loader
 
+from utils.paths import get_base_path, get_user_data_path, get_data_path
+
 class SimulationService:
     def __init__(self):
-        self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        self.models_path = os.path.join(self.base_path, 'models')
+        self.base_path = get_base_path()
+        # Models are in user_data since they are generated/updated there
+        self.models_path = os.path.join(get_user_data_path(), 'models')
         self.rf = None
         self.iso_forest = None
         self.scaler = None
@@ -99,7 +102,7 @@ class SimulationService:
         """
         df = data_loader.data.get("merged")
         if df is None or df.empty:
-            merged_path = os.path.join(self.base_path, 'ml_outputs', 'merged_features.csv')
+            merged_path = os.path.join(get_user_data_path(), 'ml_outputs', 'merged_features.csv')
             df = pd.read_csv(merged_path)
             if 'date' in df.columns:
                 df['date'] = pd.to_datetime(df['date'])
@@ -167,7 +170,7 @@ class SimulationService:
 
         # --- LIVE POD DATA INGESTION ---
         try:
-            pod_df = pd.read_csv("backend/data/live_pod.csv")
+            pod_df = pd.read_csv(os.path.join(get_data_path(), "live_pod.csv"))
             if not pod_df.empty:
                 latest_pod = pod_df.tail(1)
                 

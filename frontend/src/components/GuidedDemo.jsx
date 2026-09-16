@@ -1,41 +1,24 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronRight, X } from 'lucide-react';
 
-const GuidedDemo = ({ onStart }) => {
+const STEPS = [
+    { title: 'Welcome to VectorShield', content: "This is your hospital's outbreak surveillance workstation — every number here is live." },
+    { title: 'Dashboard', content: 'National risk index, 48-hour case forecasts, and active hotspots at a glance.' },
+    { title: 'Live Risk Map', content: 'Click any city marker for a live risk breakdown of that zone.' },
+    { title: 'Alerts', content: 'Automatic alerts fire when a zone crosses a risk threshold — acknowledge them as you triage.' },
+];
+
+const GuidedDemo = () => {
     const [step, setStep] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
-    const steps = [
-        {
-            title: "Welcome to VectorShield",
-            content: "I'll guide you through the system architecture and live prediction flow.",
-            target: "body",
-        },
-        {
-            title: "Executive Dashboard",
-            content: "View national risk metrics, 48-hour case forecasts, and active hotspots at a glance.",
-            target: "dashboard",
-        },
-        {
-            title: "Live Risk Map",
-            content: "Real-time geospatial visualization of city-level risk scores and thermal heatmaps.",
-            target: "map",
-        },
-        {
-            title: "AI Alerts",
-            content: "Automatic detection of anomalous health patterns and immediate risk notifications.",
-            target: "alerts",
-        },
-    ];
-
     const start = () => {
         setIsActive(true);
-        setStep(1);
-        if (onStart) onStart();
+        setStep(0);
     };
 
     const next = () => {
-        if (step < steps.length - 1) setStep(step + 1);
+        if (step < STEPS.length - 1) setStep(step + 1);
         else setIsActive(false);
     };
 
@@ -43,37 +26,31 @@ const GuidedDemo = ({ onStart }) => {
         return (
             <button
                 onClick={start}
-                className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-xs font-bold hover:opacity-90 transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-[#F1F8F5] hover:bg-[#D7F2F2] text-[#0B5C78] rounded font-medium text-sm transition-colors shadow-sm"
+                type="button"
             >
-                <HelpCircle className="w-4 h-4" /> Start Guided Demo
+                <HelpCircle className="w-4 h-4" /> Guided Tour
             </button>
         );
     }
 
     return (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[2000] w-full max-w-sm">
-            <div className="bg-slate-900 border-2 border-primary rounded-2xl shadow-2xl p-6 relative animate-in slide-in-from-bottom-4 duration-500">
-                <button
-                    onClick={() => setIsActive(false)}
-                    className="absolute top-4 right-4 text-slate-500 hover:text-white"
-                >
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[2000] w-[calc(100%-2rem)] max-w-sm">
+            <div className="bg-white border-2 border-[#159A7E] rounded-xl shadow-2xl p-5 relative">
+                <button onClick={() => setIsActive(false)} className="absolute top-3 right-3 text-[#8593A6] hover:text-[#0F172A]" type="button">
                     <X className="w-4 h-4" />
                 </button>
-
-                <div className="flex items-center gap-2 mb-2 text-primary">
-                    <span className="px-2 py-0.5 bg-primary/20 rounded text-[10px] font-bold">STEP {step} / {steps.length - 1}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-white mb-2">{steps[step].title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                    {steps[step].content}
-                </p>
-
+                <span className="app-mono text-[10px] font-bold px-2 py-0.5 bg-[#D7F2F2] text-[#0B5C78] rounded">
+                    STEP {step + 1} / {STEPS.length}
+                </span>
+                <h3 className="text-base font-bold text-[#0F172A] mt-2 mb-1.5">{STEPS[step].title}</h3>
+                <p className="text-sm text-[#475569] leading-relaxed mb-4">{STEPS[step].content}</p>
                 <button
                     onClick={next}
-                    className="w-full flex items-center justify-center gap-2 py-3 bg-primary text-slate-950 font-bold rounded-xl hover:opacity-90 transition-opacity"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#159A7E] hover:bg-[#11836A] text-white font-semibold rounded text-sm transition-colors"
+                    type="button"
                 >
-                    {step < steps.length - 1 ? "Next Insight" : "Finish Discovery"}
+                    {step < STEPS.length - 1 ? 'Next' : 'Finish'}
                     <ChevronRight className="w-4 h-4" />
                 </button>
             </div>

@@ -18,7 +18,7 @@ class DataLoader:
             "anomalies": "anomalies.csv",
             "zones": "zones.csv"
         }
-        
+
         for key, filename in files.items():
             path = os.path.join(self.output_dir, filename)
             if os.path.exists(path):
@@ -30,9 +30,30 @@ class DataLoader:
             else:
                 print(f"Warning: {path} not found.")
                 self.data[key] = pd.DataFrame()
-        
+
+        self._tenant_cities_cache = {}
         self.last_loaded = datetime.now()
         print("Data loaded successfully.")
+
+    def get_tenant_cities(self, profile: str):
+        """City names belonging to a given dataset_profile (see db_models.Hospital).
+        Cached per profile since the merged dataframe -> profile mapping never
+        changes at runtime (only which cities exist, not who they belong to)."""
+        if not hasattr(self, '_tenant_cities_cache'):
+            self._tenant_cities_cache = {}
+        if profile in self._tenant_cities_cache:
+            return self._tenant_cities_cache[profile]
+
+        merged = self.data.get("merged")
+        if merged is None or merged.empty or 'tenant_profile' not in merged.columns:
+            # No tenant tagging present (e.g. dataset hasn't been regenerated with
+            # scripts/generate_demo_tenant_data.py) - everyone sees everything.
+            cities = set(merged['city'].unique()) if merged is not None and not merged.empty else set()
+        else:
+            cities = set(merged.loc[merged['tenant_profile'] == profile, 'city'].unique())
+
+        self._tenant_cities_cache[profile] = cities
+        return cities
 
     def get_latest_risk_scores(self):
         df = self.data.get("risk_scores")

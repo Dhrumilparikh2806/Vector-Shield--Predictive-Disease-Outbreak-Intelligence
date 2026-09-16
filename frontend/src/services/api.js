@@ -10,9 +10,8 @@ function detectEnvironment() {
 }
 
 const isDev = detectEnvironment();
-const API_BASE_URL = isDev
-  ? 'http://localhost:8000/api/v1'
-  : '/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+  || (isDev ? 'http://localhost:8000/api/v1' : '/api/v1');
 
 console.log(`API Base URL: ${API_BASE_URL}, Environment: ${isDev ? 'development' : 'production'}`);
 
@@ -22,6 +21,15 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json'
   }
+});
+
+// Attach the hospital's auth token to every request
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('vs_token') || sessionStorage.getItem('vs_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 // Response interceptor for better error handling
@@ -34,9 +42,56 @@ api.interceptors.response.use(
     if (error?.response?.status === 404) {
       console.error('API endpoint not found. Check backend is running.');
     }
+    if (error?.response?.status === 401) {
+      localStorage.removeItem('vs_token');
+      localStorage.removeItem('vs_hospital');
+      sessionStorage.removeItem('vs_token');
+      sessionStorage.removeItem('vs_hospital');
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
+    }
     return Promise.reject(error);
   }
 );
+
+// Auth endpoints
+export const loginRequest = async (email, password) => {
+  const response = await api.post('/auth/login', { email, password });
+  return response.data;
+};
+
+export const signupRequest = async (hospitalName, email, password, plan, hospitalCount) => {
+  const response = await api.post('/auth/signup', {
+    hospital_name: hospitalName,
+    email,
+    password,
+    plan,
+    hospital_count: hospitalCount,
+  });
+  return response.data;
+};
+
+// Admin endpoints
+export const adminListHospitals = async (status = null) => {
+  const response = await api.get('/admin/hospitals', { params: status ? { status } : {} });
+  return response.data;
+};
+
+export const adminApproveHospital = async (id, { plan, hospital_count } = {}) => {
+  const response = await api.post(`/admin/hospitals/${id}/approve`, { plan, hospital_count });
+  return response.data;
+};
+
+export const adminRejectHospital = async (id) => {
+  const response = await api.post(`/admin/hospitals/${id}/reject`, {});
+  return response.data;
+};
+
+export const adminGetOverview = async () => {
+  const response = await api.get('/admin/overview');
+  return response.data;
+};
 
 export const getDashboardSummary = async () => {
   const response = await api.get('/dashboard/summary');
@@ -65,6 +120,21 @@ export const getPredictions48h = async () => {
 
 export const getLiveAlerts = async () => {
   const response = await api.get('/alerts/live');
+  return response.data;
+};
+
+export const getInventoryStatus = async () => {
+  const response = await api.get('/inventory/status');
+  return response.data;
+};
+
+export const getInventorySummary = async () => {
+  const response = await api.get('/inventory/summary');
+  return response.data;
+};
+
+export const getInventoryRebalance = async () => {
+  const response = await api.get('/inventory/rebalance');
   return response.data;
 };
 

@@ -4,9 +4,11 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 # Support different database configurations via environment variable
+from utils.paths import get_db_path
+
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "sqlite:///./vectorshield.db"
+    f"sqlite:///{get_db_path()}"
 )
 
 # For SQLite, add in-memory option for Vercel

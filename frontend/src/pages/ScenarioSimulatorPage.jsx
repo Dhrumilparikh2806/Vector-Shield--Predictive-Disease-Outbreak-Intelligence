@@ -1,34 +1,66 @@
 import React, { useState } from 'react';
-import { Upload, Play, FileText, Activity, AlertTriangle, TrendingUp, Search } from 'lucide-react';
+import { Database, Play, FileText, Droplet, Activity, AlertTriangle, TrendingUp, Search, CheckCircle2, Loader } from 'lucide-react';
 import KPICard from '../components/KPICard';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { uploadScenario } from '../services/api';
 import clsx from 'clsx';
 
+const formatBytes = (bytes) => {
+    if (!bytes && bytes !== 0) return '';
+    if (bytes < 1024) return `${bytes} B`;
+    return `${(bytes / 1024).toFixed(0)} KB`;
+};
+
+const UploadTile = ({ label, icon: Icon, file, onChange }) => (
+    <div className="group relative flex flex-col justify-between p-4 rounded-lg bg-[#F8FAFB] border border-[#E2E8F0] hover:border-[#159A7E]/40 transition-all">
+        <div className="flex items-start justify-between mb-2">
+            <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded bg-white border border-[#E2E8F0] flex items-center justify-center text-[#159A7E]">
+                    <Icon className="w-4 h-4" />
+                </div>
+                <div>
+                    <span className="text-sm font-semibold text-[#0F172A] block">{label}</span>
+                    {file ? (
+                        <span className="app-mono text-xs text-[#159A7E] font-medium flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> {file.name} ({formatBytes(file.size)})
+                        </span>
+                    ) : (
+                        <span className="app-mono text-xs text-[#8593A6]">No file selected</span>
+                    )}
+                </div>
+            </div>
+            {file && (
+                <span className="app-mono text-[10px] uppercase px-1.5 py-0.5 bg-[#F0FDF4] text-[#16A34A] rounded font-semibold shrink-0">Ready</span>
+            )}
+        </div>
+        <label className="w-full text-center py-2 rounded bg-white border border-[#E2E8F0] text-sm font-medium text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F8F5] cursor-pointer transition-colors">
+            {file ? 'Replace file' : 'Choose CSV file'}
+            <input type="file" accept=".csv" className="hidden" onChange={(e) => onChange(e.target.files[0])} />
+        </label>
+    </div>
+);
+
 const ScenarioSimulatorPage = () => {
     const [hospitalFile, setHospitalFile] = useState(null);
     const [waterFile, setWaterFile] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [hasRun, setHasRun] = useState(false);
     const [results, setResults] = useState({
         predicted_cases: 0,
         riskScore: 0,
         riskLevel: 'Sample',
         anomaly: false,
-        analysis: {
-            waterRisk: 'Sample',
-            environmentRisk: 'Sample',
-            trend: 'Sample'
-        },
-        chartData: []
+        analysis: { waterRisk: 'Sample', environmentRisk: 'Sample', trend: 'Sample' },
+        chartData: [],
     });
 
     const handleSimulation = async () => {
         if (!hospitalFile || !waterFile) return;
-
         setIsLoading(true);
         try {
             const data = await uploadScenario(hospitalFile, waterFile);
             setResults(data);
+            setHasRun(true);
         } catch (error) {
             console.error('Simulation failed:', error);
             alert('Simulation failed. Please ensure CSV files are correctly formatted.');
@@ -37,109 +69,72 @@ const ScenarioSimulatorPage = () => {
         }
     };
 
-    const displayChartData = results.chartData.length > 0 ? results.chartData : [
-        { name: 'T-48h', risk: 20 },
-        { name: 'T-36h', risk: 25 },
-        { name: 'T-24h', risk: 40 },
-        { name: 'T-12h', risk: 35 },
-        { name: 'Now', risk: 45 },
-        { name: 'T+12h', risk: 50 },
-        { name: 'T+24h', risk: 65 },
-        { name: 'T+36h', risk: 75 },
-        { name: 'T+48h', risk: 80 },
+    const displayChartData = results.chartData?.length > 0 ? results.chartData : [
+        { name: 'T-48h', risk: 20 }, { name: 'T-36h', risk: 25 }, { name: 'T-24h', risk: 40 },
+        { name: 'T-12h', risk: 35 }, { name: 'Now', risk: 45 }, { name: 'T+12h', risk: 50 },
+        { name: 'T+24h', risk: 65 }, { name: 'T+36h', risk: 75 }, { name: 'T+48h', risk: 80 },
     ];
 
     return (
-        <div className="p-6 space-y-6 bg-slate-950 min-h-screen font-sans">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold text-white tracking-tight">Scenario Simulator</h1>
-                <p className="text-slate-400 text-sm">Upload environmental and clinical datasets to simulate epidemiological outcomes.</p>
+        <div className="app-shell p-6 space-y-6 bg-[#F8FAFB] min-h-screen">
+            <div>
+                <div className="flex items-center gap-2 mb-0.5">
+                    <span className="app-mono text-[10px] uppercase tracking-wider text-[#159A7E] font-bold">Predictive Epidemiology</span>
+                    <span className="text-[#CBD5E1] text-xs">/</span>
+                    <span className="app-mono text-[10px] uppercase tracking-wider text-[#8593A6]">Scenario Engine</span>
+                </div>
+                <h1 className="text-2xl font-bold text-[#0F172A] tracking-tight">Outbreak Scenario Simulator</h1>
+                <p className="text-[#475569] text-sm mt-1">Upload hospital admissions and water quality data to project a 48-hour outbreak scenario.</p>
             </div>
 
-            {/* Section A: Upload */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg">
-                <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                    <Upload className="w-5 h-5 text-slate-400" /> Data Ingestion
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Hospital Admissions CSV</label>
-                        <div className="flex items-center justify-center w-full">
-                            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-slate-800 border-dashed rounded-lg cursor-pointer bg-slate-950 hover:bg-slate-900 transition-colors">
-                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <FileText className="w-8 h-8 text-slate-500 mb-2" />
-                                    <p className="text-sm text-slate-500">{hospitalFile ? hospitalFile.name : 'Select clinical data file'}</p>
-                                </div>
-                                <input type="file" className="hidden" onChange={(e) => setHospitalFile(e.target.files[0])} />
-                            </label>
-                        </div>
-                    </div>
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Water Quality CSV</label>
-                        <div className="flex items-center justify-center w-full">
-                            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-slate-800 border-dashed rounded-lg cursor-pointer bg-slate-950 hover:bg-slate-900 transition-colors">
-                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <Droplets className="w-8 h-8 text-slate-500 mb-2" />
-                                    <p className="text-sm text-slate-500">{waterFile ? waterFile.name : 'Select environmental data file'}</p>
-                                </div>
-                                <input type="file" className="hidden" onChange={(e) => setWaterFile(e.target.files[0])} />
-                            </label>
-                        </div>
-                    </div>
+            <div className="bg-white border border-[#E2E8F0] rounded-lg shadow-sm p-5">
+                <div className="flex items-center gap-2 mb-4">
+                    <Database className="w-5 h-5 text-[#159A7E]" />
+                    <h2 className="text-base font-semibold text-[#0F172A]">Data Ingestion</h2>
                 </div>
-                <div className="flex gap-4">
-                    <button
-                        onClick={handleSimulation}
-                        disabled={!hospitalFile || !waterFile || isLoading}
-                        className="flex-1 md:flex-none px-6 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:grayscale"
-                    >
-                        <Play className="w-4 h-4" /> {isLoading ? 'Processing...' : 'Run Prediction'}
-                    </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <UploadTile label="Hospital Admissions CSV" icon={FileText} file={hospitalFile} onChange={setHospitalFile} />
+                    <UploadTile label="Water Quality CSV" icon={Droplet} file={waterFile} onChange={setWaterFile} />
                 </div>
+                <button
+                    onClick={handleSimulation}
+                    disabled={!hospitalFile || !waterFile || isLoading}
+                    className="flex items-center justify-center gap-2 px-5 py-2.5 bg-[#159A7E] text-white font-semibold rounded hover:bg-[#11836A] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    type="button"
+                >
+                    {isLoading ? <Loader className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4" />}
+                    {isLoading ? 'Processing...' : 'Run Prediction'}
+                </button>
             </div>
 
-            {/* Section B: Results */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <KPICard title="Predicted Cases (48h)" value={results.predicted_cases} unit="cases" icon={Activity} />
                 <KPICard title="Risk Score" value={results.riskScore} unit="/ 100" icon={AlertTriangle} riskLevel={results.riskLevel} />
                 <KPICard title="Risk Level" value={results.riskLevel} icon={Search} riskLevel={results.riskLevel} />
-                <KPICard title="Anomaly Detected" value={results.anomaly ? "Yes" : "No"} icon={Activity} riskLevel={results.anomaly ? "Critical" : "Low"} />
+                <KPICard title="Anomaly Detected" value={results.anomaly ? 'Yes' : 'No'} icon={Activity} riskLevel={results.anomaly ? 'CRITICAL' : 'LOW'} />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Section C: Mini Chart */}
-                <div className="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg h-80">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-slate-400" /> Projected Risk Trend
+                <div className="lg:col-span-2 bg-white border border-[#E2E8F0] rounded-lg shadow-sm p-5 h-80">
+                    <h2 className="text-base font-semibold text-[#0F172A] mb-1 flex items-center gap-2">
+                        <TrendingUp className="w-4 h-4 text-[#159A7E]" /> Projected Risk Trend
                     </h2>
-                    <div className="h-[200px] w-full">
+                    <p className="text-xs text-[#8593A6] mb-3">
+                        {hasRun ? 'Based on your uploaded data' : 'Illustrative — upload data and run a prediction to see your projection'}
+                    </p>
+                    <div className="h-[190px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart data={displayChartData}>
-                                <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                                <XAxis
-                                    dataKey="name"
-                                    stroke="#64748b"
-                                    fontSize={10}
-                                    tickLine={false}
-                                    axisLine={false}
-                                />
-                                <YAxis
-                                    stroke="#64748b"
-                                    fontSize={10}
-                                    tickLine={false}
-                                    axisLine={false}
-                                    domain={[0, 100]}
-                                />
-                                <Tooltip
-                                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '8px' }}
-                                    itemStyle={{ color: '#94a3b8' }}
-                                />
+                                <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
+                                <XAxis dataKey="name" stroke="#8593A6" fontSize={10} tickLine={false} axisLine={false} />
+                                <YAxis stroke="#8593A6" fontSize={10} tickLine={false} axisLine={false} domain={[0, 100]} />
+                                <Tooltip contentStyle={{ backgroundColor: '#fff', border: '1px solid #E2E8F0', borderRadius: 6 }} itemStyle={{ color: '#0F172A' }} />
                                 <Line
                                     type="monotone"
                                     dataKey="risk"
-                                    stroke={results.riskScore > 70 ? "#ef4444" : "#3b82f6"}
+                                    stroke={results.riskScore > 70 ? '#DC2626' : '#159A7E'}
                                     strokeWidth={2}
-                                    dot={{ fill: results.riskScore > 70 ? "#ef4444" : "#3b82f6", strokeWidth: 2, r: 4 }}
+                                    dot={{ fill: results.riskScore > 70 ? '#DC2626' : '#159A7E', strokeWidth: 2, r: 4 }}
                                     activeDot={{ r: 6, strokeWidth: 0 }}
                                 />
                             </LineChart>
@@ -147,27 +142,26 @@ const ScenarioSimulatorPage = () => {
                     </div>
                 </div>
 
-                {/* Section D: Analysis Panel */}
-                <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-lg">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <Search className="w-5 h-5 text-slate-400" /> Simulation Analysis
+                <div className="bg-white border border-[#E2E8F0] rounded-lg shadow-sm p-5">
+                    <h2 className="text-base font-semibold text-[#0F172A] mb-4 flex items-center gap-2">
+                        <Search className="w-4 h-4 text-[#0B5C78]" /> Simulation Analysis
                     </h2>
-                    <div className="space-y-6">
-                        <div className="border-b border-slate-800 pb-4">
-                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Water Risk</p>
-                            <p className="text-white font-medium">{results.analysis.waterRisk}</p>
+                    <div className="space-y-4">
+                        <div className="border-b border-[#F1F5F9] pb-3">
+                            <p className="app-mono text-[10px] font-bold text-[#8593A6] uppercase tracking-widest mb-1">Water Risk</p>
+                            <p className="text-[#0F172A] font-medium">{results.analysis?.waterRisk}</p>
                         </div>
-                        <div className="border-b border-slate-800 pb-4">
-                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Environmental Risk</p>
-                            <p className="text-white font-medium">{results.analysis.environmentRisk}</p>
+                        <div className="border-b border-[#F1F5F9] pb-3">
+                            <p className="app-mono text-[10px] font-bold text-[#8593A6] uppercase tracking-widest mb-1">Environmental Risk</p>
+                            <p className="text-[#0F172A] font-medium">{results.analysis?.environmentRisk}</p>
                         </div>
                         <div>
-                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Trend Analysis</p>
-                            <p className={clsx("font-bold", {
-                                "text-emerald-400": results.analysis.trend === "Falling",
-                                "text-rose-400": results.analysis.trend === "Rising",
-                                "text-slate-300": results.analysis.trend === "Stable"
-                            })}>{results.analysis.trend}</p>
+                            <p className="app-mono text-[10px] font-bold text-[#8593A6] uppercase tracking-widest mb-1">Trend Analysis</p>
+                            <p className={clsx('font-bold', {
+                                'text-[#16A34A]': results.analysis?.trend === 'Falling',
+                                'text-[#DC2626]': results.analysis?.trend === 'Rising',
+                                'text-[#475569]': results.analysis?.trend === 'Stable' || results.analysis?.trend === 'Sample',
+                            })}>{results.analysis?.trend}</p>
                         </div>
                     </div>
                 </div>
@@ -175,13 +169,5 @@ const ScenarioSimulatorPage = () => {
         </div>
     );
 };
-
-// Internal icon component for flexibility
-const Droplets = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-        <path d="M7 16.3c2.2 0 4-1.8 4-4 0-3.3-4-8-4-8s-4 4.7-4 8c0 2.2 1.8 4 4 4Z" />
-        <path d="M17 14c1.1 0 2-.9 2-2 0-1.7-2-4-2-4s-2 2.3-2 4c0 1.1.9 2 2 2Z" />
-    </svg>
-);
 
 export default ScenarioSimulatorPage;

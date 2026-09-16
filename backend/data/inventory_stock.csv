@@ -1,0 +1,796 @@
+hospital_id,hospital_name,city,tenant_profile,item_code,item_name,unit,current_stock,lead_time_days,unit_cost_inr
+GOV_AGARTALA,"District Government Hospital, Agartala",Agartala,government,ors_sachets,ORS Sachets,sachet,3988,5,15
+GOV_AGARTALA,"District Government Hospital, Agartala",Agartala,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1121,7,65
+GOV_AGARTALA,"District Government Hospital, Agartala",Agartala,government,azithromycin_courses,Azithromycin Course,course,335,7,140
+GOV_AGARTALA,"District Government Hospital, Agartala",Agartala,government,ciprofloxacin_courses,Ciprofloxacin Course,course,260,9,95
+GOV_AGARTALA,"District Government Hospital, Agartala",Agartala,government,water_purification_tablets,Water Purification Tablets,tablet,11164,4,4
+GOV_AHMEDABAD,"District Government Hospital, Ahmedabad",Ahmedabad,government,ors_sachets,ORS Sachets,sachet,2348,6,15
+GOV_AHMEDABAD,"District Government Hospital, Ahmedabad",Ahmedabad,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,799,7,65
+GOV_AHMEDABAD,"District Government Hospital, Ahmedabad",Ahmedabad,government,azithromycin_courses,Azithromycin Course,course,245,7,140
+GOV_AHMEDABAD,"District Government Hospital, Ahmedabad",Ahmedabad,government,ciprofloxacin_courses,Ciprofloxacin Course,course,214,8,95
+GOV_AHMEDABAD,"District Government Hospital, Ahmedabad",Ahmedabad,government,water_purification_tablets,Water Purification Tablets,tablet,8191,5,4
+MER_AHMEDABAD_CENTRAL,Meridian Health — Ahmedabad - Central,Ahmedabad - Central,meridian,ors_sachets,ORS Sachets,sachet,3942,2,15
+MER_AHMEDABAD_CENTRAL,Meridian Health — Ahmedabad - Central,Ahmedabad - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1192,4,65
+MER_AHMEDABAD_CENTRAL,Meridian Health — Ahmedabad - Central,Ahmedabad - Central,meridian,azithromycin_courses,Azithromycin Course,course,341,6,140
+MER_AHMEDABAD_CENTRAL,Meridian Health — Ahmedabad - Central,Ahmedabad - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,281,5,95
+MER_AHMEDABAD_CENTRAL,Meridian Health — Ahmedabad - Central,Ahmedabad - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,9350,1,4
+MER_AHMEDABAD_EAST,Meridian Health — Ahmedabad - East,Ahmedabad - East,meridian,ors_sachets,ORS Sachets,sachet,2990,2,15
+MER_AHMEDABAD_EAST,Meridian Health — Ahmedabad - East,Ahmedabad - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,946,3,65
+MER_AHMEDABAD_EAST,Meridian Health — Ahmedabad - East,Ahmedabad - East,meridian,azithromycin_courses,Azithromycin Course,course,265,5,140
+MER_AHMEDABAD_EAST,Meridian Health — Ahmedabad - East,Ahmedabad - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,211,6,95
+MER_AHMEDABAD_EAST,Meridian Health — Ahmedabad - East,Ahmedabad - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,6892,1,4
+MER_AHMEDABAD_NORTH,Meridian Health — Ahmedabad - North,Ahmedabad - North,meridian,ors_sachets,ORS Sachets,sachet,1028,3,15
+MER_AHMEDABAD_NORTH,Meridian Health — Ahmedabad - North,Ahmedabad - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,330,3,65
+MER_AHMEDABAD_NORTH,Meridian Health — Ahmedabad - North,Ahmedabad - North,meridian,azithromycin_courses,Azithromycin Course,course,124,5,140
+MER_AHMEDABAD_NORTH,Meridian Health — Ahmedabad - North,Ahmedabad - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,90,4,95
+MER_AHMEDABAD_NORTH,Meridian Health — Ahmedabad - North,Ahmedabad - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,3594,1,4
+MER_AHMEDABAD_SOUTH,Meridian Health — Ahmedabad - South,Ahmedabad - South,meridian,ors_sachets,ORS Sachets,sachet,2822,2,15
+MER_AHMEDABAD_SOUTH,Meridian Health — Ahmedabad - South,Ahmedabad - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,996,3,65
+MER_AHMEDABAD_SOUTH,Meridian Health — Ahmedabad - South,Ahmedabad - South,meridian,azithromycin_courses,Azithromycin Course,course,274,4,140
+MER_AHMEDABAD_SOUTH,Meridian Health — Ahmedabad - South,Ahmedabad - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,233,5,95
+MER_AHMEDABAD_SOUTH,Meridian Health — Ahmedabad - South,Ahmedabad - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,7416,3,4
+MER_AHMEDABAD_WEST,Meridian Health — Ahmedabad - West,Ahmedabad - West,meridian,ors_sachets,ORS Sachets,sachet,2753,2,15
+MER_AHMEDABAD_WEST,Meridian Health — Ahmedabad - West,Ahmedabad - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1030,3,65
+MER_AHMEDABAD_WEST,Meridian Health — Ahmedabad - West,Ahmedabad - West,meridian,azithromycin_courses,Azithromycin Course,course,284,5,140
+MER_AHMEDABAD_WEST,Meridian Health — Ahmedabad - West,Ahmedabad - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,262,6,95
+MER_AHMEDABAD_WEST,Meridian Health — Ahmedabad - West,Ahmedabad - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,10367,2,4
+GOV_AIZAWL,"District Government Hospital, Aizawl",Aizawl,government,ors_sachets,ORS Sachets,sachet,2413,5,15
+GOV_AIZAWL,"District Government Hospital, Aizawl",Aizawl,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,836,7,65
+GOV_AIZAWL,"District Government Hospital, Aizawl",Aizawl,government,azithromycin_courses,Azithromycin Course,course,228,7,140
+GOV_AIZAWL,"District Government Hospital, Aizawl",Aizawl,government,ciprofloxacin_courses,Ciprofloxacin Course,course,183,7,95
+GOV_AIZAWL,"District Government Hospital, Aizawl",Aizawl,government,water_purification_tablets,Water Purification Tablets,tablet,5819,5,4
+GOV_AMRITSAR,"District Government Hospital, Amritsar",Amritsar,government,ors_sachets,ORS Sachets,sachet,4470,4,15
+GOV_AMRITSAR,"District Government Hospital, Amritsar",Amritsar,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1575,7,65
+GOV_AMRITSAR,"District Government Hospital, Amritsar",Amritsar,government,azithromycin_courses,Azithromycin Course,course,544,7,140
+GOV_AMRITSAR,"District Government Hospital, Amritsar",Amritsar,government,ciprofloxacin_courses,Ciprofloxacin Course,course,373,8,95
+GOV_AMRITSAR,"District Government Hospital, Amritsar",Amritsar,government,water_purification_tablets,Water Purification Tablets,tablet,15410,5,4
+PUB_NIMHANS_BLR,NIMHANS,Bengaluru,default,ors_sachets,ORS Sachets,sachet,3565,4,15
+PUB_NIMHANS_BLR,NIMHANS,Bengaluru,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1070,4,65
+PUB_NIMHANS_BLR,NIMHANS,Bengaluru,default,azithromycin_courses,Azithromycin Course,course,394,5,140
+PUB_NIMHANS_BLR,NIMHANS,Bengaluru,default,ciprofloxacin_courses,Ciprofloxacin Course,course,304,5,95
+PUB_NIMHANS_BLR,NIMHANS,Bengaluru,default,water_purification_tablets,Water Purification Tablets,tablet,11127,2,4
+PVT_NARAYANA_BLR,Narayana Health,Bengaluru,default,ors_sachets,ORS Sachets,sachet,2722,2,15
+PVT_NARAYANA_BLR,Narayana Health,Bengaluru,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,890,4,65
+PVT_NARAYANA_BLR,Narayana Health,Bengaluru,default,azithromycin_courses,Azithromycin Course,course,246,7,140
+PVT_NARAYANA_BLR,Narayana Health,Bengaluru,default,ciprofloxacin_courses,Ciprofloxacin Course,course,254,5,95
+PVT_NARAYANA_BLR,Narayana Health,Bengaluru,default,water_purification_tablets,Water Purification Tablets,tablet,7544,4,4
+PVT_MANIPAL_BLR,Manipal Hospital,Bengaluru,default,ors_sachets,ORS Sachets,sachet,2201,3,15
+PVT_MANIPAL_BLR,Manipal Hospital,Bengaluru,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,602,5,65
+PVT_MANIPAL_BLR,Manipal Hospital,Bengaluru,default,azithromycin_courses,Azithromycin Course,course,176,6,140
+PVT_MANIPAL_BLR,Manipal Hospital,Bengaluru,default,ciprofloxacin_courses,Ciprofloxacin Course,course,156,6,95
+PVT_MANIPAL_BLR,Manipal Hospital,Bengaluru,default,water_purification_tablets,Water Purification Tablets,tablet,6124,4,4
+MER_BENGALURU_CENTRAL,Meridian Health — Bengaluru - Central,Bengaluru - Central,meridian,ors_sachets,ORS Sachets,sachet,1068,2,15
+MER_BENGALURU_CENTRAL,Meridian Health — Bengaluru - Central,Bengaluru - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,346,4,65
+MER_BENGALURU_CENTRAL,Meridian Health — Bengaluru - Central,Bengaluru - Central,meridian,azithromycin_courses,Azithromycin Course,course,109,4,140
+MER_BENGALURU_CENTRAL,Meridian Health — Bengaluru - Central,Bengaluru - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,87,6,95
+MER_BENGALURU_CENTRAL,Meridian Health — Bengaluru - Central,Bengaluru - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,3046,2,4
+MER_BENGALURU_EAST,Meridian Health — Bengaluru - East,Bengaluru - East,meridian,ors_sachets,ORS Sachets,sachet,1318,3,15
+MER_BENGALURU_EAST,Meridian Health — Bengaluru - East,Bengaluru - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,570,2,65
+MER_BENGALURU_EAST,Meridian Health — Bengaluru - East,Bengaluru - East,meridian,azithromycin_courses,Azithromycin Course,course,158,4,140
+MER_BENGALURU_EAST,Meridian Health — Bengaluru - East,Bengaluru - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,138,5,95
+MER_BENGALURU_EAST,Meridian Health — Bengaluru - East,Bengaluru - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,4105,1,4
+MER_BENGALURU_NORTH,Meridian Health — Bengaluru - North,Bengaluru - North,meridian,ors_sachets,ORS Sachets,sachet,2001,3,15
+MER_BENGALURU_NORTH,Meridian Health — Bengaluru - North,Bengaluru - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,874,3,65
+MER_BENGALURU_NORTH,Meridian Health — Bengaluru - North,Bengaluru - North,meridian,azithromycin_courses,Azithromycin Course,course,235,4,140
+MER_BENGALURU_NORTH,Meridian Health — Bengaluru - North,Bengaluru - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,184,6,95
+MER_BENGALURU_NORTH,Meridian Health — Bengaluru - North,Bengaluru - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,6086,3,4
+MER_BENGALURU_SOUTH,Meridian Health — Bengaluru - South,Bengaluru - South,meridian,ors_sachets,ORS Sachets,sachet,2020,2,15
+MER_BENGALURU_SOUTH,Meridian Health — Bengaluru - South,Bengaluru - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,824,4,65
+MER_BENGALURU_SOUTH,Meridian Health — Bengaluru - South,Bengaluru - South,meridian,azithromycin_courses,Azithromycin Course,course,202,5,140
+MER_BENGALURU_SOUTH,Meridian Health — Bengaluru - South,Bengaluru - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,169,4,95
+MER_BENGALURU_SOUTH,Meridian Health — Bengaluru - South,Bengaluru - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,5949,3,4
+MER_BENGALURU_WEST,Meridian Health — Bengaluru - West,Bengaluru - West,meridian,ors_sachets,ORS Sachets,sachet,4576,3,15
+MER_BENGALURU_WEST,Meridian Health — Bengaluru - West,Bengaluru - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1747,3,65
+MER_BENGALURU_WEST,Meridian Health — Bengaluru - West,Bengaluru - West,meridian,azithromycin_courses,Azithromycin Course,course,489,5,140
+MER_BENGALURU_WEST,Meridian Health — Bengaluru - West,Bengaluru - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,382,5,95
+MER_BENGALURU_WEST,Meridian Health — Bengaluru - West,Bengaluru - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,14490,2,4
+GOV_BHILAI,"District Government Hospital, Bhilai",Bhilai,government,ors_sachets,ORS Sachets,sachet,3460,5,15
+GOV_BHILAI,"District Government Hospital, Bhilai",Bhilai,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1334,5,65
+GOV_BHILAI,"District Government Hospital, Bhilai",Bhilai,government,azithromycin_courses,Azithromycin Course,course,451,8,140
+GOV_BHILAI,"District Government Hospital, Bhilai",Bhilai,government,ciprofloxacin_courses,Ciprofloxacin Course,course,315,9,95
+GOV_BHILAI,"District Government Hospital, Bhilai",Bhilai,government,water_purification_tablets,Water Purification Tablets,tablet,11957,6,4
+GOV_BHOPAL,"District Government Hospital, Bhopal",Bhopal,government,ors_sachets,ORS Sachets,sachet,2301,6,15
+GOV_BHOPAL,"District Government Hospital, Bhopal",Bhopal,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,721,7,65
+GOV_BHOPAL,"District Government Hospital, Bhopal",Bhopal,government,azithromycin_courses,Azithromycin Course,course,215,9,140
+GOV_BHOPAL,"District Government Hospital, Bhopal",Bhopal,government,ciprofloxacin_courses,Ciprofloxacin Course,course,164,7,95
+GOV_BHOPAL,"District Government Hospital, Bhopal",Bhopal,government,water_purification_tablets,Water Purification Tablets,tablet,5784,4,4
+MER_BHOPAL_CENTRAL,Meridian Health — Bhopal - Central,Bhopal - Central,meridian,ors_sachets,ORS Sachets,sachet,1869,3,15
+MER_BHOPAL_CENTRAL,Meridian Health — Bhopal - Central,Bhopal - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,748,4,65
+MER_BHOPAL_CENTRAL,Meridian Health — Bhopal - Central,Bhopal - Central,meridian,azithromycin_courses,Azithromycin Course,course,218,5,140
+MER_BHOPAL_CENTRAL,Meridian Health — Bhopal - Central,Bhopal - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,190,5,95
+MER_BHOPAL_CENTRAL,Meridian Health — Bhopal - Central,Bhopal - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,6879,1,4
+MER_BHOPAL_EAST,Meridian Health — Bhopal - East,Bhopal - East,meridian,ors_sachets,ORS Sachets,sachet,2503,2,15
+MER_BHOPAL_EAST,Meridian Health — Bhopal - East,Bhopal - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,748,3,65
+MER_BHOPAL_EAST,Meridian Health — Bhopal - East,Bhopal - East,meridian,azithromycin_courses,Azithromycin Course,course,209,6,140
+MER_BHOPAL_EAST,Meridian Health — Bhopal - East,Bhopal - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,223,5,95
+MER_BHOPAL_EAST,Meridian Health — Bhopal - East,Bhopal - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,7538,3,4
+MER_BHOPAL_NORTH,Meridian Health — Bhopal - North,Bhopal - North,meridian,ors_sachets,ORS Sachets,sachet,1439,3,15
+MER_BHOPAL_NORTH,Meridian Health — Bhopal - North,Bhopal - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,479,4,65
+MER_BHOPAL_NORTH,Meridian Health — Bhopal - North,Bhopal - North,meridian,azithromycin_courses,Azithromycin Course,course,129,6,140
+MER_BHOPAL_NORTH,Meridian Health — Bhopal - North,Bhopal - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,123,4,95
+MER_BHOPAL_NORTH,Meridian Health — Bhopal - North,Bhopal - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,3143,1,4
+MER_BHOPAL_SOUTH,Meridian Health — Bhopal - South,Bhopal - South,meridian,ors_sachets,ORS Sachets,sachet,1309,3,15
+MER_BHOPAL_SOUTH,Meridian Health — Bhopal - South,Bhopal - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,439,2,65
+MER_BHOPAL_SOUTH,Meridian Health — Bhopal - South,Bhopal - South,meridian,azithromycin_courses,Azithromycin Course,course,144,4,140
+MER_BHOPAL_SOUTH,Meridian Health — Bhopal - South,Bhopal - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,124,4,95
+MER_BHOPAL_SOUTH,Meridian Health — Bhopal - South,Bhopal - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,3635,1,4
+MER_BHOPAL_WEST,Meridian Health — Bhopal - West,Bhopal - West,meridian,ors_sachets,ORS Sachets,sachet,1402,3,15
+MER_BHOPAL_WEST,Meridian Health — Bhopal - West,Bhopal - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,577,4,65
+MER_BHOPAL_WEST,Meridian Health — Bhopal - West,Bhopal - West,meridian,azithromycin_courses,Azithromycin Course,course,163,5,140
+MER_BHOPAL_WEST,Meridian Health — Bhopal - West,Bhopal - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,133,4,95
+MER_BHOPAL_WEST,Meridian Health — Bhopal - West,Bhopal - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,3853,2,4
+GOV_BHUBANESWAR,"District Government Hospital, Bhubaneswar",Bhubaneswar,government,ors_sachets,ORS Sachets,sachet,2429,4,15
+GOV_BHUBANESWAR,"District Government Hospital, Bhubaneswar",Bhubaneswar,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1100,7,65
+GOV_BHUBANESWAR,"District Government Hospital, Bhubaneswar",Bhubaneswar,government,azithromycin_courses,Azithromycin Course,course,312,7,140
+GOV_BHUBANESWAR,"District Government Hospital, Bhubaneswar",Bhubaneswar,government,ciprofloxacin_courses,Ciprofloxacin Course,course,230,7,95
+GOV_BHUBANESWAR,"District Government Hospital, Bhubaneswar",Bhubaneswar,government,water_purification_tablets,Water Purification Tablets,tablet,7612,4,4
+PUB_PGIMER_CHD,PGIMER,Chandigarh,default,ors_sachets,ORS Sachets,sachet,2688,2,15
+PUB_PGIMER_CHD,PGIMER,Chandigarh,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,799,4,65
+PUB_PGIMER_CHD,PGIMER,Chandigarh,default,azithromycin_courses,Azithromycin Course,course,269,7,140
+PUB_PGIMER_CHD,PGIMER,Chandigarh,default,ciprofloxacin_courses,Ciprofloxacin Course,course,188,7,95
+PUB_PGIMER_CHD,PGIMER,Chandigarh,default,water_purification_tablets,Water Purification Tablets,tablet,7861,4,4
+MER_CHANDIGARH_CENTRAL,Meridian Health — Chandigarh - Central,Chandigarh - Central,meridian,ors_sachets,ORS Sachets,sachet,842,2,15
+MER_CHANDIGARH_CENTRAL,Meridian Health — Chandigarh - Central,Chandigarh - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,292,3,65
+MER_CHANDIGARH_CENTRAL,Meridian Health — Chandigarh - Central,Chandigarh - Central,meridian,azithromycin_courses,Azithromycin Course,course,72,5,140
+MER_CHANDIGARH_CENTRAL,Meridian Health — Chandigarh - Central,Chandigarh - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,73,5,95
+MER_CHANDIGARH_CENTRAL,Meridian Health — Chandigarh - Central,Chandigarh - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,2582,3,4
+MER_CHANDIGARH_EAST,Meridian Health — Chandigarh - East,Chandigarh - East,meridian,ors_sachets,ORS Sachets,sachet,1398,3,15
+MER_CHANDIGARH_EAST,Meridian Health — Chandigarh - East,Chandigarh - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,499,3,65
+MER_CHANDIGARH_EAST,Meridian Health — Chandigarh - East,Chandigarh - East,meridian,azithromycin_courses,Azithromycin Course,course,118,6,140
+MER_CHANDIGARH_EAST,Meridian Health — Chandigarh - East,Chandigarh - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,96,5,95
+MER_CHANDIGARH_EAST,Meridian Health — Chandigarh - East,Chandigarh - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,3425,2,4
+MER_CHANDIGARH_NORTH,Meridian Health — Chandigarh - North,Chandigarh - North,meridian,ors_sachets,ORS Sachets,sachet,2146,3,15
+MER_CHANDIGARH_NORTH,Meridian Health — Chandigarh - North,Chandigarh - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,601,3,65
+MER_CHANDIGARH_NORTH,Meridian Health — Chandigarh - North,Chandigarh - North,meridian,azithromycin_courses,Azithromycin Course,course,187,6,140
+MER_CHANDIGARH_NORTH,Meridian Health — Chandigarh - North,Chandigarh - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,143,5,95
+MER_CHANDIGARH_NORTH,Meridian Health — Chandigarh - North,Chandigarh - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,5215,3,4
+MER_CHANDIGARH_SOUTH,Meridian Health — Chandigarh - South,Chandigarh - South,meridian,ors_sachets,ORS Sachets,sachet,1839,1,15
+MER_CHANDIGARH_SOUTH,Meridian Health — Chandigarh - South,Chandigarh - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,552,2,65
+MER_CHANDIGARH_SOUTH,Meridian Health — Chandigarh - South,Chandigarh - South,meridian,azithromycin_courses,Azithromycin Course,course,169,5,140
+MER_CHANDIGARH_SOUTH,Meridian Health — Chandigarh - South,Chandigarh - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,131,6,95
+MER_CHANDIGARH_SOUTH,Meridian Health — Chandigarh - South,Chandigarh - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,4536,1,4
+MER_CHANDIGARH_WEST,Meridian Health — Chandigarh - West,Chandigarh - West,meridian,ors_sachets,ORS Sachets,sachet,2368,2,15
+MER_CHANDIGARH_WEST,Meridian Health — Chandigarh - West,Chandigarh - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,951,4,65
+MER_CHANDIGARH_WEST,Meridian Health — Chandigarh - West,Chandigarh - West,meridian,azithromycin_courses,Azithromycin Course,course,255,4,140
+MER_CHANDIGARH_WEST,Meridian Health — Chandigarh - West,Chandigarh - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,250,4,95
+MER_CHANDIGARH_WEST,Meridian Health — Chandigarh - West,Chandigarh - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,6882,2,4
+PUB_RGGGH_CHN,Rajiv Gandhi Govt General Hospital,Chennai,default,ors_sachets,ORS Sachets,sachet,1376,2,15
+PUB_RGGGH_CHN,Rajiv Gandhi Govt General Hospital,Chennai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,605,5,65
+PUB_RGGGH_CHN,Rajiv Gandhi Govt General Hospital,Chennai,default,azithromycin_courses,Azithromycin Course,course,148,5,140
+PUB_RGGGH_CHN,Rajiv Gandhi Govt General Hospital,Chennai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,148,6,95
+PUB_RGGGH_CHN,Rajiv Gandhi Govt General Hospital,Chennai,default,water_purification_tablets,Water Purification Tablets,tablet,4073,3,4
+PVT_APOLLO_CHN,Apollo Hospitals,Chennai,default,ors_sachets,ORS Sachets,sachet,1888,4,15
+PVT_APOLLO_CHN,Apollo Hospitals,Chennai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,617,4,65
+PVT_APOLLO_CHN,Apollo Hospitals,Chennai,default,azithromycin_courses,Azithromycin Course,course,149,6,140
+PVT_APOLLO_CHN,Apollo Hospitals,Chennai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,157,7,95
+PVT_APOLLO_CHN,Apollo Hospitals,Chennai,default,water_purification_tablets,Water Purification Tablets,tablet,5309,4,4
+MER_CHENNAI_CENTRAL,Meridian Health — Chennai - Central,Chennai - Central,meridian,ors_sachets,ORS Sachets,sachet,2205,3,15
+MER_CHENNAI_CENTRAL,Meridian Health — Chennai - Central,Chennai - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,875,4,65
+MER_CHENNAI_CENTRAL,Meridian Health — Chennai - Central,Chennai - Central,meridian,azithromycin_courses,Azithromycin Course,course,230,6,140
+MER_CHENNAI_CENTRAL,Meridian Health — Chennai - Central,Chennai - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,202,6,95
+MER_CHENNAI_CENTRAL,Meridian Health — Chennai - Central,Chennai - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,7787,2,4
+MER_CHENNAI_EAST,Meridian Health — Chennai - East,Chennai - East,meridian,ors_sachets,ORS Sachets,sachet,3464,3,15
+MER_CHENNAI_EAST,Meridian Health — Chennai - East,Chennai - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1458,2,65
+MER_CHENNAI_EAST,Meridian Health — Chennai - East,Chennai - East,meridian,azithromycin_courses,Azithromycin Course,course,407,4,140
+MER_CHENNAI_EAST,Meridian Health — Chennai - East,Chennai - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,384,6,95
+MER_CHENNAI_EAST,Meridian Health — Chennai - East,Chennai - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,12616,3,4
+MER_CHENNAI_NORTH,Meridian Health — Chennai - North,Chennai - North,meridian,ors_sachets,ORS Sachets,sachet,1570,3,15
+MER_CHENNAI_NORTH,Meridian Health — Chennai - North,Chennai - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,579,2,65
+MER_CHENNAI_NORTH,Meridian Health — Chennai - North,Chennai - North,meridian,azithromycin_courses,Azithromycin Course,course,175,4,140
+MER_CHENNAI_NORTH,Meridian Health — Chennai - North,Chennai - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,150,4,95
+MER_CHENNAI_NORTH,Meridian Health — Chennai - North,Chennai - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,4555,3,4
+MER_CHENNAI_SOUTH,Meridian Health — Chennai - South,Chennai - South,meridian,ors_sachets,ORS Sachets,sachet,2580,2,15
+MER_CHENNAI_SOUTH,Meridian Health — Chennai - South,Chennai - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1000,2,65
+MER_CHENNAI_SOUTH,Meridian Health — Chennai - South,Chennai - South,meridian,azithromycin_courses,Azithromycin Course,course,268,4,140
+MER_CHENNAI_SOUTH,Meridian Health — Chennai - South,Chennai - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,230,5,95
+MER_CHENNAI_SOUTH,Meridian Health — Chennai - South,Chennai - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,8054,3,4
+MER_CHENNAI_WEST,Meridian Health — Chennai - West,Chennai - West,meridian,ors_sachets,ORS Sachets,sachet,3994,2,15
+MER_CHENNAI_WEST,Meridian Health — Chennai - West,Chennai - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1175,4,65
+MER_CHENNAI_WEST,Meridian Health — Chennai - West,Chennai - West,meridian,azithromycin_courses,Azithromycin Course,course,382,4,140
+MER_CHENNAI_WEST,Meridian Health — Chennai - West,Chennai - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,349,4,95
+MER_CHENNAI_WEST,Meridian Health — Chennai - West,Chennai - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,10782,1,4
+GOV_COIMBATORE,"District Government Hospital, Coimbatore",Coimbatore,government,ors_sachets,ORS Sachets,sachet,4046,4,15
+GOV_COIMBATORE,"District Government Hospital, Coimbatore",Coimbatore,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1081,5,65
+GOV_COIMBATORE,"District Government Hospital, Coimbatore",Coimbatore,government,azithromycin_courses,Azithromycin Course,course,412,7,140
+GOV_COIMBATORE,"District Government Hospital, Coimbatore",Coimbatore,government,ciprofloxacin_courses,Ciprofloxacin Course,course,278,7,95
+GOV_COIMBATORE,"District Government Hospital, Coimbatore",Coimbatore,government,water_purification_tablets,Water Purification Tablets,tablet,10497,6,4
+MER_COIMBATORE_CENTRAL,Meridian Health — Coimbatore - Central,Coimbatore - Central,meridian,ors_sachets,ORS Sachets,sachet,3410,2,15
+MER_COIMBATORE_CENTRAL,Meridian Health — Coimbatore - Central,Coimbatore - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1449,4,65
+MER_COIMBATORE_CENTRAL,Meridian Health — Coimbatore - Central,Coimbatore - Central,meridian,azithromycin_courses,Azithromycin Course,course,406,4,140
+MER_COIMBATORE_CENTRAL,Meridian Health — Coimbatore - Central,Coimbatore - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,280,4,95
+MER_COIMBATORE_CENTRAL,Meridian Health — Coimbatore - Central,Coimbatore - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,9233,2,4
+MER_COIMBATORE_EAST,Meridian Health — Coimbatore - East,Coimbatore - East,meridian,ors_sachets,ORS Sachets,sachet,1902,2,15
+MER_COIMBATORE_EAST,Meridian Health — Coimbatore - East,Coimbatore - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,682,4,65
+MER_COIMBATORE_EAST,Meridian Health — Coimbatore - East,Coimbatore - East,meridian,azithromycin_courses,Azithromycin Course,course,175,6,140
+MER_COIMBATORE_EAST,Meridian Health — Coimbatore - East,Coimbatore - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,193,6,95
+MER_COIMBATORE_EAST,Meridian Health — Coimbatore - East,Coimbatore - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,6477,2,4
+MER_COIMBATORE_NORTH,Meridian Health — Coimbatore - North,Coimbatore - North,meridian,ors_sachets,ORS Sachets,sachet,1474,1,15
+MER_COIMBATORE_NORTH,Meridian Health — Coimbatore - North,Coimbatore - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,489,3,65
+MER_COIMBATORE_NORTH,Meridian Health — Coimbatore - North,Coimbatore - North,meridian,azithromycin_courses,Azithromycin Course,course,161,4,140
+MER_COIMBATORE_NORTH,Meridian Health — Coimbatore - North,Coimbatore - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,122,4,95
+MER_COIMBATORE_NORTH,Meridian Health — Coimbatore - North,Coimbatore - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,5084,1,4
+MER_COIMBATORE_SOUTH,Meridian Health — Coimbatore - South,Coimbatore - South,meridian,ors_sachets,ORS Sachets,sachet,1304,1,15
+MER_COIMBATORE_SOUTH,Meridian Health — Coimbatore - South,Coimbatore - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,459,4,65
+MER_COIMBATORE_SOUTH,Meridian Health — Coimbatore - South,Coimbatore - South,meridian,azithromycin_courses,Azithromycin Course,course,145,6,140
+MER_COIMBATORE_SOUTH,Meridian Health — Coimbatore - South,Coimbatore - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,124,4,95
+MER_COIMBATORE_SOUTH,Meridian Health — Coimbatore - South,Coimbatore - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,4275,2,4
+MER_COIMBATORE_WEST,Meridian Health — Coimbatore - West,Coimbatore - West,meridian,ors_sachets,ORS Sachets,sachet,2416,2,15
+MER_COIMBATORE_WEST,Meridian Health — Coimbatore - West,Coimbatore - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,847,3,65
+MER_COIMBATORE_WEST,Meridian Health — Coimbatore - West,Coimbatore - West,meridian,azithromycin_courses,Azithromycin Course,course,198,4,140
+MER_COIMBATORE_WEST,Meridian Health — Coimbatore - West,Coimbatore - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,168,5,95
+MER_COIMBATORE_WEST,Meridian Health — Coimbatore - West,Coimbatore - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,7191,3,4
+GOV_DEHRADUN,"District Government Hospital, Dehradun",Dehradun,government,ors_sachets,ORS Sachets,sachet,2477,6,15
+GOV_DEHRADUN,"District Government Hospital, Dehradun",Dehradun,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,746,5,65
+GOV_DEHRADUN,"District Government Hospital, Dehradun",Dehradun,government,azithromycin_courses,Azithromycin Course,course,217,8,140
+GOV_DEHRADUN,"District Government Hospital, Dehradun",Dehradun,government,ciprofloxacin_courses,Ciprofloxacin Course,course,160,9,95
+GOV_DEHRADUN,"District Government Hospital, Dehradun",Dehradun,government,water_purification_tablets,Water Purification Tablets,tablet,5860,5,4
+PUB_AIIMS_DEL,All India Institute of Medical Sciences (AIIMS),Delhi,default,ors_sachets,ORS Sachets,sachet,2171,3,15
+PUB_AIIMS_DEL,All India Institute of Medical Sciences (AIIMS),Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,800,5,65
+PUB_AIIMS_DEL,All India Institute of Medical Sciences (AIIMS),Delhi,default,azithromycin_courses,Azithromycin Course,course,254,7,140
+PUB_AIIMS_DEL,All India Institute of Medical Sciences (AIIMS),Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,222,7,95
+PUB_AIIMS_DEL,All India Institute of Medical Sciences (AIIMS),Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,7155,4,4
+PUB_LHMC_DEL,Lady Hardinge Medical College,Delhi,default,ors_sachets,ORS Sachets,sachet,3826,4,15
+PUB_LHMC_DEL,Lady Hardinge Medical College,Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1170,5,65
+PUB_LHMC_DEL,Lady Hardinge Medical College,Delhi,default,azithromycin_courses,Azithromycin Course,course,327,5,140
+PUB_LHMC_DEL,Lady Hardinge Medical College,Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,280,7,95
+PUB_LHMC_DEL,Lady Hardinge Medical College,Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,11671,4,4
+PUB_RML_DEL,Dr. Ram Manohar Lohia Hospital,Delhi,default,ors_sachets,ORS Sachets,sachet,2176,3,15
+PUB_RML_DEL,Dr. Ram Manohar Lohia Hospital,Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,591,3,65
+PUB_RML_DEL,Dr. Ram Manohar Lohia Hospital,Delhi,default,azithromycin_courses,Azithromycin Course,course,169,6,140
+PUB_RML_DEL,Dr. Ram Manohar Lohia Hospital,Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,188,6,95
+PUB_RML_DEL,Dr. Ram Manohar Lohia Hospital,Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,5998,3,4
+PUB_GB_PANT_DEL,G.B. Pant Hospital,Delhi,default,ors_sachets,ORS Sachets,sachet,2812,3,15
+PUB_GB_PANT_DEL,G.B. Pant Hospital,Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,922,5,65
+PUB_GB_PANT_DEL,G.B. Pant Hospital,Delhi,default,azithromycin_courses,Azithromycin Course,course,293,5,140
+PUB_GB_PANT_DEL,G.B. Pant Hospital,Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,215,6,95
+PUB_GB_PANT_DEL,G.B. Pant Hospital,Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,7792,2,4
+PVT_MAX_SAK,Max Super Speciality Hospital,Delhi,default,ors_sachets,ORS Sachets,sachet,1114,4,15
+PVT_MAX_SAK,Max Super Speciality Hospital,Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,332,3,65
+PVT_MAX_SAK,Max Super Speciality Hospital,Delhi,default,azithromycin_courses,Azithromycin Course,course,115,6,140
+PVT_MAX_SAK,Max Super Speciality Hospital,Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,79,7,95
+PVT_MAX_SAK,Max Super Speciality Hospital,Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,2588,4,4
+PVT_SIR_GANGA_RAM,Sir Ganga Ram Hospital,Delhi,default,ors_sachets,ORS Sachets,sachet,1906,3,15
+PVT_SIR_GANGA_RAM,Sir Ganga Ram Hospital,Delhi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,703,4,65
+PVT_SIR_GANGA_RAM,Sir Ganga Ram Hospital,Delhi,default,azithromycin_courses,Azithromycin Course,course,194,7,140
+PVT_SIR_GANGA_RAM,Sir Ganga Ram Hospital,Delhi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,144,7,95
+PVT_SIR_GANGA_RAM,Sir Ganga Ram Hospital,Delhi,default,water_purification_tablets,Water Purification Tablets,tablet,5601,3,4
+MER_DELHI_CENTRAL,Meridian Health — Delhi - Central,Delhi - Central,meridian,ors_sachets,ORS Sachets,sachet,1662,2,15
+MER_DELHI_CENTRAL,Meridian Health — Delhi - Central,Delhi - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,652,2,65
+MER_DELHI_CENTRAL,Meridian Health — Delhi - Central,Delhi - Central,meridian,azithromycin_courses,Azithromycin Course,course,196,5,140
+MER_DELHI_CENTRAL,Meridian Health — Delhi - Central,Delhi - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,144,6,95
+MER_DELHI_CENTRAL,Meridian Health — Delhi - Central,Delhi - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,5050,2,4
+MER_DELHI_EAST,Meridian Health — Delhi - East,Delhi - East,meridian,ors_sachets,ORS Sachets,sachet,2692,2,15
+MER_DELHI_EAST,Meridian Health — Delhi - East,Delhi - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,818,2,65
+MER_DELHI_EAST,Meridian Health — Delhi - East,Delhi - East,meridian,azithromycin_courses,Azithromycin Course,course,260,6,140
+MER_DELHI_EAST,Meridian Health — Delhi - East,Delhi - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,211,6,95
+MER_DELHI_EAST,Meridian Health — Delhi - East,Delhi - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,7544,1,4
+MER_DELHI_NORTH,Meridian Health — Delhi - North,Delhi - North,meridian,ors_sachets,ORS Sachets,sachet,3541,2,15
+MER_DELHI_NORTH,Meridian Health — Delhi - North,Delhi - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1167,3,65
+MER_DELHI_NORTH,Meridian Health — Delhi - North,Delhi - North,meridian,azithromycin_courses,Azithromycin Course,course,314,5,140
+MER_DELHI_NORTH,Meridian Health — Delhi - North,Delhi - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,282,4,95
+MER_DELHI_NORTH,Meridian Health — Delhi - North,Delhi - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,9912,2,4
+MER_DELHI_SOUTH,Meridian Health — Delhi - South,Delhi - South,meridian,ors_sachets,ORS Sachets,sachet,2016,1,15
+MER_DELHI_SOUTH,Meridian Health — Delhi - South,Delhi - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,699,4,65
+MER_DELHI_SOUTH,Meridian Health — Delhi - South,Delhi - South,meridian,azithromycin_courses,Azithromycin Course,course,194,4,140
+MER_DELHI_SOUTH,Meridian Health — Delhi - South,Delhi - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,168,6,95
+MER_DELHI_SOUTH,Meridian Health — Delhi - South,Delhi - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,6419,1,4
+MER_DELHI_WEST,Meridian Health — Delhi - West,Delhi - West,meridian,ors_sachets,ORS Sachets,sachet,1517,3,15
+MER_DELHI_WEST,Meridian Health — Delhi - West,Delhi - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,421,4,65
+MER_DELHI_WEST,Meridian Health — Delhi - West,Delhi - West,meridian,azithromycin_courses,Azithromycin Course,course,158,5,140
+MER_DELHI_WEST,Meridian Health — Delhi - West,Delhi - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,125,5,95
+MER_DELHI_WEST,Meridian Health — Delhi - West,Delhi - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,4275,2,4
+GOV_GANGTOK,"District Government Hospital, Gangtok",Gangtok,government,ors_sachets,ORS Sachets,sachet,1542,5,15
+GOV_GANGTOK,"District Government Hospital, Gangtok",Gangtok,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,467,6,65
+GOV_GANGTOK,"District Government Hospital, Gangtok",Gangtok,government,azithromycin_courses,Azithromycin Course,course,141,8,140
+GOV_GANGTOK,"District Government Hospital, Gangtok",Gangtok,government,ciprofloxacin_courses,Ciprofloxacin Course,course,126,7,95
+GOV_GANGTOK,"District Government Hospital, Gangtok",Gangtok,government,water_purification_tablets,Water Purification Tablets,tablet,4942,5,4
+PVT_FMH_GGN,Fortis Memorial Research Institute,Gurugram,default,ors_sachets,ORS Sachets,sachet,1065,3,15
+PVT_FMH_GGN,Fortis Memorial Research Institute,Gurugram,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,389,5,65
+PVT_FMH_GGN,Fortis Memorial Research Institute,Gurugram,default,azithromycin_courses,Azithromycin Course,course,124,7,140
+PVT_FMH_GGN,Fortis Memorial Research Institute,Gurugram,default,ciprofloxacin_courses,Ciprofloxacin Course,course,91,6,95
+PVT_FMH_GGN,Fortis Memorial Research Institute,Gurugram,default,water_purification_tablets,Water Purification Tablets,tablet,3529,2,4
+PVT_MEDANTA_GGN,Medanta – The Medicity,Gurugram,default,ors_sachets,ORS Sachets,sachet,1202,2,15
+PVT_MEDANTA_GGN,Medanta – The Medicity,Gurugram,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,433,3,65
+PVT_MEDANTA_GGN,Medanta – The Medicity,Gurugram,default,azithromycin_courses,Azithromycin Course,course,107,6,140
+PVT_MEDANTA_GGN,Medanta – The Medicity,Gurugram,default,ciprofloxacin_courses,Ciprofloxacin Course,course,89,6,95
+PVT_MEDANTA_GGN,Medanta – The Medicity,Gurugram,default,water_purification_tablets,Water Purification Tablets,tablet,3175,2,4
+GOV_GUWAHATI,"District Government Hospital, Guwahati",Guwahati,government,ors_sachets,ORS Sachets,sachet,3208,6,15
+GOV_GUWAHATI,"District Government Hospital, Guwahati",Guwahati,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1198,7,65
+GOV_GUWAHATI,"District Government Hospital, Guwahati",Guwahati,government,azithromycin_courses,Azithromycin Course,course,311,8,140
+GOV_GUWAHATI,"District Government Hospital, Guwahati",Guwahati,government,ciprofloxacin_courses,Ciprofloxacin Course,course,281,7,95
+GOV_GUWAHATI,"District Government Hospital, Guwahati",Guwahati,government,water_purification_tablets,Water Purification Tablets,tablet,8731,4,4
+MER_GUWAHATI_CENTRAL,Meridian Health — Guwahati - Central,Guwahati - Central,meridian,ors_sachets,ORS Sachets,sachet,3187,2,15
+MER_GUWAHATI_CENTRAL,Meridian Health — Guwahati - Central,Guwahati - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1081,2,65
+MER_GUWAHATI_CENTRAL,Meridian Health — Guwahati - Central,Guwahati - Central,meridian,azithromycin_courses,Azithromycin Course,course,323,5,140
+MER_GUWAHATI_CENTRAL,Meridian Health — Guwahati - Central,Guwahati - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,219,5,95
+MER_GUWAHATI_CENTRAL,Meridian Health — Guwahati - Central,Guwahati - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,8884,2,4
+MER_GUWAHATI_EAST,Meridian Health — Guwahati - East,Guwahati - East,meridian,ors_sachets,ORS Sachets,sachet,1060,1,15
+MER_GUWAHATI_EAST,Meridian Health — Guwahati - East,Guwahati - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,393,4,65
+MER_GUWAHATI_EAST,Meridian Health — Guwahati - East,Guwahati - East,meridian,azithromycin_courses,Azithromycin Course,course,109,4,140
+MER_GUWAHATI_EAST,Meridian Health — Guwahati - East,Guwahati - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,95,6,95
+MER_GUWAHATI_EAST,Meridian Health — Guwahati - East,Guwahati - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,2864,2,4
+MER_GUWAHATI_NORTH,Meridian Health — Guwahati - North,Guwahati - North,meridian,ors_sachets,ORS Sachets,sachet,2235,3,15
+MER_GUWAHATI_NORTH,Meridian Health — Guwahati - North,Guwahati - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,758,2,65
+MER_GUWAHATI_NORTH,Meridian Health — Guwahati - North,Guwahati - North,meridian,azithromycin_courses,Azithromycin Course,course,208,5,140
+MER_GUWAHATI_NORTH,Meridian Health — Guwahati - North,Guwahati - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,221,5,95
+MER_GUWAHATI_NORTH,Meridian Health — Guwahati - North,Guwahati - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,7246,3,4
+MER_GUWAHATI_SOUTH,Meridian Health — Guwahati - South,Guwahati - South,meridian,ors_sachets,ORS Sachets,sachet,1890,1,15
+MER_GUWAHATI_SOUTH,Meridian Health — Guwahati - South,Guwahati - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,740,3,65
+MER_GUWAHATI_SOUTH,Meridian Health — Guwahati - South,Guwahati - South,meridian,azithromycin_courses,Azithromycin Course,course,225,5,140
+MER_GUWAHATI_SOUTH,Meridian Health — Guwahati - South,Guwahati - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,179,5,95
+MER_GUWAHATI_SOUTH,Meridian Health — Guwahati - South,Guwahati - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,6163,2,4
+MER_GUWAHATI_WEST,Meridian Health — Guwahati - West,Guwahati - West,meridian,ors_sachets,ORS Sachets,sachet,3358,1,15
+MER_GUWAHATI_WEST,Meridian Health — Guwahati - West,Guwahati - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1185,2,65
+MER_GUWAHATI_WEST,Meridian Health — Guwahati - West,Guwahati - West,meridian,azithromycin_courses,Azithromycin Course,course,351,4,140
+MER_GUWAHATI_WEST,Meridian Health — Guwahati - West,Guwahati - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,297,4,95
+MER_GUWAHATI_WEST,Meridian Health — Guwahati - West,Guwahati - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,10489,2,4
+PVT_YASHODA_HYD,Yashoda Hospitals,Hyderabad,default,ors_sachets,ORS Sachets,sachet,1332,2,15
+PVT_YASHODA_HYD,Yashoda Hospitals,Hyderabad,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,473,5,65
+PVT_YASHODA_HYD,Yashoda Hospitals,Hyderabad,default,azithromycin_courses,Azithromycin Course,course,127,7,140
+PVT_YASHODA_HYD,Yashoda Hospitals,Hyderabad,default,ciprofloxacin_courses,Ciprofloxacin Course,course,115,6,95
+PVT_YASHODA_HYD,Yashoda Hospitals,Hyderabad,default,water_purification_tablets,Water Purification Tablets,tablet,4186,2,4
+PVT_CARE_HYD,CARE Hospitals,Hyderabad,default,ors_sachets,ORS Sachets,sachet,790,2,15
+PVT_CARE_HYD,CARE Hospitals,Hyderabad,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,255,3,65
+PVT_CARE_HYD,CARE Hospitals,Hyderabad,default,azithromycin_courses,Azithromycin Course,course,87,6,140
+PVT_CARE_HYD,CARE Hospitals,Hyderabad,default,ciprofloxacin_courses,Ciprofloxacin Course,course,71,5,95
+PVT_CARE_HYD,CARE Hospitals,Hyderabad,default,water_purification_tablets,Water Purification Tablets,tablet,2222,4,4
+MER_HYDERABAD_CENTRAL,Meridian Health — Hyderabad - Central,Hyderabad - Central,meridian,ors_sachets,ORS Sachets,sachet,3123,2,15
+MER_HYDERABAD_CENTRAL,Meridian Health — Hyderabad - Central,Hyderabad - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1344,2,65
+MER_HYDERABAD_CENTRAL,Meridian Health — Hyderabad - Central,Hyderabad - Central,meridian,azithromycin_courses,Azithromycin Course,course,365,6,140
+MER_HYDERABAD_CENTRAL,Meridian Health — Hyderabad - Central,Hyderabad - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,258,4,95
+MER_HYDERABAD_CENTRAL,Meridian Health — Hyderabad - Central,Hyderabad - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,10234,2,4
+MER_HYDERABAD_EAST,Meridian Health — Hyderabad - East,Hyderabad - East,meridian,ors_sachets,ORS Sachets,sachet,2682,1,15
+MER_HYDERABAD_EAST,Meridian Health — Hyderabad - East,Hyderabad - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1122,4,65
+MER_HYDERABAD_EAST,Meridian Health — Hyderabad - East,Hyderabad - East,meridian,azithromycin_courses,Azithromycin Course,course,259,4,140
+MER_HYDERABAD_EAST,Meridian Health — Hyderabad - East,Hyderabad - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,216,4,95
+MER_HYDERABAD_EAST,Meridian Health — Hyderabad - East,Hyderabad - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,9213,3,4
+MER_HYDERABAD_NORTH,Meridian Health — Hyderabad - North,Hyderabad - North,meridian,ors_sachets,ORS Sachets,sachet,5296,3,15
+MER_HYDERABAD_NORTH,Meridian Health — Hyderabad - North,Hyderabad - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1844,4,65
+MER_HYDERABAD_NORTH,Meridian Health — Hyderabad - North,Hyderabad - North,meridian,azithromycin_courses,Azithromycin Course,course,523,6,140
+MER_HYDERABAD_NORTH,Meridian Health — Hyderabad - North,Hyderabad - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,499,6,95
+MER_HYDERABAD_NORTH,Meridian Health — Hyderabad - North,Hyderabad - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,13918,2,4
+MER_HYDERABAD_SOUTH,Meridian Health — Hyderabad - South,Hyderabad - South,meridian,ors_sachets,ORS Sachets,sachet,844,2,15
+MER_HYDERABAD_SOUTH,Meridian Health — Hyderabad - South,Hyderabad - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,358,4,65
+MER_HYDERABAD_SOUTH,Meridian Health — Hyderabad - South,Hyderabad - South,meridian,azithromycin_courses,Azithromycin Course,course,96,6,140
+MER_HYDERABAD_SOUTH,Meridian Health — Hyderabad - South,Hyderabad - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,91,6,95
+MER_HYDERABAD_SOUTH,Meridian Health — Hyderabad - South,Hyderabad - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,2679,2,4
+MER_HYDERABAD_WEST,Meridian Health — Hyderabad - West,Hyderabad - West,meridian,ors_sachets,ORS Sachets,sachet,1768,1,15
+MER_HYDERABAD_WEST,Meridian Health — Hyderabad - West,Hyderabad - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,630,4,65
+MER_HYDERABAD_WEST,Meridian Health — Hyderabad - West,Hyderabad - West,meridian,azithromycin_courses,Azithromycin Course,course,220,5,140
+MER_HYDERABAD_WEST,Meridian Health — Hyderabad - West,Hyderabad - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,156,5,95
+MER_HYDERABAD_WEST,Meridian Health — Hyderabad - West,Hyderabad - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,5882,3,4
+GOV_IMPHAL,"District Government Hospital, Imphal",Imphal,government,ors_sachets,ORS Sachets,sachet,3111,5,15
+GOV_IMPHAL,"District Government Hospital, Imphal",Imphal,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1193,5,65
+GOV_IMPHAL,"District Government Hospital, Imphal",Imphal,government,azithromycin_courses,Azithromycin Course,course,296,7,140
+GOV_IMPHAL,"District Government Hospital, Imphal",Imphal,government,ciprofloxacin_courses,Ciprofloxacin Course,course,299,7,95
+GOV_IMPHAL,"District Government Hospital, Imphal",Imphal,government,water_purification_tablets,Water Purification Tablets,tablet,9666,6,4
+GOV_INDORE,"District Government Hospital, Indore",Indore,government,ors_sachets,ORS Sachets,sachet,773,4,15
+GOV_INDORE,"District Government Hospital, Indore",Indore,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,218,7,65
+GOV_INDORE,"District Government Hospital, Indore",Indore,government,azithromycin_courses,Azithromycin Course,course,61,9,140
+GOV_INDORE,"District Government Hospital, Indore",Indore,government,ciprofloxacin_courses,Ciprofloxacin Course,course,64,8,95
+GOV_INDORE,"District Government Hospital, Indore",Indore,government,water_purification_tablets,Water Purification Tablets,tablet,1961,4,4
+MER_INDORE_CENTRAL,Meridian Health — Indore - Central,Indore - Central,meridian,ors_sachets,ORS Sachets,sachet,988,1,15
+MER_INDORE_CENTRAL,Meridian Health — Indore - Central,Indore - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,292,4,65
+MER_INDORE_CENTRAL,Meridian Health — Indore - Central,Indore - Central,meridian,azithromycin_courses,Azithromycin Course,course,91,6,140
+MER_INDORE_CENTRAL,Meridian Health — Indore - Central,Indore - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,86,6,95
+MER_INDORE_CENTRAL,Meridian Health — Indore - Central,Indore - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,2625,2,4
+MER_INDORE_EAST,Meridian Health — Indore - East,Indore - East,meridian,ors_sachets,ORS Sachets,sachet,2962,2,15
+MER_INDORE_EAST,Meridian Health — Indore - East,Indore - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,859,4,65
+MER_INDORE_EAST,Meridian Health — Indore - East,Indore - East,meridian,azithromycin_courses,Azithromycin Course,course,278,6,140
+MER_INDORE_EAST,Meridian Health — Indore - East,Indore - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,246,4,95
+MER_INDORE_EAST,Meridian Health — Indore - East,Indore - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,8149,2,4
+MER_INDORE_NORTH,Meridian Health — Indore - North,Indore - North,meridian,ors_sachets,ORS Sachets,sachet,1910,1,15
+MER_INDORE_NORTH,Meridian Health — Indore - North,Indore - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,772,2,65
+MER_INDORE_NORTH,Meridian Health — Indore - North,Indore - North,meridian,azithromycin_courses,Azithromycin Course,course,210,4,140
+MER_INDORE_NORTH,Meridian Health — Indore - North,Indore - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,181,4,95
+MER_INDORE_NORTH,Meridian Health — Indore - North,Indore - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,5274,3,4
+MER_INDORE_SOUTH,Meridian Health — Indore - South,Indore - South,meridian,ors_sachets,ORS Sachets,sachet,2320,2,15
+MER_INDORE_SOUTH,Meridian Health — Indore - South,Indore - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,757,3,65
+MER_INDORE_SOUTH,Meridian Health — Indore - South,Indore - South,meridian,azithromycin_courses,Azithromycin Course,course,206,4,140
+MER_INDORE_SOUTH,Meridian Health — Indore - South,Indore - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,185,5,95
+MER_INDORE_SOUTH,Meridian Health — Indore - South,Indore - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,6073,1,4
+MER_INDORE_WEST,Meridian Health — Indore - West,Indore - West,meridian,ors_sachets,ORS Sachets,sachet,1598,2,15
+MER_INDORE_WEST,Meridian Health — Indore - West,Indore - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,593,2,65
+MER_INDORE_WEST,Meridian Health — Indore - West,Indore - West,meridian,azithromycin_courses,Azithromycin Course,course,182,5,140
+MER_INDORE_WEST,Meridian Health — Indore - West,Indore - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,141,4,95
+MER_INDORE_WEST,Meridian Health — Indore - West,Indore - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,4624,2,4
+GOV_ITANAGAR,"District Government Hospital, Itanagar",Itanagar,government,ors_sachets,ORS Sachets,sachet,2229,4,15
+GOV_ITANAGAR,"District Government Hospital, Itanagar",Itanagar,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,680,7,65
+GOV_ITANAGAR,"District Government Hospital, Itanagar",Itanagar,government,azithromycin_courses,Azithromycin Course,course,174,9,140
+GOV_ITANAGAR,"District Government Hospital, Itanagar",Itanagar,government,ciprofloxacin_courses,Ciprofloxacin Course,course,176,8,95
+GOV_ITANAGAR,"District Government Hospital, Itanagar",Itanagar,government,water_purification_tablets,Water Purification Tablets,tablet,6339,6,4
+PUB_SAFD_JAIP,Sawai Man Singh Hospital,Jaipur,default,ors_sachets,ORS Sachets,sachet,1610,2,15
+PUB_SAFD_JAIP,Sawai Man Singh Hospital,Jaipur,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,591,4,65
+PUB_SAFD_JAIP,Sawai Man Singh Hospital,Jaipur,default,azithromycin_courses,Azithromycin Course,course,139,6,140
+PUB_SAFD_JAIP,Sawai Man Singh Hospital,Jaipur,default,ciprofloxacin_courses,Ciprofloxacin Course,course,150,5,95
+PUB_SAFD_JAIP,Sawai Man Singh Hospital,Jaipur,default,water_purification_tablets,Water Purification Tablets,tablet,4529,4,4
+MER_JAIPUR_CENTRAL,Meridian Health — Jaipur - Central,Jaipur - Central,meridian,ors_sachets,ORS Sachets,sachet,3231,2,15
+MER_JAIPUR_CENTRAL,Meridian Health — Jaipur - Central,Jaipur - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1010,4,65
+MER_JAIPUR_CENTRAL,Meridian Health — Jaipur - Central,Jaipur - Central,meridian,azithromycin_courses,Azithromycin Course,course,306,5,140
+MER_JAIPUR_CENTRAL,Meridian Health — Jaipur - Central,Jaipur - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,256,4,95
+MER_JAIPUR_CENTRAL,Meridian Health — Jaipur - Central,Jaipur - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,11087,2,4
+MER_JAIPUR_EAST,Meridian Health — Jaipur - East,Jaipur - East,meridian,ors_sachets,ORS Sachets,sachet,2262,3,15
+MER_JAIPUR_EAST,Meridian Health — Jaipur - East,Jaipur - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,759,2,65
+MER_JAIPUR_EAST,Meridian Health — Jaipur - East,Jaipur - East,meridian,azithromycin_courses,Azithromycin Course,course,233,6,140
+MER_JAIPUR_EAST,Meridian Health — Jaipur - East,Jaipur - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,203,5,95
+MER_JAIPUR_EAST,Meridian Health — Jaipur - East,Jaipur - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,6283,2,4
+MER_JAIPUR_NORTH,Meridian Health — Jaipur - North,Jaipur - North,meridian,ors_sachets,ORS Sachets,sachet,2426,1,15
+MER_JAIPUR_NORTH,Meridian Health — Jaipur - North,Jaipur - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,750,3,65
+MER_JAIPUR_NORTH,Meridian Health — Jaipur - North,Jaipur - North,meridian,azithromycin_courses,Azithromycin Course,course,266,5,140
+MER_JAIPUR_NORTH,Meridian Health — Jaipur - North,Jaipur - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,186,6,95
+MER_JAIPUR_NORTH,Meridian Health — Jaipur - North,Jaipur - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,7436,2,4
+MER_JAIPUR_SOUTH,Meridian Health — Jaipur - South,Jaipur - South,meridian,ors_sachets,ORS Sachets,sachet,2625,3,15
+MER_JAIPUR_SOUTH,Meridian Health — Jaipur - South,Jaipur - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,979,3,65
+MER_JAIPUR_SOUTH,Meridian Health — Jaipur - South,Jaipur - South,meridian,azithromycin_courses,Azithromycin Course,course,298,4,140
+MER_JAIPUR_SOUTH,Meridian Health — Jaipur - South,Jaipur - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,213,5,95
+MER_JAIPUR_SOUTH,Meridian Health — Jaipur - South,Jaipur - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,8825,3,4
+MER_JAIPUR_WEST,Meridian Health — Jaipur - West,Jaipur - West,meridian,ors_sachets,ORS Sachets,sachet,1073,3,15
+MER_JAIPUR_WEST,Meridian Health — Jaipur - West,Jaipur - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,359,3,65
+MER_JAIPUR_WEST,Meridian Health — Jaipur - West,Jaipur - West,meridian,azithromycin_courses,Azithromycin Course,course,130,6,140
+MER_JAIPUR_WEST,Meridian Health — Jaipur - West,Jaipur - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,86,5,95
+MER_JAIPUR_WEST,Meridian Health — Jaipur - West,Jaipur - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,3008,1,4
+GOV_JAMMU,"District Government Hospital, Jammu",Jammu,government,ors_sachets,ORS Sachets,sachet,1501,6,15
+GOV_JAMMU,"District Government Hospital, Jammu",Jammu,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,412,5,65
+GOV_JAMMU,"District Government Hospital, Jammu",Jammu,government,azithromycin_courses,Azithromycin Course,course,133,9,140
+GOV_JAMMU,"District Government Hospital, Jammu",Jammu,government,ciprofloxacin_courses,Ciprofloxacin Course,course,123,8,95
+GOV_JAMMU,"District Government Hospital, Jammu",Jammu,government,water_purification_tablets,Water Purification Tablets,tablet,3736,6,4
+GOV_JODHPUR,"District Government Hospital, Jodhpur",Jodhpur,government,ors_sachets,ORS Sachets,sachet,2381,4,15
+GOV_JODHPUR,"District Government Hospital, Jodhpur",Jodhpur,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,767,7,65
+GOV_JODHPUR,"District Government Hospital, Jodhpur",Jodhpur,government,azithromycin_courses,Azithromycin Course,course,227,7,140
+GOV_JODHPUR,"District Government Hospital, Jodhpur",Jodhpur,government,ciprofloxacin_courses,Ciprofloxacin Course,course,168,9,95
+GOV_JODHPUR,"District Government Hospital, Jodhpur",Jodhpur,government,water_purification_tablets,Water Purification Tablets,tablet,5074,6,4
+PVT_ASTER_KOC,Aster Medcity,Kochi,default,ors_sachets,ORS Sachets,sachet,2032,3,15
+PVT_ASTER_KOC,Aster Medcity,Kochi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,813,4,65
+PVT_ASTER_KOC,Aster Medcity,Kochi,default,azithromycin_courses,Azithromycin Course,course,227,6,140
+PVT_ASTER_KOC,Aster Medcity,Kochi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,173,5,95
+PVT_ASTER_KOC,Aster Medcity,Kochi,default,water_purification_tablets,Water Purification Tablets,tablet,6043,4,4
+MER_KOCHI_CENTRAL,Meridian Health — Kochi - Central,Kochi - Central,meridian,ors_sachets,ORS Sachets,sachet,1429,1,15
+MER_KOCHI_CENTRAL,Meridian Health — Kochi - Central,Kochi - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,545,2,65
+MER_KOCHI_CENTRAL,Meridian Health — Kochi - Central,Kochi - Central,meridian,azithromycin_courses,Azithromycin Course,course,165,5,140
+MER_KOCHI_CENTRAL,Meridian Health — Kochi - Central,Kochi - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,129,5,95
+MER_KOCHI_CENTRAL,Meridian Health — Kochi - Central,Kochi - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,4360,1,4
+MER_KOCHI_EAST,Meridian Health — Kochi - East,Kochi - East,meridian,ors_sachets,ORS Sachets,sachet,2287,1,15
+MER_KOCHI_EAST,Meridian Health — Kochi - East,Kochi - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,911,3,65
+MER_KOCHI_EAST,Meridian Health — Kochi - East,Kochi - East,meridian,azithromycin_courses,Azithromycin Course,course,240,4,140
+MER_KOCHI_EAST,Meridian Health — Kochi - East,Kochi - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,238,6,95
+MER_KOCHI_EAST,Meridian Health — Kochi - East,Kochi - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,6651,1,4
+MER_KOCHI_NORTH,Meridian Health — Kochi - North,Kochi - North,meridian,ors_sachets,ORS Sachets,sachet,2262,3,15
+MER_KOCHI_NORTH,Meridian Health — Kochi - North,Kochi - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,854,2,65
+MER_KOCHI_NORTH,Meridian Health — Kochi - North,Kochi - North,meridian,azithromycin_courses,Azithromycin Course,course,287,5,140
+MER_KOCHI_NORTH,Meridian Health — Kochi - North,Kochi - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,194,5,95
+MER_KOCHI_NORTH,Meridian Health — Kochi - North,Kochi - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,7195,3,4
+MER_KOCHI_SOUTH,Meridian Health — Kochi - South,Kochi - South,meridian,ors_sachets,ORS Sachets,sachet,2021,1,15
+MER_KOCHI_SOUTH,Meridian Health — Kochi - South,Kochi - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,539,4,65
+MER_KOCHI_SOUTH,Meridian Health — Kochi - South,Kochi - South,meridian,azithromycin_courses,Azithromycin Course,course,199,6,140
+MER_KOCHI_SOUTH,Meridian Health — Kochi - South,Kochi - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,133,4,95
+MER_KOCHI_SOUTH,Meridian Health — Kochi - South,Kochi - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,4801,1,4
+MER_KOCHI_WEST,Meridian Health — Kochi - West,Kochi - West,meridian,ors_sachets,ORS Sachets,sachet,1306,3,15
+MER_KOCHI_WEST,Meridian Health — Kochi - West,Kochi - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,411,4,65
+MER_KOCHI_WEST,Meridian Health — Kochi - West,Kochi - West,meridian,azithromycin_courses,Azithromycin Course,course,118,4,140
+MER_KOCHI_WEST,Meridian Health — Kochi - West,Kochi - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,98,6,95
+MER_KOCHI_WEST,Meridian Health — Kochi - West,Kochi - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,3552,2,4
+GOV_KOHIMA,"District Government Hospital, Kohima",Kohima,government,ors_sachets,ORS Sachets,sachet,3764,5,15
+GOV_KOHIMA,"District Government Hospital, Kohima",Kohima,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1228,5,65
+GOV_KOHIMA,"District Government Hospital, Kohima",Kohima,government,azithromycin_courses,Azithromycin Course,course,319,8,140
+GOV_KOHIMA,"District Government Hospital, Kohima",Kohima,government,ciprofloxacin_courses,Ciprofloxacin Course,course,314,9,95
+GOV_KOHIMA,"District Government Hospital, Kohima",Kohima,government,water_purification_tablets,Water Purification Tablets,tablet,10740,5,4
+PVT_AMRI_KOL,AMRI Hospitals,Kolkata,default,ors_sachets,ORS Sachets,sachet,2031,2,15
+PVT_AMRI_KOL,AMRI Hospitals,Kolkata,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,697,5,65
+PVT_AMRI_KOL,AMRI Hospitals,Kolkata,default,azithromycin_courses,Azithromycin Course,course,203,6,140
+PVT_AMRI_KOL,AMRI Hospitals,Kolkata,default,ciprofloxacin_courses,Ciprofloxacin Course,course,149,7,95
+PVT_AMRI_KOL,AMRI Hospitals,Kolkata,default,water_purification_tablets,Water Purification Tablets,tablet,5516,3,4
+MER_KOLKATA_CENTRAL,Meridian Health — Kolkata - Central,Kolkata - Central,meridian,ors_sachets,ORS Sachets,sachet,2634,1,15
+MER_KOLKATA_CENTRAL,Meridian Health — Kolkata - Central,Kolkata - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,899,3,65
+MER_KOLKATA_CENTRAL,Meridian Health — Kolkata - Central,Kolkata - Central,meridian,azithromycin_courses,Azithromycin Course,course,239,4,140
+MER_KOLKATA_CENTRAL,Meridian Health — Kolkata - Central,Kolkata - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,247,4,95
+MER_KOLKATA_CENTRAL,Meridian Health — Kolkata - Central,Kolkata - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,7793,2,4
+MER_KOLKATA_EAST,Meridian Health — Kolkata - East,Kolkata - East,meridian,ors_sachets,ORS Sachets,sachet,1912,3,15
+MER_KOLKATA_EAST,Meridian Health — Kolkata - East,Kolkata - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,656,3,65
+MER_KOLKATA_EAST,Meridian Health — Kolkata - East,Kolkata - East,meridian,azithromycin_courses,Azithromycin Course,course,196,4,140
+MER_KOLKATA_EAST,Meridian Health — Kolkata - East,Kolkata - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,192,6,95
+MER_KOLKATA_EAST,Meridian Health — Kolkata - East,Kolkata - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,5630,2,4
+MER_KOLKATA_NORTH,Meridian Health — Kolkata - North,Kolkata - North,meridian,ors_sachets,ORS Sachets,sachet,1782,1,15
+MER_KOLKATA_NORTH,Meridian Health — Kolkata - North,Kolkata - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,714,2,65
+MER_KOLKATA_NORTH,Meridian Health — Kolkata - North,Kolkata - North,meridian,azithromycin_courses,Azithromycin Course,course,212,4,140
+MER_KOLKATA_NORTH,Meridian Health — Kolkata - North,Kolkata - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,176,4,95
+MER_KOLKATA_NORTH,Meridian Health — Kolkata - North,Kolkata - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,4835,3,4
+MER_KOLKATA_SOUTH,Meridian Health — Kolkata - South,Kolkata - South,meridian,ors_sachets,ORS Sachets,sachet,2776,2,15
+MER_KOLKATA_SOUTH,Meridian Health — Kolkata - South,Kolkata - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,981,4,65
+MER_KOLKATA_SOUTH,Meridian Health — Kolkata - South,Kolkata - South,meridian,azithromycin_courses,Azithromycin Course,course,308,5,140
+MER_KOLKATA_SOUTH,Meridian Health — Kolkata - South,Kolkata - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,230,4,95
+MER_KOLKATA_SOUTH,Meridian Health — Kolkata - South,Kolkata - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,7485,3,4
+MER_KOLKATA_WEST,Meridian Health — Kolkata - West,Kolkata - West,meridian,ors_sachets,ORS Sachets,sachet,3556,3,15
+MER_KOLKATA_WEST,Meridian Health — Kolkata - West,Kolkata - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1218,2,65
+MER_KOLKATA_WEST,Meridian Health — Kolkata - West,Kolkata - West,meridian,azithromycin_courses,Azithromycin Course,course,448,5,140
+MER_KOLKATA_WEST,Meridian Health — Kolkata - West,Kolkata - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,345,4,95
+MER_KOLKATA_WEST,Meridian Health — Kolkata - West,Kolkata - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,12798,2,4
+PUB_KGMU_LKO,King George’s Medical University,Lucknow,default,ors_sachets,ORS Sachets,sachet,1780,4,15
+PUB_KGMU_LKO,King George’s Medical University,Lucknow,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,625,3,65
+PUB_KGMU_LKO,King George’s Medical University,Lucknow,default,azithromycin_courses,Azithromycin Course,course,168,7,140
+PUB_KGMU_LKO,King George’s Medical University,Lucknow,default,ciprofloxacin_courses,Ciprofloxacin Course,course,144,7,95
+PUB_KGMU_LKO,King George’s Medical University,Lucknow,default,water_purification_tablets,Water Purification Tablets,tablet,4350,2,4
+PUB_SGPGI_LKO,SGPGIMS,Lucknow,default,ors_sachets,ORS Sachets,sachet,2642,4,15
+PUB_SGPGI_LKO,SGPGIMS,Lucknow,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,986,3,65
+PUB_SGPGI_LKO,SGPGIMS,Lucknow,default,azithromycin_courses,Azithromycin Course,course,264,6,140
+PUB_SGPGI_LKO,SGPGIMS,Lucknow,default,ciprofloxacin_courses,Ciprofloxacin Course,course,293,5,95
+PUB_SGPGI_LKO,SGPGIMS,Lucknow,default,water_purification_tablets,Water Purification Tablets,tablet,8481,4,4
+MER_LUCKNOW_CENTRAL,Meridian Health — Lucknow - Central,Lucknow - Central,meridian,ors_sachets,ORS Sachets,sachet,2667,1,15
+MER_LUCKNOW_CENTRAL,Meridian Health — Lucknow - Central,Lucknow - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,990,3,65
+MER_LUCKNOW_CENTRAL,Meridian Health — Lucknow - Central,Lucknow - Central,meridian,azithromycin_courses,Azithromycin Course,course,350,6,140
+MER_LUCKNOW_CENTRAL,Meridian Health — Lucknow - Central,Lucknow - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,279,6,95
+MER_LUCKNOW_CENTRAL,Meridian Health — Lucknow - Central,Lucknow - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,8446,1,4
+MER_LUCKNOW_EAST,Meridian Health — Lucknow - East,Lucknow - East,meridian,ors_sachets,ORS Sachets,sachet,1226,3,15
+MER_LUCKNOW_EAST,Meridian Health — Lucknow - East,Lucknow - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,408,2,65
+MER_LUCKNOW_EAST,Meridian Health — Lucknow - East,Lucknow - East,meridian,azithromycin_courses,Azithromycin Course,course,139,4,140
+MER_LUCKNOW_EAST,Meridian Health — Lucknow - East,Lucknow - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,103,4,95
+MER_LUCKNOW_EAST,Meridian Health — Lucknow - East,Lucknow - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,4288,2,4
+MER_LUCKNOW_NORTH,Meridian Health — Lucknow - North,Lucknow - North,meridian,ors_sachets,ORS Sachets,sachet,2585,2,15
+MER_LUCKNOW_NORTH,Meridian Health — Lucknow - North,Lucknow - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1102,3,65
+MER_LUCKNOW_NORTH,Meridian Health — Lucknow - North,Lucknow - North,meridian,azithromycin_courses,Azithromycin Course,course,299,6,140
+MER_LUCKNOW_NORTH,Meridian Health — Lucknow - North,Lucknow - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,262,4,95
+MER_LUCKNOW_NORTH,Meridian Health — Lucknow - North,Lucknow - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,7826,1,4
+MER_LUCKNOW_SOUTH,Meridian Health — Lucknow - South,Lucknow - South,meridian,ors_sachets,ORS Sachets,sachet,1853,3,15
+MER_LUCKNOW_SOUTH,Meridian Health — Lucknow - South,Lucknow - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,583,4,65
+MER_LUCKNOW_SOUTH,Meridian Health — Lucknow - South,Lucknow - South,meridian,azithromycin_courses,Azithromycin Course,course,164,4,140
+MER_LUCKNOW_SOUTH,Meridian Health — Lucknow - South,Lucknow - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,156,4,95
+MER_LUCKNOW_SOUTH,Meridian Health — Lucknow - South,Lucknow - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,4057,1,4
+MER_LUCKNOW_WEST,Meridian Health — Lucknow - West,Lucknow - West,meridian,ors_sachets,ORS Sachets,sachet,3154,1,15
+MER_LUCKNOW_WEST,Meridian Health — Lucknow - West,Lucknow - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1074,2,65
+MER_LUCKNOW_WEST,Meridian Health — Lucknow - West,Lucknow - West,meridian,azithromycin_courses,Azithromycin Course,course,260,5,140
+MER_LUCKNOW_WEST,Meridian Health — Lucknow - West,Lucknow - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,213,4,95
+MER_LUCKNOW_WEST,Meridian Health — Lucknow - West,Lucknow - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,9421,3,4
+GOV_LUDHIANA,"District Government Hospital, Ludhiana",Ludhiana,government,ors_sachets,ORS Sachets,sachet,2370,6,15
+GOV_LUDHIANA,"District Government Hospital, Ludhiana",Ludhiana,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,691,6,65
+GOV_LUDHIANA,"District Government Hospital, Ludhiana",Ludhiana,government,azithromycin_courses,Azithromycin Course,course,214,8,140
+GOV_LUDHIANA,"District Government Hospital, Ludhiana",Ludhiana,government,ciprofloxacin_courses,Ciprofloxacin Course,course,180,7,95
+GOV_LUDHIANA,"District Government Hospital, Ludhiana",Ludhiana,government,water_purification_tablets,Water Purification Tablets,tablet,5551,4,4
+PUB_KEM_MUM,KEM Hospital,Mumbai,default,ors_sachets,ORS Sachets,sachet,3619,4,15
+PUB_KEM_MUM,KEM Hospital,Mumbai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1250,5,65
+PUB_KEM_MUM,KEM Hospital,Mumbai,default,azithromycin_courses,Azithromycin Course,course,304,5,140
+PUB_KEM_MUM,KEM Hospital,Mumbai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,316,6,95
+PUB_KEM_MUM,KEM Hospital,Mumbai,default,water_purification_tablets,Water Purification Tablets,tablet,8182,3,4
+PVT_TATA_MUM,Tata Memorial Hospital,Mumbai,default,ors_sachets,ORS Sachets,sachet,1841,4,15
+PVT_TATA_MUM,Tata Memorial Hospital,Mumbai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,477,4,65
+PVT_TATA_MUM,Tata Memorial Hospital,Mumbai,default,azithromycin_courses,Azithromycin Course,course,161,5,140
+PVT_TATA_MUM,Tata Memorial Hospital,Mumbai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,135,6,95
+PVT_TATA_MUM,Tata Memorial Hospital,Mumbai,default,water_purification_tablets,Water Purification Tablets,tablet,5205,3,4
+PVT_KOKILABEN_MUM,Kokilaben Dhirubhai Ambani Hospital,Mumbai,default,ors_sachets,ORS Sachets,sachet,675,4,15
+PVT_KOKILABEN_MUM,Kokilaben Dhirubhai Ambani Hospital,Mumbai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,251,5,65
+PVT_KOKILABEN_MUM,Kokilaben Dhirubhai Ambani Hospital,Mumbai,default,azithromycin_courses,Azithromycin Course,course,78,7,140
+PVT_KOKILABEN_MUM,Kokilaben Dhirubhai Ambani Hospital,Mumbai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,69,7,95
+PVT_KOKILABEN_MUM,Kokilaben Dhirubhai Ambani Hospital,Mumbai,default,water_purification_tablets,Water Purification Tablets,tablet,1966,3,4
+PVT_HINDUJA_MUM,P. D. Hinduja Hospital,Mumbai,default,ors_sachets,ORS Sachets,sachet,1154,3,15
+PVT_HINDUJA_MUM,P. D. Hinduja Hospital,Mumbai,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,421,5,65
+PVT_HINDUJA_MUM,P. D. Hinduja Hospital,Mumbai,default,azithromycin_courses,Azithromycin Course,course,134,6,140
+PVT_HINDUJA_MUM,P. D. Hinduja Hospital,Mumbai,default,ciprofloxacin_courses,Ciprofloxacin Course,course,117,7,95
+PVT_HINDUJA_MUM,P. D. Hinduja Hospital,Mumbai,default,water_purification_tablets,Water Purification Tablets,tablet,3347,3,4
+MER_MUMBAI_CENTRAL,Meridian Health — Mumbai - Central,Mumbai - Central,meridian,ors_sachets,ORS Sachets,sachet,2454,2,15
+MER_MUMBAI_CENTRAL,Meridian Health — Mumbai - Central,Mumbai - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,898,4,65
+MER_MUMBAI_CENTRAL,Meridian Health — Mumbai - Central,Mumbai - Central,meridian,azithromycin_courses,Azithromycin Course,course,286,4,140
+MER_MUMBAI_CENTRAL,Meridian Health — Mumbai - Central,Mumbai - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,234,6,95
+MER_MUMBAI_CENTRAL,Meridian Health — Mumbai - Central,Mumbai - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,7591,2,4
+MER_MUMBAI_EAST,Meridian Health — Mumbai - East,Mumbai - East,meridian,ors_sachets,ORS Sachets,sachet,1807,2,15
+MER_MUMBAI_EAST,Meridian Health — Mumbai - East,Mumbai - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,782,4,65
+MER_MUMBAI_EAST,Meridian Health — Mumbai - East,Mumbai - East,meridian,azithromycin_courses,Azithromycin Course,course,200,6,140
+MER_MUMBAI_EAST,Meridian Health — Mumbai - East,Mumbai - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,190,5,95
+MER_MUMBAI_EAST,Meridian Health — Mumbai - East,Mumbai - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,5364,2,4
+MER_MUMBAI_NORTH,Meridian Health — Mumbai - North,Mumbai - North,meridian,ors_sachets,ORS Sachets,sachet,2047,3,15
+MER_MUMBAI_NORTH,Meridian Health — Mumbai - North,Mumbai - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,626,3,65
+MER_MUMBAI_NORTH,Meridian Health — Mumbai - North,Mumbai - North,meridian,azithromycin_courses,Azithromycin Course,course,217,5,140
+MER_MUMBAI_NORTH,Meridian Health — Mumbai - North,Mumbai - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,143,4,95
+MER_MUMBAI_NORTH,Meridian Health — Mumbai - North,Mumbai - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,5555,3,4
+MER_MUMBAI_SOUTH,Meridian Health — Mumbai - South,Mumbai - South,meridian,ors_sachets,ORS Sachets,sachet,840,3,15
+MER_MUMBAI_SOUTH,Meridian Health — Mumbai - South,Mumbai - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,280,2,65
+MER_MUMBAI_SOUTH,Meridian Health — Mumbai - South,Mumbai - South,meridian,azithromycin_courses,Azithromycin Course,course,91,4,140
+MER_MUMBAI_SOUTH,Meridian Health — Mumbai - South,Mumbai - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,79,4,95
+MER_MUMBAI_SOUTH,Meridian Health — Mumbai - South,Mumbai - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,2861,2,4
+MER_MUMBAI_WEST,Meridian Health — Mumbai - West,Mumbai - West,meridian,ors_sachets,ORS Sachets,sachet,3852,3,15
+MER_MUMBAI_WEST,Meridian Health — Mumbai - West,Mumbai - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1092,2,65
+MER_MUMBAI_WEST,Meridian Health — Mumbai - West,Mumbai - West,meridian,azithromycin_courses,Azithromycin Course,course,321,6,140
+MER_MUMBAI_WEST,Meridian Health — Mumbai - West,Mumbai - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,336,4,95
+MER_MUMBAI_WEST,Meridian Health — Mumbai - West,Mumbai - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,10446,3,4
+PUB_GMC_NAG,Government Medical College,Nagpur,default,ors_sachets,ORS Sachets,sachet,2267,2,15
+PUB_GMC_NAG,Government Medical College,Nagpur,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,800,4,65
+PUB_GMC_NAG,Government Medical College,Nagpur,default,azithromycin_courses,Azithromycin Course,course,221,6,140
+PUB_GMC_NAG,Government Medical College,Nagpur,default,ciprofloxacin_courses,Ciprofloxacin Course,course,233,5,95
+PUB_GMC_NAG,Government Medical College,Nagpur,default,water_purification_tablets,Water Purification Tablets,tablet,8019,4,4
+MER_NAGPUR_CENTRAL,Meridian Health — Nagpur - Central,Nagpur - Central,meridian,ors_sachets,ORS Sachets,sachet,530,1,15
+MER_NAGPUR_CENTRAL,Meridian Health — Nagpur - Central,Nagpur - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,174,4,65
+MER_NAGPUR_CENTRAL,Meridian Health — Nagpur - Central,Nagpur - Central,meridian,azithromycin_courses,Azithromycin Course,course,58,4,140
+MER_NAGPUR_CENTRAL,Meridian Health — Nagpur - Central,Nagpur - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,48,4,95
+MER_NAGPUR_CENTRAL,Meridian Health — Nagpur - Central,Nagpur - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,1486,2,4
+MER_NAGPUR_EAST,Meridian Health — Nagpur - East,Nagpur - East,meridian,ors_sachets,ORS Sachets,sachet,2323,3,15
+MER_NAGPUR_EAST,Meridian Health — Nagpur - East,Nagpur - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,841,3,65
+MER_NAGPUR_EAST,Meridian Health — Nagpur - East,Nagpur - East,meridian,azithromycin_courses,Azithromycin Course,course,278,6,140
+MER_NAGPUR_EAST,Meridian Health — Nagpur - East,Nagpur - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,226,4,95
+MER_NAGPUR_EAST,Meridian Health — Nagpur - East,Nagpur - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,6679,2,4
+MER_NAGPUR_NORTH,Meridian Health — Nagpur - North,Nagpur - North,meridian,ors_sachets,ORS Sachets,sachet,2244,3,15
+MER_NAGPUR_NORTH,Meridian Health — Nagpur - North,Nagpur - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,855,3,65
+MER_NAGPUR_NORTH,Meridian Health — Nagpur - North,Nagpur - North,meridian,azithromycin_courses,Azithromycin Course,course,197,6,140
+MER_NAGPUR_NORTH,Meridian Health — Nagpur - North,Nagpur - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,171,4,95
+MER_NAGPUR_NORTH,Meridian Health — Nagpur - North,Nagpur - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,5498,3,4
+MER_NAGPUR_SOUTH,Meridian Health — Nagpur - South,Nagpur - South,meridian,ors_sachets,ORS Sachets,sachet,2775,2,15
+MER_NAGPUR_SOUTH,Meridian Health — Nagpur - South,Nagpur - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,751,2,65
+MER_NAGPUR_SOUTH,Meridian Health — Nagpur - South,Nagpur - South,meridian,azithromycin_courses,Azithromycin Course,course,223,6,140
+MER_NAGPUR_SOUTH,Meridian Health — Nagpur - South,Nagpur - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,207,4,95
+MER_NAGPUR_SOUTH,Meridian Health — Nagpur - South,Nagpur - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,7161,1,4
+MER_NAGPUR_WEST,Meridian Health — Nagpur - West,Nagpur - West,meridian,ors_sachets,ORS Sachets,sachet,1861,1,15
+MER_NAGPUR_WEST,Meridian Health — Nagpur - West,Nagpur - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,637,3,65
+MER_NAGPUR_WEST,Meridian Health — Nagpur - West,Nagpur - West,meridian,azithromycin_courses,Azithromycin Course,course,152,5,140
+MER_NAGPUR_WEST,Meridian Health — Nagpur - West,Nagpur - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,148,4,95
+MER_NAGPUR_WEST,Meridian Health — Nagpur - West,Nagpur - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,4759,2,4
+GOV_PANAJI,"District Government Hospital, Panaji",Panaji,government,ors_sachets,ORS Sachets,sachet,2120,6,15
+GOV_PANAJI,"District Government Hospital, Panaji",Panaji,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,665,6,65
+GOV_PANAJI,"District Government Hospital, Panaji",Panaji,government,azithromycin_courses,Azithromycin Course,course,223,7,140
+GOV_PANAJI,"District Government Hospital, Panaji",Panaji,government,ciprofloxacin_courses,Ciprofloxacin Course,course,201,9,95
+GOV_PANAJI,"District Government Hospital, Panaji",Panaji,government,water_purification_tablets,Water Purification Tablets,tablet,5807,6,4
+GOV_PATNA,"District Government Hospital, Patna",Patna,government,ors_sachets,ORS Sachets,sachet,2916,6,15
+GOV_PATNA,"District Government Hospital, Patna",Patna,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,997,7,65
+GOV_PATNA,"District Government Hospital, Patna",Patna,government,azithromycin_courses,Azithromycin Course,course,269,9,140
+GOV_PATNA,"District Government Hospital, Patna",Patna,government,ciprofloxacin_courses,Ciprofloxacin Course,course,267,8,95
+GOV_PATNA,"District Government Hospital, Patna",Patna,government,water_purification_tablets,Water Purification Tablets,tablet,8569,6,4
+MER_PATNA_CENTRAL,Meridian Health — Patna - Central,Patna - Central,meridian,ors_sachets,ORS Sachets,sachet,3155,1,15
+MER_PATNA_CENTRAL,Meridian Health — Patna - Central,Patna - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1021,3,65
+MER_PATNA_CENTRAL,Meridian Health — Patna - Central,Patna - Central,meridian,azithromycin_courses,Azithromycin Course,course,359,6,140
+MER_PATNA_CENTRAL,Meridian Health — Patna - Central,Patna - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,289,4,95
+MER_PATNA_CENTRAL,Meridian Health — Patna - Central,Patna - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,8851,2,4
+MER_PATNA_EAST,Meridian Health — Patna - East,Patna - East,meridian,ors_sachets,ORS Sachets,sachet,1128,3,15
+MER_PATNA_EAST,Meridian Health — Patna - East,Patna - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,517,3,65
+MER_PATNA_EAST,Meridian Health — Patna - East,Patna - East,meridian,azithromycin_courses,Azithromycin Course,course,115,5,140
+MER_PATNA_EAST,Meridian Health — Patna - East,Patna - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,112,4,95
+MER_PATNA_EAST,Meridian Health — Patna - East,Patna - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,3808,1,4
+MER_PATNA_NORTH,Meridian Health — Patna - North,Patna - North,meridian,ors_sachets,ORS Sachets,sachet,2011,2,15
+MER_PATNA_NORTH,Meridian Health — Patna - North,Patna - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,740,2,65
+MER_PATNA_NORTH,Meridian Health — Patna - North,Patna - North,meridian,azithromycin_courses,Azithromycin Course,course,230,5,140
+MER_PATNA_NORTH,Meridian Health — Patna - North,Patna - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,170,6,95
+MER_PATNA_NORTH,Meridian Health — Patna - North,Patna - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,6108,2,4
+MER_PATNA_SOUTH,Meridian Health — Patna - South,Patna - South,meridian,ors_sachets,ORS Sachets,sachet,2366,1,15
+MER_PATNA_SOUTH,Meridian Health — Patna - South,Patna - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,631,3,65
+MER_PATNA_SOUTH,Meridian Health — Patna - South,Patna - South,meridian,azithromycin_courses,Azithromycin Course,course,217,6,140
+MER_PATNA_SOUTH,Meridian Health — Patna - South,Patna - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,167,4,95
+MER_PATNA_SOUTH,Meridian Health — Patna - South,Patna - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,5564,3,4
+MER_PATNA_WEST,Meridian Health — Patna - West,Patna - West,meridian,ors_sachets,ORS Sachets,sachet,3146,1,15
+MER_PATNA_WEST,Meridian Health — Patna - West,Patna - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1326,2,65
+MER_PATNA_WEST,Meridian Health — Patna - West,Patna - West,meridian,azithromycin_courses,Azithromycin Course,course,354,4,140
+MER_PATNA_WEST,Meridian Health — Patna - West,Patna - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,310,4,95
+MER_PATNA_WEST,Meridian Health — Patna - West,Patna - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,9650,3,4
+PUB_JIPMER_PDY,JIPMER,Puducherry,default,ors_sachets,ORS Sachets,sachet,3469,3,15
+PUB_JIPMER_PDY,JIPMER,Puducherry,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,932,5,65
+PUB_JIPMER_PDY,JIPMER,Puducherry,default,azithromycin_courses,Azithromycin Course,course,359,6,140
+PUB_JIPMER_PDY,JIPMER,Puducherry,default,ciprofloxacin_courses,Ciprofloxacin Course,course,265,5,95
+PUB_JIPMER_PDY,JIPMER,Puducherry,default,water_purification_tablets,Water Purification Tablets,tablet,7870,4,4
+PVT_RUBY_PUNE,Ruby Hall Clinic,Pune,default,ors_sachets,ORS Sachets,sachet,2206,3,15
+PVT_RUBY_PUNE,Ruby Hall Clinic,Pune,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,802,5,65
+PVT_RUBY_PUNE,Ruby Hall Clinic,Pune,default,azithromycin_courses,Azithromycin Course,course,239,6,140
+PVT_RUBY_PUNE,Ruby Hall Clinic,Pune,default,ciprofloxacin_courses,Ciprofloxacin Course,course,196,5,95
+PVT_RUBY_PUNE,Ruby Hall Clinic,Pune,default,water_purification_tablets,Water Purification Tablets,tablet,5592,2,4
+MER_PUNE_CENTRAL,Meridian Health — Pune - Central,Pune - Central,meridian,ors_sachets,ORS Sachets,sachet,2720,1,15
+MER_PUNE_CENTRAL,Meridian Health — Pune - Central,Pune - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,942,2,65
+MER_PUNE_CENTRAL,Meridian Health — Pune - Central,Pune - Central,meridian,azithromycin_courses,Azithromycin Course,course,226,6,140
+MER_PUNE_CENTRAL,Meridian Health — Pune - Central,Pune - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,206,5,95
+MER_PUNE_CENTRAL,Meridian Health — Pune - Central,Pune - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,8285,2,4
+MER_PUNE_EAST,Meridian Health — Pune - East,Pune - East,meridian,ors_sachets,ORS Sachets,sachet,3044,3,15
+MER_PUNE_EAST,Meridian Health — Pune - East,Pune - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1088,4,65
+MER_PUNE_EAST,Meridian Health — Pune - East,Pune - East,meridian,azithromycin_courses,Azithromycin Course,course,284,6,140
+MER_PUNE_EAST,Meridian Health — Pune - East,Pune - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,257,4,95
+MER_PUNE_EAST,Meridian Health — Pune - East,Pune - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,9654,3,4
+MER_PUNE_NORTH,Meridian Health — Pune - North,Pune - North,meridian,ors_sachets,ORS Sachets,sachet,1532,2,15
+MER_PUNE_NORTH,Meridian Health — Pune - North,Pune - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,516,3,65
+MER_PUNE_NORTH,Meridian Health — Pune - North,Pune - North,meridian,azithromycin_courses,Azithromycin Course,course,160,5,140
+MER_PUNE_NORTH,Meridian Health — Pune - North,Pune - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,152,5,95
+MER_PUNE_NORTH,Meridian Health — Pune - North,Pune - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,4335,2,4
+MER_PUNE_SOUTH,Meridian Health — Pune - South,Pune - South,meridian,ors_sachets,ORS Sachets,sachet,2328,1,15
+MER_PUNE_SOUTH,Meridian Health — Pune - South,Pune - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,709,4,65
+MER_PUNE_SOUTH,Meridian Health — Pune - South,Pune - South,meridian,azithromycin_courses,Azithromycin Course,course,228,4,140
+MER_PUNE_SOUTH,Meridian Health — Pune - South,Pune - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,204,5,95
+MER_PUNE_SOUTH,Meridian Health — Pune - South,Pune - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,5572,1,4
+MER_PUNE_WEST,Meridian Health — Pune - West,Pune - West,meridian,ors_sachets,ORS Sachets,sachet,2905,1,15
+MER_PUNE_WEST,Meridian Health — Pune - West,Pune - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1171,2,65
+MER_PUNE_WEST,Meridian Health — Pune - West,Pune - West,meridian,azithromycin_courses,Azithromycin Course,course,310,5,140
+MER_PUNE_WEST,Meridian Health — Pune - West,Pune - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,232,4,95
+MER_PUNE_WEST,Meridian Health — Pune - West,Pune - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,7686,3,4
+GOV_RAIPUR,"District Government Hospital, Raipur",Raipur,government,ors_sachets,ORS Sachets,sachet,1955,4,15
+GOV_RAIPUR,"District Government Hospital, Raipur",Raipur,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,535,5,65
+GOV_RAIPUR,"District Government Hospital, Raipur",Raipur,government,azithromycin_courses,Azithromycin Course,course,196,9,140
+GOV_RAIPUR,"District Government Hospital, Raipur",Raipur,government,ciprofloxacin_courses,Ciprofloxacin Course,course,134,8,95
+GOV_RAIPUR,"District Government Hospital, Raipur",Raipur,government,water_purification_tablets,Water Purification Tablets,tablet,5017,6,4
+GOV_RANCHI,"District Government Hospital, Ranchi",Ranchi,government,ors_sachets,ORS Sachets,sachet,2216,4,15
+GOV_RANCHI,"District Government Hospital, Ranchi",Ranchi,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,820,6,65
+GOV_RANCHI,"District Government Hospital, Ranchi",Ranchi,government,azithromycin_courses,Azithromycin Course,course,191,9,140
+GOV_RANCHI,"District Government Hospital, Ranchi",Ranchi,government,ciprofloxacin_courses,Ciprofloxacin Course,course,181,9,95
+GOV_RANCHI,"District Government Hospital, Ranchi",Ranchi,government,water_purification_tablets,Water Purification Tablets,tablet,6969,5,4
+GOV_SHILLONG,"District Government Hospital, Shillong",Shillong,government,ors_sachets,ORS Sachets,sachet,1734,5,15
+GOV_SHILLONG,"District Government Hospital, Shillong",Shillong,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,574,7,65
+GOV_SHILLONG,"District Government Hospital, Shillong",Shillong,government,azithromycin_courses,Azithromycin Course,course,160,9,140
+GOV_SHILLONG,"District Government Hospital, Shillong",Shillong,government,ciprofloxacin_courses,Ciprofloxacin Course,course,140,8,95
+GOV_SHILLONG,"District Government Hospital, Shillong",Shillong,government,water_purification_tablets,Water Purification Tablets,tablet,5570,4,4
+GOV_SHIMLA,"District Government Hospital, Shimla",Shimla,government,ors_sachets,ORS Sachets,sachet,2009,4,15
+GOV_SHIMLA,"District Government Hospital, Shimla",Shimla,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,837,5,65
+GOV_SHIMLA,"District Government Hospital, Shimla",Shimla,government,azithromycin_courses,Azithromycin Course,course,257,7,140
+GOV_SHIMLA,"District Government Hospital, Shimla",Shimla,government,ciprofloxacin_courses,Ciprofloxacin Course,course,220,9,95
+GOV_SHIMLA,"District Government Hospital, Shimla",Shimla,government,water_purification_tablets,Water Purification Tablets,tablet,6078,6,4
+RD_SITAPUR,"Ram Dayal Hospital, Sitapur",Sitapur,ramdayal,ors_sachets,ORS Sachets,sachet,1100,7,15
+RD_SITAPUR,"Ram Dayal Hospital, Sitapur",Sitapur,ramdayal,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,421,8,65
+RD_SITAPUR,"Ram Dayal Hospital, Sitapur",Sitapur,ramdayal,azithromycin_courses,Azithromycin Course,course,99,9,140
+RD_SITAPUR,"Ram Dayal Hospital, Sitapur",Sitapur,ramdayal,ciprofloxacin_courses,Ciprofloxacin Course,course,110,10,95
+RD_SITAPUR,"Ram Dayal Hospital, Sitapur",Sitapur,ramdayal,water_purification_tablets,Water Purification Tablets,tablet,3709,6,4
+GOV_SRINAGAR,"District Government Hospital, Srinagar",Srinagar,government,ors_sachets,ORS Sachets,sachet,4223,6,15
+GOV_SRINAGAR,"District Government Hospital, Srinagar",Srinagar,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1258,7,65
+GOV_SRINAGAR,"District Government Hospital, Srinagar",Srinagar,government,azithromycin_courses,Azithromycin Course,course,409,7,140
+GOV_SRINAGAR,"District Government Hospital, Srinagar",Srinagar,government,ciprofloxacin_courses,Ciprofloxacin Course,course,293,9,95
+GOV_SRINAGAR,"District Government Hospital, Srinagar",Srinagar,government,water_purification_tablets,Water Purification Tablets,tablet,12573,5,4
+GOV_SURAT,"District Government Hospital, Surat",Surat,government,ors_sachets,ORS Sachets,sachet,3211,6,15
+GOV_SURAT,"District Government Hospital, Surat",Surat,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1023,7,65
+GOV_SURAT,"District Government Hospital, Surat",Surat,government,azithromycin_courses,Azithromycin Course,course,367,9,140
+GOV_SURAT,"District Government Hospital, Surat",Surat,government,ciprofloxacin_courses,Ciprofloxacin Course,course,262,9,95
+GOV_SURAT,"District Government Hospital, Surat",Surat,government,water_purification_tablets,Water Purification Tablets,tablet,8642,6,4
+MER_SURAT_CENTRAL,Meridian Health — Surat - Central,Surat - Central,meridian,ors_sachets,ORS Sachets,sachet,2891,1,15
+MER_SURAT_CENTRAL,Meridian Health — Surat - Central,Surat - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,933,4,65
+MER_SURAT_CENTRAL,Meridian Health — Surat - Central,Surat - Central,meridian,azithromycin_courses,Azithromycin Course,course,329,6,140
+MER_SURAT_CENTRAL,Meridian Health — Surat - Central,Surat - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,288,6,95
+MER_SURAT_CENTRAL,Meridian Health — Surat - Central,Surat - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,7867,3,4
+MER_SURAT_EAST,Meridian Health — Surat - East,Surat - East,meridian,ors_sachets,ORS Sachets,sachet,1978,2,15
+MER_SURAT_EAST,Meridian Health — Surat - East,Surat - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,679,2,65
+MER_SURAT_EAST,Meridian Health — Surat - East,Surat - East,meridian,azithromycin_courses,Azithromycin Course,course,212,6,140
+MER_SURAT_EAST,Meridian Health — Surat - East,Surat - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,175,5,95
+MER_SURAT_EAST,Meridian Health — Surat - East,Surat - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,4883,2,4
+MER_SURAT_NORTH,Meridian Health — Surat - North,Surat - North,meridian,ors_sachets,ORS Sachets,sachet,3513,1,15
+MER_SURAT_NORTH,Meridian Health — Surat - North,Surat - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1371,3,65
+MER_SURAT_NORTH,Meridian Health — Surat - North,Surat - North,meridian,azithromycin_courses,Azithromycin Course,course,448,4,140
+MER_SURAT_NORTH,Meridian Health — Surat - North,Surat - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,306,5,95
+MER_SURAT_NORTH,Meridian Health — Surat - North,Surat - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,11474,2,4
+MER_SURAT_SOUTH,Meridian Health — Surat - South,Surat - South,meridian,ors_sachets,ORS Sachets,sachet,2439,2,15
+MER_SURAT_SOUTH,Meridian Health — Surat - South,Surat - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,705,4,65
+MER_SURAT_SOUTH,Meridian Health — Surat - South,Surat - South,meridian,azithromycin_courses,Azithromycin Course,course,188,4,140
+MER_SURAT_SOUTH,Meridian Health — Surat - South,Surat - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,211,6,95
+MER_SURAT_SOUTH,Meridian Health — Surat - South,Surat - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,5267,2,4
+MER_SURAT_WEST,Meridian Health — Surat - West,Surat - West,meridian,ors_sachets,ORS Sachets,sachet,868,3,15
+MER_SURAT_WEST,Meridian Health — Surat - West,Surat - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,303,3,65
+MER_SURAT_WEST,Meridian Health — Surat - West,Surat - West,meridian,azithromycin_courses,Azithromycin Course,course,101,5,140
+MER_SURAT_WEST,Meridian Health — Surat - West,Surat - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,80,5,95
+MER_SURAT_WEST,Meridian Health — Surat - West,Surat - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,2673,2,4
+GOV_THIRUVANANTHAPURAM,"District Government Hospital, Thiruvananthapuram",Thiruvananthapuram,government,ors_sachets,ORS Sachets,sachet,2604,6,15
+GOV_THIRUVANANTHAPURAM,"District Government Hospital, Thiruvananthapuram",Thiruvananthapuram,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,915,6,65
+GOV_THIRUVANANTHAPURAM,"District Government Hospital, Thiruvananthapuram",Thiruvananthapuram,government,azithromycin_courses,Azithromycin Course,course,250,7,140
+GOV_THIRUVANANTHAPURAM,"District Government Hospital, Thiruvananthapuram",Thiruvananthapuram,government,ciprofloxacin_courses,Ciprofloxacin Course,course,205,7,95
+GOV_THIRUVANANTHAPURAM,"District Government Hospital, Thiruvananthapuram",Thiruvananthapuram,government,water_purification_tablets,Water Purification Tablets,tablet,7501,5,4
+PUB_BHU_VNS,Sir Sunderlal Hospital (BHU),Varanasi,default,ors_sachets,ORS Sachets,sachet,3106,2,15
+PUB_BHU_VNS,Sir Sunderlal Hospital (BHU),Varanasi,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,919,5,65
+PUB_BHU_VNS,Sir Sunderlal Hospital (BHU),Varanasi,default,azithromycin_courses,Azithromycin Course,course,315,6,140
+PUB_BHU_VNS,Sir Sunderlal Hospital (BHU),Varanasi,default,ciprofloxacin_courses,Ciprofloxacin Course,course,231,5,95
+PUB_BHU_VNS,Sir Sunderlal Hospital (BHU),Varanasi,default,water_purification_tablets,Water Purification Tablets,tablet,7899,3,4
+PUB_CMC_VEL,Christian Medical College,Vellore,default,ors_sachets,ORS Sachets,sachet,2895,4,15
+PUB_CMC_VEL,Christian Medical College,Vellore,default,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,994,3,65
+PUB_CMC_VEL,Christian Medical College,Vellore,default,azithromycin_courses,Azithromycin Course,course,267,5,140
+PUB_CMC_VEL,Christian Medical College,Vellore,default,ciprofloxacin_courses,Ciprofloxacin Course,course,227,7,95
+PUB_CMC_VEL,Christian Medical College,Vellore,default,water_purification_tablets,Water Purification Tablets,tablet,8077,4,4
+GOV_VISAKHAPATNAM,"District Government Hospital, Visakhapatnam",Visakhapatnam,government,ors_sachets,ORS Sachets,sachet,1445,4,15
+GOV_VISAKHAPATNAM,"District Government Hospital, Visakhapatnam",Visakhapatnam,government,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,535,5,65
+GOV_VISAKHAPATNAM,"District Government Hospital, Visakhapatnam",Visakhapatnam,government,azithromycin_courses,Azithromycin Course,course,142,9,140
+GOV_VISAKHAPATNAM,"District Government Hospital, Visakhapatnam",Visakhapatnam,government,ciprofloxacin_courses,Ciprofloxacin Course,course,116,9,95
+GOV_VISAKHAPATNAM,"District Government Hospital, Visakhapatnam",Visakhapatnam,government,water_purification_tablets,Water Purification Tablets,tablet,4855,6,4
+MER_VISAKHAPATNAM_CENTRA,Meridian Health — Visakhapatnam - Central,Visakhapatnam - Central,meridian,ors_sachets,ORS Sachets,sachet,2607,1,15
+MER_VISAKHAPATNAM_CENTRA,Meridian Health — Visakhapatnam - Central,Visakhapatnam - Central,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,827,3,65
+MER_VISAKHAPATNAM_CENTRA,Meridian Health — Visakhapatnam - Central,Visakhapatnam - Central,meridian,azithromycin_courses,Azithromycin Course,course,289,6,140
+MER_VISAKHAPATNAM_CENTRA,Meridian Health — Visakhapatnam - Central,Visakhapatnam - Central,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,244,5,95
+MER_VISAKHAPATNAM_CENTRA,Meridian Health — Visakhapatnam - Central,Visakhapatnam - Central,meridian,water_purification_tablets,Water Purification Tablets,tablet,7745,2,4
+MER_VISAKHAPATNAM_EAST,Meridian Health — Visakhapatnam - East,Visakhapatnam - East,meridian,ors_sachets,ORS Sachets,sachet,3088,1,15
+MER_VISAKHAPATNAM_EAST,Meridian Health — Visakhapatnam - East,Visakhapatnam - East,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1149,3,65
+MER_VISAKHAPATNAM_EAST,Meridian Health — Visakhapatnam - East,Visakhapatnam - East,meridian,azithromycin_courses,Azithromycin Course,course,274,5,140
+MER_VISAKHAPATNAM_EAST,Meridian Health — Visakhapatnam - East,Visakhapatnam - East,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,271,6,95
+MER_VISAKHAPATNAM_EAST,Meridian Health — Visakhapatnam - East,Visakhapatnam - East,meridian,water_purification_tablets,Water Purification Tablets,tablet,10048,2,4
+MER_VISAKHAPATNAM_NORTH,Meridian Health — Visakhapatnam - North,Visakhapatnam - North,meridian,ors_sachets,ORS Sachets,sachet,1915,1,15
+MER_VISAKHAPATNAM_NORTH,Meridian Health — Visakhapatnam - North,Visakhapatnam - North,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,703,4,65
+MER_VISAKHAPATNAM_NORTH,Meridian Health — Visakhapatnam - North,Visakhapatnam - North,meridian,azithromycin_courses,Azithromycin Course,course,234,5,140
+MER_VISAKHAPATNAM_NORTH,Meridian Health — Visakhapatnam - North,Visakhapatnam - North,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,179,5,95
+MER_VISAKHAPATNAM_NORTH,Meridian Health — Visakhapatnam - North,Visakhapatnam - North,meridian,water_purification_tablets,Water Purification Tablets,tablet,6288,1,4
+MER_VISAKHAPATNAM_SOUTH,Meridian Health — Visakhapatnam - South,Visakhapatnam - South,meridian,ors_sachets,ORS Sachets,sachet,3527,2,15
+MER_VISAKHAPATNAM_SOUTH,Meridian Health — Visakhapatnam - South,Visakhapatnam - South,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,1223,4,65
+MER_VISAKHAPATNAM_SOUTH,Meridian Health — Visakhapatnam - South,Visakhapatnam - South,meridian,azithromycin_courses,Azithromycin Course,course,357,5,140
+MER_VISAKHAPATNAM_SOUTH,Meridian Health — Visakhapatnam - South,Visakhapatnam - South,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,277,5,95
+MER_VISAKHAPATNAM_SOUTH,Meridian Health — Visakhapatnam - South,Visakhapatnam - South,meridian,water_purification_tablets,Water Purification Tablets,tablet,9558,2,4
+MER_VISAKHAPATNAM_WEST,Meridian Health — Visakhapatnam - West,Visakhapatnam - West,meridian,ors_sachets,ORS Sachets,sachet,2115,1,15
+MER_VISAKHAPATNAM_WEST,Meridian Health — Visakhapatnam - West,Visakhapatnam - West,meridian,iv_fluid_bags,IV Fluid - Ringer's Lactate (1L),bag,777,3,65
+MER_VISAKHAPATNAM_WEST,Meridian Health — Visakhapatnam - West,Visakhapatnam - West,meridian,azithromycin_courses,Azithromycin Course,course,239,4,140
+MER_VISAKHAPATNAM_WEST,Meridian Health — Visakhapatnam - West,Visakhapatnam - West,meridian,ciprofloxacin_courses,Ciprofloxacin Course,course,222,4,95
+MER_VISAKHAPATNAM_WEST,Meridian Health — Visakhapatnam - West,Visakhapatnam - West,meridian,water_purification_tablets,Water Purification Tablets,tablet,7900,2,4

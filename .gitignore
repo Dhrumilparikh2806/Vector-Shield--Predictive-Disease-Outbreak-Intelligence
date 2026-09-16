@@ -5,6 +5,7 @@ __pycache__/
 backend/data/live_pod.csv
 backend/ml_outputs/
 dist/
+build/
 .vscode/
 .idea/
 .venv/

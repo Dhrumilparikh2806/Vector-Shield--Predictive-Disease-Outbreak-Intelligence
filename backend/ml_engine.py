@@ -7,19 +7,15 @@ from sklearn.cluster import DBSCAN
 from datetime import timedelta
 
 # Set paths
-base_path = os.path.dirname(os.path.abspath(__file__))
-# Support legacy `data` folder and new `Data set` folder (note space)
-# Prefer the canonical `data` folder first (user placed NEW CSVs in backend/data)
-data_dirs = [os.path.join(base_path, 'data'), os.path.join(base_path, 'Data set')]
-data_path = None
-for d in data_dirs:
-    if os.path.exists(d):
-        data_path = d
-        break
-if data_path is None:
-    # fallback to base data path even if missing, to keep previous behavior
-    data_path = os.path.join(base_path, 'data')
-output_path = os.path.join(base_path, 'ml_outputs')
+from utils.paths import get_base_path, get_data_path, get_user_data_path
+
+# Set paths
+base_path = get_base_path()
+data_path = get_data_path()
+
+# Use user data path for outputs to ensure write permissions in frozen app
+user_data = get_user_data_path()
+output_path = os.path.join(user_data, 'ml_outputs')
 
 if not os.path.exists(output_path):
     os.makedirs(output_path)
@@ -81,28 +77,10 @@ merged_df = pd.merge(hospital_df, water_df, on=['city', 'date', 'hospital_id'], 
 
 # --- STEP 2: GEO ENRICHMENT ---
 print("Applying geo enrichment...")
-geo_mapping = {
-    'Delhi': [28.6139, 77.2090],
-    'Mumbai': [19.0760, 72.8777],
-    'Chennai': [13.0827, 80.2707],
-    'Kolkata': [22.5726, 88.3639],
-    'Bengaluru': [12.9716, 77.5946],
-    'Bangalore': [12.9716, 77.5946],
-    'Hyderabad': [17.3850, 78.4867],
-    'Pune': [18.5204, 73.8567],
-    'Jaipur': [26.9124, 75.7873],
-    'Lucknow': [26.8467, 80.9462],
-    'Nagpur': [21.1458, 79.0882],
-    'Kochi': [9.9312, 76.2673],
-    'Varanasi': [25.3176, 82.9739],
-    'Vellore': [12.9165, 79.1325],
-    'Puducherry': [11.9416, 79.8083],
-    'Gurugram': [28.4595, 77.0266],
-    'Chandigarh': [30.7333, 76.7794]
-}
+from geo_mapping import GEO_MAPPING as geo_mapping, FALLBACK_COORDS
 
-merged_df['lat'] = merged_df['city'].map(lambda x: geo_mapping.get(x, [20.5937, 78.9629])[0])
-merged_df['lng'] = merged_df['city'].map(lambda x: geo_mapping.get(x, [20.5937, 78.9629])[1])
+merged_df['lat'] = merged_df['city'].map(lambda x: geo_mapping.get(x, FALLBACK_COORDS)[0])
+merged_df['lng'] = merged_df['city'].map(lambda x: geo_mapping.get(x, FALLBACK_COORDS)[1])
 
 # --- STEP 3: FEATURE ENGINEERING ---
 print("Engineering features...")
@@ -222,7 +200,10 @@ merged_df['anomaly_score'] = iso_forest.decision_function(merged_df[anomaly_feat
 merged_df[['city', 'date', 'is_anomaly', 'anomaly_score']].to_csv(os.path.join(output_path, 'anomalies.csv'), index=False)
 
 import pickle
-models_path = os.path.join(base_path, 'models')
+# Use user data path for models if we need to write them (training happens here)
+# But wait, models are ideally read-only in frozen app? 
+# The script currently TRAINS models every run. So we must write them.
+models_path = os.path.join(user_data, 'models')
 if not os.path.exists(models_path):
     os.makedirs(models_path)
 

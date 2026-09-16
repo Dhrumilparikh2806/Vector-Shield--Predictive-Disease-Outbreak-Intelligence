@@ -213,9 +213,19 @@ button[class*="bg-primary"], .btn-primary {
 h1, h2, h3, h4, h5, h6 { color: var(--text-main) !important; font-family: Inter, system-ui !important; }
 label, .text-muted { color: var(--text-muted) !important; }
 
-/* Ensure icons generally appear dark for visibility */
-svg { stroke: var(--text-main) !important; fill: var(--text-main) !important; }
+/* Icons inherit color from their own classes; lucide's outline style (fill: none) is preserved */
+svg { fill: none; }
+svg[fill]:not([fill="none"]) { fill: revert; }
 
 /* Remove gradients and dark overlays */
 [style*="gradient"], [class*="gradient"], [class*="overlay"], .dark-overlay { background: none !important; }
+
+/* Surveillance app shell typography (scoped, doesn't affect marketing/auth pages) */
+.app-shell, .app-shell input, .app-shell select, .app-shell button {
+  font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+}
+.app-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
 

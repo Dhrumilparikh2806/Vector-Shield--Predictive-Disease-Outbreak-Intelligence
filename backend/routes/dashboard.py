@@ -1,8 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from services.data_loader import data_loader
 from schemas import DashboardSummary
 import pandas as pd
 import os
+
+from auth import get_current_hospital
+from db_models import Hospital
 
 # Resolve paths relative to this file so they work regardless of CWD
 _BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,11 +14,19 @@ LIVE_POD_PATH = os.path.join(_BACKEND_DIR, "data", "live_pod.csv")
 router = APIRouter()
 
 @router.get("/summary", response_model=DashboardSummary)
-def get_dashboard_summary():
+def get_dashboard_summary(current_hospital: Hospital = Depends(get_current_hospital)):
+    tenant_cities = data_loader.get_tenant_cities(current_hospital.dataset_profile)
+
     risk_df = data_loader.get_latest_risk_scores()
-    zones_df = data_loader.get_zones()
     anomaly_df = data_loader.get_latest_anomalies()
     preds_df = data_loader.get_latest_predictions()
+
+    if not risk_df.empty:
+        risk_df = risk_df[risk_df['city'].isin(tenant_cities)]
+    if not anomaly_df.empty:
+        anomaly_df = anomaly_df[anomaly_df['city'].isin(tenant_cities)]
+    if not preds_df.empty:
+        preds_df = preds_df[preds_df['city'].isin(tenant_cities)]
 
     if risk_df.empty:
         return {
@@ -57,7 +68,7 @@ def get_live_pod_data():
                 "soil_moisture": 0,
                 "status": "no_data"
             }
-        
+
         df = pd.read_csv(pod_path)
         if df.empty:
             return {
@@ -67,7 +78,7 @@ def get_live_pod_data():
                 "soil_moisture": 0,
                 "status": "no_data"
             }
-        
+
         latest = df.iloc[-1]
         return {
             "temperature": round(float(latest.get("temperature", 0)), 1),

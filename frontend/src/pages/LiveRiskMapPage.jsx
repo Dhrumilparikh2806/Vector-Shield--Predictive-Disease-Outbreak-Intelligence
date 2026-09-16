@@ -1,35 +1,107 @@
-import React, { useState, useEffect } from 'react';
-import { getMapZones, getDashboardSummary, getHeatmapData, reloadBackend, simulateTick, exportZonesCSV, getExportableData } from '../services/api';
-import { Activity, Droplets, Thermometer, Radio, AlertCircle, Download, FileText, Loader } from 'lucide-react';
-import RiskExplanationPanel from '../components/RiskExplanationPanel';
+import React, { useState, useEffect, useMemo } from 'react';
+import { getMapZones, getDashboardSummary, getHeatmapData, simulateTick, exportZonesCSV, getExportableData, getRiskExplanation } from '../services/api';
+import {
+    Radio, AlertTriangle, Download, FileText, Loader, ShieldCheck, Gauge,
+    Bug, BrainCircuit, ArrowRight, Layers, RotateCcw,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import LiveMapComponent from '../components/LiveMapComponent';
 import SimulationIndicator from '../components/SimulationIndicator';
 import GuidedDemo from '../components/GuidedDemo';
 
-const KPIRow = ({ label, value, colorClass = "text-slate-200" }) => (
-    <div className="flex justify-between items-center py-1 border-b border-slate-800 last:border-0 last:pb-0">
-        <span className="text-slate-400 text-sm">{label}</span>
-        <span className={`font-mono font-medium ${colorClass}`}>{value}</span>
+const SEVERITY_FILTERS = [
+    { key: 'ALL', label: 'All', match: () => true },
+    { key: 'CRITICAL', label: 'Critical', match: (r) => r >= 70, color: '#DC2626' },
+    { key: 'HIGH', label: 'High', match: (r) => r >= 45 && r < 70, color: '#EA580C' },
+    { key: 'MODERATE', label: 'Moderate', match: (r) => r >= 15 && r < 45, color: '#CA8A04' },
+    { key: 'LOW', label: 'Low', match: (r) => r < 15, color: '#16A34A' },
+];
+
+const RISK_LEGEND = [
+    { label: 'Critical', range: '70 – 100', color: '#DC2626' },
+    { label: 'High', range: '45 – 69', color: '#EA580C' },
+    { label: 'Moderate', range: '15 – 44', color: '#CA8A04' },
+    { label: 'Low', range: '0 – 14', color: '#16A34A' },
+];
+
+const KPIRow = ({ label, value, color = '#0F172A' }) => (
+    <div className="flex justify-between items-center py-1.5 border-b border-[#F1F5F9] last:border-0 last:pb-0">
+        <span className="text-[#475569] text-sm">{label}</span>
+        <span className="app-mono font-semibold text-sm" style={{ color }}>{value}</span>
     </div>
 );
 
-const RiskLevelBar = ({ label, range, color }) => (
-    <div className="flex items-center gap-2 mb-2">
-        <div className={`w-8 h-4 rounded ${color}`}></div>
-        <div className={`text-xs font-bold uppercase tracking-wider w-20 ${color.replace('bg-', 'text-')}`}>{label}</div>
-        <div className="text-xs text-slate-500 ml-auto font-mono">{range}</div>
-    </div>
-);
+const TargetAnalysisPanel = ({ location }) => {
+    const [explanation, setExplanation] = useState(null);
+
+    useEffect(() => {
+        if (!location) return;
+        let cancelled = false;
+        getRiskExplanation(location).then((d) => { if (!cancelled) setExplanation(d); }).catch(() => {});
+        return () => { cancelled = true; };
+    }, [location]);
+
+    if (!location) {
+        return (
+            <div className="bg-white border border-[#E2E8F0] rounded-lg shadow-sm p-6 text-center">
+                <Gauge className="w-8 h-8 text-[#CBD5E1] mx-auto mb-2" />
+                <p className="text-sm text-[#475569]">Click a city marker on the map to inspect its risk breakdown.</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="bg-white border border-[#E2E8F0] rounded-lg shadow-sm overflow-hidden">
+            <div className="p-4 bg-[#F8FAFB] border-b border-[#E2E8F0] flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#159A7E]" />
+                <h2 className="text-sm font-semibold text-[#0F172A]">Target Analysis: {location}</h2>
+            </div>
+            {explanation ? (
+                <div className="p-4 flex flex-col gap-3">
+                    <div className="grid grid-cols-2 gap-2.5">
+                        <div className="p-2.5 rounded bg-[#F8FAFB] border border-[#E2E8F0]">
+                            <span className="app-mono text-[10px] text-[#8593A6] uppercase">Admissions Trend</span>
+                            <div className="app-mono text-base font-bold text-[#0F172A]">{explanation.hospitalTrend}%</div>
+                        </div>
+                        <div className="p-2.5 rounded bg-[#F8FAFB] border border-[#E2E8F0]">
+                            <span className="app-mono text-[10px] text-[#8593A6] uppercase">Water Index</span>
+                            <div className="app-mono text-base font-bold text-[#0F172A]">{explanation.waterContamination}<span className="text-xs text-[#8593A6]">/100</span></div>
+                        </div>
+                        <div className="p-2.5 rounded bg-[#F8FAFB] border border-[#E2E8F0]">
+                            <span className="app-mono text-[10px] text-[#8593A6] uppercase">Environmental Risk</span>
+                            <div className="app-mono text-base font-bold text-[#0F172A]">{explanation.environmentalRisk}<span className="text-xs text-[#8593A6]">/100</span></div>
+                        </div>
+                        <div className="p-2.5 rounded bg-[#F8FAFB] border border-[#E2E8F0]">
+                            <span className="app-mono text-[10px] text-[#8593A6] uppercase">Model Confidence</span>
+                            <div className="app-mono text-base font-bold text-[#159A7E]">{explanation.confidence}%</div>
+                        </div>
+                    </div>
+                    <Link
+                        to={`/city/${encodeURIComponent(location)}`}
+                        className="flex items-center justify-between p-2.5 rounded bg-[#159A7E] text-white hover:bg-[#11836A] transition-all shadow-sm group"
+                    >
+                        <span className="flex items-center gap-1.5 text-sm font-semibold">
+                            <BrainCircuit className="w-4 h-4" /> Open Full City Profile
+                        </span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </div>
+            ) : (
+                <div className="p-6 text-center text-sm text-[#8593A6]">Loading breakdown…</div>
+            )}
+        </div>
+    );
+};
 
 const LiveRiskMapPage = () => {
-    
     const [zones, setZones] = useState([]);
     const [summary, setSummary] = useState(null);
     const [heatmap, setHeatmap] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedCity, setSelectedCity] = useState(null);
     const [exportLoading, setExportLoading] = useState(false);
+    const [severityFilter, setSeverityFilter] = useState('ALL');
+    const [mapKey, setMapKey] = useState(0);
 
     const handleExportCSV = async () => {
         setExportLoading(true);
@@ -45,9 +117,8 @@ const LiveRiskMapPage = () => {
                 link.remove();
                 window.URL.revokeObjectURL(url);
             } else {
-                // Fallback: create CSV from frontend state
                 const csvContent = 'city,risk_score,severity,predicted_cases_48h\n' +
-                    zones.map(z => `${z.location},${z.risk},${z.level},${z.predicted_cases || 0}`).join('\n');
+                    zones.map((z) => `${z.location},${z.risk},${z.level},${z.predicted_cases || 0}`).join('\n');
                 const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 link.href = window.URL.createObjectURL(blob);
@@ -65,8 +136,8 @@ const LiveRiskMapPage = () => {
     const handleIntelReport = async () => {
         setExportLoading(true);
         try {
-            const data = await getExportableData();
-            const topZones = zones.sort((a, b) => (b.risk || 0) - (a.risk || 0)).slice(0, 5);
+            await getExportableData();
+            const topZones = [...zones].sort((a, b) => (b.risk || 0) - (a.risk || 0)).slice(0, 5);
             const report = {
                 timestamp: new Date().toISOString(),
                 reportType: 'Risk Intelligence Report',
@@ -74,18 +145,12 @@ const LiveRiskMapPage = () => {
                     avgRisk: summary?.avgRisk || 0,
                     totalZones: summary?.totalZones || 0,
                     criticalZones: summary?.criticalZones || 0,
-                    totalAnomalies: summary?.totalAnomalies || 0
+                    totalAnomalies: summary?.totalAnomalies || 0,
                 },
-                activeCities: zones.map(z => ({ city: z.location, risk: z.risk, severity: z.level })),
-                topRiskZones: topZones.map(z => ({ 
-                    city: z.location, 
-                    risk: z.risk, 
-                    severity: z.level, 
-                    predictedCases: z.predicted_cases || 0 
-                }))
+                activeCities: zones.map((z) => ({ city: z.location, risk: z.risk, severity: z.level })),
+                topRiskZones: topZones.map((z) => ({ city: z.location, risk: z.risk, severity: z.level, predictedCases: z.predicted_cases || 0 })),
             };
-            const jsonStr = JSON.stringify(report, null, 2);
-            const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8;' });
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json;charset=utf-8;' });
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
             link.download = `intel-report-${new Date().toISOString().slice(0, 10)}.json`;
@@ -109,141 +174,180 @@ const LiveRiskMapPage = () => {
             const [zonesData, summaryData, heatmapData] = await Promise.all([
                 getMapZones(),
                 getDashboardSummary(),
-                getHeatmapData()
+                getHeatmapData(),
             ]);
-            setZones(zonesData);
+            setZones(zonesData || []);
             setSummary(summaryData);
-            setHeatmap(heatmapData);
+            setHeatmap(heatmapData || []);
             setError(null);
         } catch (err) {
             console.error('Error loading map data:', err);
             setError('Backend offline – retrying...');
-        } finally {
-            setLoading(false);
         }
     };
 
     useEffect(() => {
         loadData();
-        const interval = setInterval(loadData, 10000);
+        const interval = setInterval(loadData, 2500);
         return () => clearInterval(interval);
     }, []);
 
+    const filteredZones = useMemo(() => {
+        const filter = SEVERITY_FILTERS.find((f) => f.key === severityFilter);
+        if (!filter || filter.key === 'ALL') return zones;
+        return zones.filter((z) => filter.match(z.riskScore ?? z.risk ?? 0));
+    }, [zones, severityFilter]);
+
+    const distribution = useMemo(() => {
+        const counts = { CRITICAL: 0, HIGH: 0, MODERATE: 0, LOW: 0 };
+        zones.forEach((z) => {
+            const score = z.riskScore ?? z.risk ?? 0;
+            if (score >= 70) counts.CRITICAL++;
+            else if (score >= 45) counts.HIGH++;
+            else if (score >= 15) counts.MODERATE++;
+            else counts.LOW++;
+        });
+        return counts;
+    }, [zones]);
+
+    const total = zones.length || 1;
+
     return (
-        <div className="h-[calc(100vh-64px)] p-6 overflow-hidden flex flex-col">
+        <div className="app-shell h-[calc(100vh-56px)] p-6 overflow-hidden flex flex-col bg-[#F8FAFB]">
             {error && (
-                <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-2 rounded-lg flex items-center gap-2 animate-pulse mb-4 text-xs">
-                    <AlertCircle className="w-4 h-4" />
+                <div className="bg-[#FEF2F2] border border-[#FCA5A5] text-[#DC2626] p-2 rounded-lg flex items-center gap-2 mb-3 text-xs">
+                    <AlertTriangle className="w-4 h-4" />
                     {error}
                 </div>
             )}
-            {/* Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 flex-shrink-0 mb-4">
+
+            <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-3 flex-shrink-0 mb-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-                        <Radio className="w-6 h-6 text-red-500 animate-pulse" />
+                    <h1 className="text-xl font-bold text-[#0F172A] flex items-center gap-2">
+                        <Radio className="w-5 h-5 text-[#DC2626] animate-pulse" />
                         Live Disease Risk Map
                     </h1>
-                    <p className="text-slate-400 text-sm mt-1">Real-time outbreak monitoring via VectorShield Pods + Hospital + Water Data</p>
+                    <p className="text-[#475569] text-sm mt-0.5">Real-time outbreak monitoring via hospital admissions, water quality, and IoT pods</p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 justify-start lg:justify-end">
+                <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex items-center bg-white border border-[#E2E8F0] p-1 rounded-lg shadow-sm">
+                        {SEVERITY_FILTERS.map((f) => (
+                            <button
+                                key={f.key}
+                                onClick={() => setSeverityFilter(f.key)}
+                                className="app-mono px-2.5 py-1 rounded text-[11px] font-bold transition-all"
+                                style={severityFilter === f.key
+                                    ? { backgroundColor: f.color || '#0F172A', color: '#fff' }
+                                    : { color: f.color || '#475569' }}
+                                type="button"
+                            >
+                                {f.label.toUpperCase()}
+                            </button>
+                        ))}
+                    </div>
+                    <button
+                        onClick={() => setMapKey((k) => k + 1)}
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-[#F1F8F5] text-[#0F172A] border border-[#E2E8F0] text-sm font-medium shadow-sm transition-all"
+                        type="button"
+                    >
+                        <RotateCcw className="w-4 h-4 text-[#159A7E]" /> Reset View
+                    </button>
                     <SimulationIndicator />
                     <GuidedDemo />
                 </div>
             </div>
 
-            {/* Main Content Split */}
             <div className="flex flex-col lg:flex-row gap-6 flex-1 min-h-0">
-
-                {/* LEFT: Map (70%) */}
-                <div className="lg:w-[70%] h-full bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-lg relative">
+                <div className="lg:w-[68%] h-full bg-white rounded-lg border border-[#E2E8F0] overflow-hidden shadow-sm relative">
                     <LiveMapComponent
-                        zones={zones}
+                        key={mapKey}
+                        zones={filteredZones}
                         heatmap={heatmap}
                         onMarkerClick={(m) => setSelectedCity(m.location)}
                     />
-
-                    {/* Floating Info */}
-                    <div className="absolute top-4 right-4 z-[400] bg-slate-900/90 backdrop-blur border border-slate-700 p-2 rounded text-xs text-slate-300">
-                        <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                            Live Feed Active
-                        </div>
+                    <div className="absolute top-3 right-3 z-[400] bg-white/95 backdrop-blur border border-[#E2E8F0] px-2.5 py-1.5 rounded text-xs text-[#475569] shadow-sm flex items-center gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-[#159A7E]" />
+                        <span className="app-mono">{filteredZones.length} / {zones.length} zones shown</span>
                     </div>
                 </div>
 
-                {/* RIGHT: Analytics Panel (30%) */}
-                <div className="lg:w-[30%] h-full overflow-y-auto space-y-4 pr-1 scrollbar-hide">
-                    {selectedCity && (
-                        <div className="animate-in slide-in-from-right-4 duration-500">
-                            <RiskExplanationPanel location={selectedCity} />
-                        </div>
-                    )}
+                <div className="lg:w-[32%] h-full overflow-y-auto space-y-4 pr-1">
+                    <TargetAnalysisPanel location={selectedCity} />
 
-                    {/* Export Actions */}
                     <div className="grid grid-cols-2 gap-2">
-                        <button 
+                        <button
                             onClick={handleExportCSV}
                             disabled={exportLoading}
-                            className="flex items-center justify-center gap-2 py-2 bg-slate-900 text-slate-400 border border-slate-800 rounded-lg text-[10px] font-bold hover:text-white hover:bg-slate-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center gap-1.5 py-2 bg-white text-[#475569] border border-[#E2E8F0] rounded text-[11px] font-bold hover:text-[#0F172A] hover:bg-[#F1F8F5] transition-all disabled:opacity-50"
+                            type="button"
                         >
                             {exportLoading ? <Loader className="w-3 h-3 animate-spin" /> : <Download className="w-3 h-3" />} EXPORT CSV
                         </button>
-                        <button 
+                        <button
                             onClick={handleIntelReport}
                             disabled={exportLoading}
-                            className="flex items-center justify-center gap-2 py-2 bg-slate-900 text-slate-400 border border-slate-800 rounded-lg text-[10px] font-bold hover:text-white hover:bg-slate-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center gap-1.5 py-2 bg-[#159A7E] text-white rounded text-[11px] font-bold hover:bg-[#11836A] transition-all disabled:opacity-50"
+                            type="button"
                         >
                             {exportLoading ? <Loader className="w-3 h-3 animate-spin" /> : <FileText className="w-3 h-3" />} INTEL REPORT
                         </button>
                     </div>
 
-                    {/* Risk Scale Card */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-lg">
-                        <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-                            <Activity className="w-4 h-4 text-red-400" />
-                            Risk Level Scale
+                    <div className="bg-white border border-[#E2E8F0] rounded-lg p-4 shadow-sm">
+                        <h3 className="text-sm font-semibold text-[#0F172A] mb-3 flex items-center gap-2">
+                            <Bug className="w-4 h-4 text-[#DC2626]" /> Risk Level Scale
                         </h3>
+                        <div className="space-y-1.5">
+                            {RISK_LEGEND.map((r) => (
+                                <div key={r.label} className="flex items-center justify-between p-1.5 rounded bg-[#F8FAFB]">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-3 h-3 rounded-full" style={{ backgroundColor: r.color }} />
+                                        <span className="text-xs font-semibold text-[#0F172A]">{r.label}</span>
+                                    </div>
+                                    <span className="app-mono text-xs font-bold" style={{ color: r.color }}>{r.range}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="bg-white border border-[#E2E8F0] rounded-lg p-4 shadow-sm">
+                        <div className="flex items-center justify-between mb-3">
+                            <h3 className="text-sm font-semibold text-[#0F172A]">Zone Risk Distribution</h3>
+                            <span className="app-mono text-xs text-[#8593A6]">{zones.length} centers</span>
+                        </div>
+                        <div className="w-full h-2.5 rounded-full bg-[#E2E8F0] overflow-hidden flex mb-3">
+                            {RISK_LEGEND.map((r) => (
+                                <div
+                                    key={r.label}
+                                    className="h-full"
+                                    style={{ width: `${((distribution[r.label.toUpperCase()] || 0) / total) * 100}%`, backgroundColor: r.color }}
+                                    title={`${r.label}: ${distribution[r.label.toUpperCase()] || 0}`}
+                                />
+                            ))}
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                            {RISK_LEGEND.map((r) => (
+                                <div key={r.label} className="flex items-center justify-between p-1.5 bg-[#F8FAFB] rounded app-mono text-xs">
+                                    <span className="flex items-center gap-1 font-medium" style={{ color: r.color }}>
+                                        <span className="w-2 h-2 rounded-full" style={{ backgroundColor: r.color }} />
+                                        {r.label}
+                                    </span>
+                                    <span className="font-bold text-[#0F172A]">{distribution[r.label.toUpperCase()] || 0}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="bg-white border border-[#E2E8F0] rounded-lg p-4 shadow-sm">
+                        <h3 className="text-sm font-semibold text-[#0F172A] mb-2">Live Analytics</h3>
                         <div className="space-y-1">
-                            <RiskLevelBar label="Critical" range="85-100" color="bg-red-600" />
-                            <RiskLevelBar label="High" range="70-84" color="bg-red-500" />
-                            <RiskLevelBar label="High-Mod" range="60-69" color="bg-orange-500" />
-                            <RiskLevelBar label="Moderate" range="45-59" color="bg-orange-400" />
-                            <RiskLevelBar label="Low-Mod" range="30-44" color="bg-amber-400" />
-                            <RiskLevelBar label="Low" range="15-29" color="bg-emerald-500" />
-                            <RiskLevelBar label="Very Low" range="0-14" color="bg-emerald-400" />
-                        </div>
-                        <div className="mt-3 text-[10px] text-slate-500 italic text-center border-t border-slate-800 pt-2">
-                            Color intensity increases with risk score
-                        </div>
-                    </div>
-
-                    {/* Zone Distribution */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <h3 className="text-sm font-semibold text-white mb-3">Zone Distribution</h3>
-                        <div className="space-y-2">
-                            <KPIRow label="Critical" value={summary?.criticalZones || 0} colorClass="text-red-500" />
-                            <KPIRow label="High" value={summary?.highZones || 0} colorClass="text-orange-500" />
-                            <KPIRow label="Active Cities" value={summary?.totalZones || 0} colorClass="text-amber-500" />
-                        </div>
-                    </div>
-
-                    {/* Live Analytics */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <h3 className="text-sm font-semibold text-white mb-3">Live Analytics</h3>
-                        <div className="space-y-2">
                             <KPIRow label="Average Risk" value={summary?.avgRisk || 0} />
-                            <KPIRow label="Total Anomalies" value={summary?.totalAnomalies || 0} colorClass="text-yellow-500" />
+                            <KPIRow label="Total Anomalies" value={summary?.totalAnomalies || 0} color="#CA8A04" />
                             <KPIRow label="Prediction Load" value={summary?.totalPredictedCases || 0} />
-                            <KPIRow label="Active Nodes" value={summary?.totalZones || 0} />
+                            <KPIRow label="Active Zones" value={summary?.totalZones || 0} />
                         </div>
                     </div>
-
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-xs text-slate-500">
-                        <p className="italic">Map updates every 10s based on latest ML output generation. Geospatial clusters are computed via DBSCAN.</p>
-                    </div>
-
                 </div>
             </div>
         </div>

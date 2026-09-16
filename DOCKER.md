@@ -144,23 +144,9 @@ docker-compose build --no-cache
 
 ## Production Deployment
 
-### Using Docker with Vercel
-
-1. Create `vercel.json` with Docker configuration:
-```json
-{
-  "version": 2,
-  "buildCommand": "docker-compose build",
-  "outputDirectory": "frontend/dist"
-}
-```
-
-2. Push to GitHub with Docker files
-
-3. On Vercel:
-   - Use Docker runtime
-   - Configure environment variables
-   - Deploy
+See [HOSTING.md](HOSTING.md) for the current deployment plan (Vercel for the
+frontend, Render for the backend via this Docker setup, and a hosted Postgres
+database).
 
 ### Using Docker with Other Platforms
 

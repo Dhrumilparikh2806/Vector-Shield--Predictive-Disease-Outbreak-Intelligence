@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
@@ -16,8 +16,10 @@ ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
 IS_PRODUCTION = ENVIRONMENT == "production"
 
 try:
-    from routes import ingest, dashboard, map, alerts, prediction, system, demo, scenario
+    from routes import ingest, dashboard, map, alerts, prediction, system, demo, scenario, inventory, auth as auth_routes, admin as admin_routes
     from database import engine, Base
+    import db_models  # noqa: F401 - registers Hospital table with Base.metadata
+    from auth import get_current_hospital, get_current_admin, seed_admin_account, seed_demo_tenants
     logger.info("Routes imported successfully")
 except Exception as e:
     logger.error(f"Error importing routes: {e}", exc_info=True)
@@ -27,6 +29,9 @@ except Exception as e:
 try:
     Base.metadata.create_all(bind=engine)
     logger.info("Database initialized successfully")
+    seed_admin_account()
+    seed_demo_tenants()
+    logger.info("Admin account and demo tenants verified")
 except Exception as e:
     logger.error(f"Error initializing database: {e}", exc_info=True)
 
@@ -46,6 +51,11 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
+@app.on_event("startup")
+async def startup_event():
+    print("VectorShield backend started on localhost")
+    logger.info("VectorShield backend started on localhost")
+
 # Root Health Check
 @app.get("/")
 def read_root():
@@ -59,19 +69,24 @@ def read_root():
 API_PREFIX = "/api/v1"
 
 try:
-    app.include_router(dashboard.router, prefix=f"{API_PREFIX}/dashboard", tags=["Dashboard"])
-    app.include_router(map.router, prefix=f"{API_PREFIX}/map", tags=["Geospatial"])
-    app.include_router(alerts.router, prefix=f"{API_PREFIX}/alerts", tags=["Alerts"])
-    app.include_router(prediction.router, prefix=f"{API_PREFIX}/prediction", tags=["ML Predictions"])
-    app.include_router(ingest.router, prefix=f"{API_PREFIX}/ingest", tags=["Data Ingestion"])
-    app.include_router(system.router, prefix=f"{API_PREFIX}/system", tags=["System Maintenance"])
-    app.include_router(demo.router, prefix=f"{API_PREFIX}/demo", tags=["Demo Mode"])
-    app.include_router(scenario.router, prefix=f"{API_PREFIX}/scenario", tags=["Scenario Workshop"])
+    app.include_router(auth_routes.router, prefix=f"{API_PREFIX}/auth", tags=["Auth"])
+    app.include_router(admin_routes.router, prefix=f"{API_PREFIX}/admin", tags=["Admin"], dependencies=[Depends(get_current_admin)])
+
+    protected = [Depends(get_current_hospital)]
+    app.include_router(dashboard.router, prefix=f"{API_PREFIX}/dashboard", tags=["Dashboard"], dependencies=protected)
+    app.include_router(map.router, prefix=f"{API_PREFIX}/map", tags=["Geospatial"], dependencies=protected)
+    app.include_router(alerts.router, prefix=f"{API_PREFIX}/alerts", tags=["Alerts"], dependencies=protected)
+    app.include_router(prediction.router, prefix=f"{API_PREFIX}/prediction", tags=["ML Predictions"], dependencies=protected)
+    app.include_router(ingest.router, prefix=f"{API_PREFIX}/ingest", tags=["Data Ingestion"], dependencies=protected)
+    app.include_router(system.router, prefix=f"{API_PREFIX}/system", tags=["System Maintenance"], dependencies=protected)
+    app.include_router(demo.router, prefix=f"{API_PREFIX}/demo", tags=["Demo Mode"], dependencies=protected)
+    app.include_router(scenario.router, prefix=f"{API_PREFIX}/scenario", tags=["Scenario Workshop"], dependencies=protected)
+    app.include_router(inventory.router, prefix=f"{API_PREFIX}/inventory", tags=["Inventory Intelligence"], dependencies=protected)
     logger.info("All routers included successfully")
 except Exception as e:
     logger.error(f"Error including routers: {e}", exc_info=True)
 
-@app.post(f"{API_PREFIX}/simulate-tick")
+@app.post(f"{API_PREFIX}/simulate-tick", dependencies=[Depends(get_current_hospital)])
 def simulate_tick():
     try:
         from services.simulation_service import simulation_service

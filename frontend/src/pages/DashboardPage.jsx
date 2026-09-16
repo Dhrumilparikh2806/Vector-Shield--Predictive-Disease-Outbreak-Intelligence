@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Activity, Droplets, AlertCircle, Layout, FileText, Download } from 'lucide-react';
+import { Activity, Droplets, AlertTriangle, Compass, LayoutGrid } from 'lucide-react';
 import KPICard from '../components/KPICard';
 import OutbreakMap from '../components/OutbreakMap';
 import TrendChart from '../components/TrendChart';
@@ -8,7 +8,7 @@ import GuidedDemo from '../components/GuidedDemo';
 import ArchitectureModal from '../components/ArchitectureModal';
 import SimulationIndicator from '../components/SimulationIndicator';
 import ExportButtons from '../components/ExportButtons';
-import { getDashboardSummary, getPredictions48h, getLiveAlerts, reloadBackend, getMapZones, simulateTick, getLivePodData } from '../services/api';
+import { getDashboardSummary, getPredictions48h, getLiveAlerts, getMapZones, simulateTick, getLivePodData } from '../services/api';
 
 const DashboardPage = () => {
     const [summary, setSummary] = useState(null);
@@ -33,7 +33,7 @@ const DashboardPage = () => {
                 getLiveAlerts(),
                 getPredictions48h(),
                 getMapZones(),
-                getLivePodData()
+                getLivePodData(),
             ]);
 
             setSummary(summaryData);
@@ -50,14 +50,12 @@ const DashboardPage = () => {
         }
     };
 
-    // Full dashboard refresh every 10s
     useEffect(() => {
         loadData();
-        const interval = setInterval(loadData, 10000);
+        const interval = setInterval(loadData, 2500);
         return () => clearInterval(interval);
     }, []);
 
-    // Dedicated pod data refresh every 5s (faster than full reload)
     useEffect(() => {
         const podInterval = setInterval(async () => {
             try {
@@ -66,53 +64,53 @@ const DashboardPage = () => {
             } catch (e) {
                 console.warn('Pod poll failed:', e);
             }
-        }, 5000);
+        }, 2500);
         return () => clearInterval(podInterval);
     }, []);
 
     if (loading && !summary) {
         return (
-            <div className="p-6 text-white bg-slate-950 min-h-screen flex flex-col items-center justify-center">
-                <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-                <p className="text-slate-400 font-medium animate-pulse tracking-widest uppercase text-xs">Initializing VectorShield Matrix...</p>
+            <div className="p-6 bg-[#F8FAFB] min-h-screen flex flex-col items-center justify-center">
+                <div className="w-12 h-12 border-4 border-[#159A7E] border-t-transparent rounded-full animate-spin mb-4" />
+                <p className="app-mono text-[#8593A6] font-medium animate-pulse tracking-widest uppercase text-xs">Loading VectorShield Surveillance...</p>
             </div>
         );
     }
 
     return (
-        <div className="p-6 space-y-6 bg-slate-950 min-h-screen font-sans selection:bg-primary/30">
+        <div className="app-shell p-6 space-y-6 bg-[#F8FAFB] min-h-screen">
             <ArchitectureModal isOpen={isArchModalOpen} onClose={() => setIsArchModalOpen(false)} />
 
             {error && (
-                <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-3 rounded-lg flex items-center gap-2 animate-pulse mb-4">
-                    <AlertCircle className="w-5 h-5" />
+                <div className="bg-[#FEF2F2] border border-[#FCA5A5] text-[#DC2626] p-3 rounded-lg flex items-center gap-2 mb-4">
+                    <AlertTriangle className="w-5 h-5" />
                     {error}
                 </div>
             )}
 
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-8">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
                 <div>
                     <div className="flex items-center gap-3 mb-1">
-                        <h1 className="text-3xl font-bold text-white tracking-tight">National Disease Surveillance</h1>
-                        <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded border border-primary/20 uppercase tracking-widest">v1.2 Pilot</span>
+                        <h1 className="text-2xl font-bold text-[#0F172A] tracking-tight">National Disease Surveillance</h1>
+                        <span className="app-mono px-2 py-0.5 bg-[#159A7E] text-white text-[10px] font-bold rounded uppercase tracking-widest">v1.2 Pilot</span>
                     </div>
-                    <p className="text-slate-400 text-sm">Real-time predictive modeling for geospatial health monitoring</p>
+                    <p className="text-[#475569] text-sm">Real-time predictive modeling for geospatial health monitoring.</p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 justify-start lg:justify-end">
+                <div className="flex flex-wrap items-center gap-2">
                     <SimulationIndicator />
                     <GuidedDemo />
                     <button
                         onClick={() => setIsArchModalOpen(true)}
-                        className="flex items-center gap-2 px-4 py-2 bg-slate-900/50 backdrop-blur text-slate-300 border border-slate-700/50 rounded-full text-xs font-bold hover:bg-slate-800 hover:text-white transition-all shadow-lg"
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0B5C78] hover:bg-[#0a4e66] text-white rounded text-sm font-medium transition-colors shadow-sm"
+                        type="button"
                     >
-                        <Layout className="w-4 h-4" /> Architecture
+                        <LayoutGrid className="w-4 h-4" /> Architecture
                     </button>
                 </div>
             </div>
 
-            {/* KPI Section */}
-            <div id="dashboard" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <KPICard
                     title="Average Risk Score"
                     value={summary?.avgRisk || 0}
@@ -130,8 +128,8 @@ const DashboardPage = () => {
                     title="Active Alerts"
                     value={alerts.length}
                     unit="zones"
-                    riskLevel={alerts.length > 0 ? "HIGH" : "LOW"}
-                    icon={AlertCircle}
+                    riskLevel={alerts.length > 0 ? 'HIGH' : 'LOW'}
+                    icon={AlertTriangle}
                 />
                 <KPICard
                     title="Total Risk Zones"
@@ -141,26 +139,25 @@ const DashboardPage = () => {
                 />
             </div>
 
-            {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
-                    <div id="map" className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-2xl">
-                        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                            <Activity className="w-4 h-4 text-primary" /> Geospatial Risk Intelligence
+                    <div className="bg-white border border-[#E2E8F0] rounded-lg shadow-sm p-4">
+                        <h2 className="text-sm font-semibold text-[#0F172A] mb-3 flex items-center gap-2">
+                            <Compass className="w-4 h-4 text-[#159A7E]" /> Geospatial Risk Intelligence
                         </h2>
                         <OutbreakMap hotspots={zones} showPopups={false} />
                     </div>
 
-                    <div id="predictions" className="grid grid-cols-1 md:grid-cols-2 gap-4 h-72">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-72">
                         <TrendChart
                             title="Predicted Cases (Top 5 Cities)"
-                            color="#f97316"
+                            color="#EA580C"
                             dataKey="predicted_cases_48h"
-                            data={predictions.slice(0, 5).map(p => ({ name: p.location, predicted_cases_48h: p.predicted_cases_48h }))}
+                            data={predictions.slice(0, 5).map((p) => ({ name: p.location, predicted_cases_48h: p.predicted_cases_48h }))}
                         />
                         <TrendChart
-                            title="Active Alerts Heatmap"
-                            color="#3b82f6"
+                            title="Active Alerts Density"
+                            color="#0B5C78"
                             dataKey="count"
                             data={Object.entries(alerts.reduce((acc, a) => {
                                 acc[a.location] = (acc[a.location] || 0) + 1;
@@ -170,13 +167,12 @@ const DashboardPage = () => {
                     </div>
                 </div>
 
-                <div id="alerts" className="h-full">
+                <div className="h-full">
                     <DashboardRightPanel summary={summary} alerts={alerts} podData={podData} />
                 </div>
             </div>
 
-            {/* Export Actions */}
-            <div className="flex justify-center gap-4 py-8 border-t border-slate-900/50 mt-12">
+            <div className="flex justify-center gap-3 py-6 border-t border-[#E2E8F0] mt-6">
                 <ExportButtons />
             </div>
         </div>

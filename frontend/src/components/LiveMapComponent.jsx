@@ -14,7 +14,7 @@ const LiveMapComponent = ({ zones = [], heatmap = [], onMarkerClick }) => {
     };
 
     return (
-        <div className="h-full w-full rounded-xl overflow-hidden border border-slate-800 relative z-0">
+        <div className="h-full w-full rounded-lg overflow-hidden border border-[#E2E8F0] relative z-0">
             <MapContainer
                 center={center}
                 zoom={5}
@@ -23,21 +23,10 @@ const LiveMapComponent = ({ zones = [], heatmap = [], onMarkerClick }) => {
                 zoomAnimation={true}
                 fadeAnimation={true}
             >
-                {/* Satellite base (ESRI World Imagery) */}
+                {/* OpenStreetMap: standard basemap, standardized across all app maps */}
                 <TileLayer
-                    attribution='Tiles © Esri'
-                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-                />
-                {/* Hillshade overlay (subtle elevation) */}
-                <TileLayer
-                    attribution='Hillshade © Esri'
-                    url="https://services.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
-                    opacity={0.35}
-                />
-                {/* Labels and boundaries */}
-                <TileLayer
-                    attribution='Labels © Esri'
-                    url="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
+                    attribution='&copy; OpenStreetMap contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
                 {/* Heatmap Simulation Layer */}

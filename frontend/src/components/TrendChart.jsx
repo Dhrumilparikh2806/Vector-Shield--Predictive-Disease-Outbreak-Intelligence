@@ -11,8 +11,8 @@ const TrendChart = ({ data, dataKey, color, title }) => {
     ];
 
     return (
-        <div className="bg-slate-900 rounded-xl border border-slate-800 p-4 h-full">
-            <h3 className="text-slate-400 text-sm font-medium mb-4">{title}</h3>
+        <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-sm p-4 h-full">
+            <h3 className="text-[#0F172A] text-sm font-semibold mb-3">{title}</h3>
             <div className="h-48 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData}>
@@ -22,17 +22,18 @@ const TrendChart = ({ data, dataKey, color, title }) => {
                                 <stop offset="95%" stopColor={color} stopOpacity={0} />
                             </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.5} />
-                        <XAxis dataKey="name" tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
-                        <YAxis tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
+                        <XAxis dataKey="name" tick={{ fill: '#8593A6', fontSize: 11 }} axisLine={false} tickLine={false} />
+                        <YAxis tick={{ fill: '#8593A6', fontSize: 11 }} axisLine={false} tickLine={false} />
                         <Tooltip
-                            contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }}
-                            itemStyle={{ color: '#f8fafc' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#E2E8F0', color: '#0F172A', borderRadius: 6, fontSize: 12 }}
+                            itemStyle={{ color: '#0F172A' }}
                         />
                         <Area
                             type="monotone"
                             dataKey={dataKey}
                             stroke={color}
+                            strokeWidth={2}
                             fillOpacity={1}
                             fill={`url(#gradient-${dataKey})`}
                         />

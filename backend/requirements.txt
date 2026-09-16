@@ -10,3 +10,6 @@ python-dotenv
 pydantic
 pydantic-settings
 aiofiles
+bcrypt
+pyjwt
+psycopg2-binary

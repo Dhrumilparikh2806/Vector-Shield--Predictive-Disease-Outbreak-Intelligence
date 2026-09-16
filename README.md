@@ -1,5 +1,7 @@
 # VectorShield – Predictive Disease Surveillance Platform
 
+> Deploying? See [HOSTING.md](HOSTING.md) for the current free-tier hosting plan (Vercel + Render + Neon).
+
 ## Overview
 Real-time outbreak prediction using:
 - **Hospital admissions**

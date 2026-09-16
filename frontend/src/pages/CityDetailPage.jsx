@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Activity, Droplets, Download, FileText, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Activity, Droplets, Download, FileText, AlertTriangle, Loader } from 'lucide-react';
 import KPICard from '../components/KPICard';
 import TrendChart from '../components/TrendChart';
 import EnvironmentalPanel from '../components/EnvironmentalPanel';
 import CityMap from '../components/CityMap';
 import RiskExplanationPanel from '../components/RiskExplanationPanel';
 
-import { getPredictions48h, getMapZones, getDashboardSummary, reloadBackend, simulateTick } from '../services/api';
+import { getPredictions48h, getMapZones, getDashboardSummary, simulateTick } from '../services/api';
+
+const round1 = (n) => (typeof n === 'number' ? Math.round(n * 10) / 10 : n);
 
 const CityDetailPage = () => {
     const { name } = useParams();
-    const [data, setData] = useState({
-        risk: 0,
-        cases: 0,
-        lat: 0,
-        lng: 0,
-        loading: true,
-        summary: null
-    });
+    const [data, setData] = useState({ risk: 0, cases: 0, lat: 0, lng: 0, loading: true, summary: null });
     const [error, setError] = useState(null);
+    const [exporting, setExporting] = useState(false);
 
     const loadData = async () => {
         try {
@@ -32,19 +28,18 @@ const CityDetailPage = () => {
             const [preds, zones, summary] = await Promise.all([
                 getPredictions48h(),
                 getMapZones(),
-                getDashboardSummary()
+                getDashboardSummary(),
             ]);
-            // ... (rest of loadData)
-            const cityPred = preds.find(p => p.location === name);
-            const cityZone = zones.find(z => z.location === name);
+            const cityPred = preds.find((p) => p.location === name);
+            const cityZone = zones.find((z) => z.location === name);
 
             setData({
-                risk: cityZone?.riskScore || 0,
-                cases: cityPred?.predicted_cases_48h || 0,
+                risk: round1(cityZone?.riskScore || 0),
+                cases: round1(cityPred?.predicted_cases_48h || 0),
                 lat: cityZone?.lat || 0,
                 lng: cityZone?.lng || 0,
                 loading: false,
-                summary
+                summary,
             });
             setError(null);
         } catch (err) {
@@ -55,56 +50,105 @@ const CityDetailPage = () => {
 
     useEffect(() => {
         loadData();
-        const interval = setInterval(loadData, 10000); // 10s for live updates
+        const interval = setInterval(loadData, 2500);
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name]);
 
+    const handleExportCSV = () => {
+        setExporting(true);
+        try {
+            const csv = 'city,risk_score,predicted_cases_48h,national_avg_risk\n' +
+                `${name},${data.risk},${data.cases},${data.summary?.avgRisk || 0}`;
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = `${name}-profile-${new Date().toISOString().slice(0, 10)}.csv`;
+            link.click();
+        } finally {
+            setExporting(false);
+        }
+    };
+
+    const handleExportReport = () => {
+        setExporting(true);
+        try {
+            const report = {
+                city: name,
+                timestamp: new Date().toISOString(),
+                riskScore: data.risk,
+                predictedCases48h: data.cases,
+                coordinates: { lat: data.lat, lng: data.lng },
+                nationalAvgRisk: data.summary?.avgRisk || 0,
+            };
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = `${name}-report-${new Date().toISOString().slice(0, 10)}.json`;
+            link.click();
+        } finally {
+            setExporting(false);
+        }
+    };
+
+    const nationalDelta = round1((data.risk || 0) - (data.summary?.avgRisk || 0));
+
     return (
-        <div className="p-6 space-y-6 bg-slate-950 min-h-screen">
-            <Link to="/dashboard" className="flex items-center text-slate-400 hover:text-white mb-2 transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-2" /> Back to Dashboard
+        <div className="app-shell p-6 space-y-6 bg-[#F8FAFB] min-h-screen">
+            <Link to="/city-explorer" className="inline-flex items-center text-[#475569] hover:text-[#0F172A] transition-colors text-sm font-medium">
+                <ArrowLeft className="w-4 h-4 mr-2" /> Back to City Explorer
             </Link>
 
             {error && (
-                <div className="bg-red-500/10 border border-red-500/50 text-red-500 p-3 rounded-lg flex items-center gap-2 animate-pulse mb-6">
-                    <AlertCircle className="w-5 h-5" />
+                <div className="bg-[#FEF2F2] border border-[#FCA5A5] text-[#DC2626] p-3 rounded-lg flex items-center gap-2">
+                    <AlertTriangle className="w-5 h-5" />
                     {error}
                 </div>
             )}
 
-            <div className="flex justify-between items-end">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-3">
                 <div>
-                    <h1 className="text-3xl font-bold text-white mb-2">{name} Analysis</h1>
-                    <div className="flex gap-2">
-                        <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Lat: {data.lat.toFixed(4)}</span>
-                        <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Lng: {data.lng.toFixed(4)}</span>
+                    <h1 className="text-2xl font-bold text-[#0F172A] mb-2">{name} Analysis</h1>
+                    <div className="flex flex-wrap gap-1.5">
+                        <span className="app-mono px-2 py-0.5 bg-[#F1F5F9] rounded text-xs text-[#475569]">LAT: {data.lat.toFixed(4)}</span>
+                        <span className="app-mono px-2 py-0.5 bg-[#F1F5F9] rounded text-xs text-[#475569]">LNG: {data.lng.toFixed(4)}</span>
                     </div>
                 </div>
                 <div className="text-right hidden md:block">
-                    <div className="text-sm text-slate-400">Last Updated</div>
-                    <div className="text-white font-mono">Real-time ML Stream</div>
+                    <div className="app-mono text-[10px] text-[#8593A6] uppercase">Live Sync</div>
+                    <div className="text-[#159A7E] app-mono text-sm font-semibold">Polling every 2.5s</div>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <KPICard title="City Risk Score" value={data.risk} unit="/ 100" riskLevel={data.risk > 70 ? "HIGH" : data.risk > 40 ? "MODERATE" : "LOW"} icon={Activity} />
+                        <KPICard title="City Risk Score" value={data.risk} unit="/ 100" riskLevel={data.risk > 70 ? 'HIGH' : data.risk > 40 ? 'MODERATE' : 'LOW'} icon={Activity} />
                         <KPICard title="Predicted 48h Cases" value={data.cases} icon={Activity} />
                         <KPICard title="National Avg Risk" value={data.summary?.avgRisk || 0} unit="/ 100" icon={Droplets} />
-                        <KPICard title="National Hotspots" value={data.summary?.criticalZones || 0} unit="active" />
+                        <KPICard title="Delta vs National" value={nationalDelta > 0 ? `+${nationalDelta}` : nationalDelta} unit="pts" icon={AlertTriangle} riskLevel={nationalDelta > 0 ? 'HIGH' : 'LOW'} />
                     </div>
 
                     <div className="h-80">
-                        <TrendChart title="Local Infection Prediction (48h Forecast)" color="#ef4444" dataKey="risk" data={[{ name: 'Now', risk: data.risk }, { name: '+48h', risk: data.cases }]} />
+                        <TrendChart title="Local Infection Prediction (48h Forecast)" color="#DC2626" dataKey="risk" data={[{ name: 'Now', risk: data.risk }, { name: '+48h', risk: data.cases }]} />
                     </div>
 
                     <div className="flex flex-wrap items-center gap-3">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-slate-400 border border-slate-800 rounded-lg text-xs font-bold hover:text-white transition-all">
-                            <Download className="w-4 h-4" /> Export CSV
+                        <button
+                            onClick={handleExportCSV}
+                            disabled={exporting}
+                            className="flex items-center gap-2 px-4 py-2 bg-white text-[#475569] border border-[#E2E8F0] rounded text-sm font-medium hover:text-[#0F172A] hover:bg-[#F1F8F5] transition-all shadow-sm disabled:opacity-60"
+                            type="button"
+                        >
+                            {exporting ? <Loader className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />} Export CSV
                         </button>
-                        <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-slate-400 border border-slate-800 rounded-lg text-xs font-bold hover:text-white transition-all">
-                            <FileText className="w-4 h-4" /> Export Report
+                        <button
+                            onClick={handleExportReport}
+                            disabled={exporting}
+                            className="flex items-center gap-2 px-4 py-2 bg-[#159A7E] text-white rounded text-sm font-medium hover:bg-[#11836A] transition-all shadow-sm disabled:opacity-60"
+                            type="button"
+                        >
+                            {exporting ? <Loader className="w-4 h-4 animate-spin" /> : <FileText className="w-4 h-4" />} Export Report (JSON)
                         </button>
                     </div>
                 </div>
@@ -112,7 +156,7 @@ const CityDetailPage = () => {
                 <div className="space-y-6">
                     <CityMap lat={data.lat} lng={data.lng} cityName={name} />
                     <EnvironmentalPanel data={{ humidity: data.risk }} />
-                    <RiskExplanationPanel location={name} />
+                    <RiskExplanationPanel location={name} defaultOpen />
                 </div>
             </div>
         </div>

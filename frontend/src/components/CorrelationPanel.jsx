@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { TrendingUp, BarChart } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { getCorrelations } from '../services/api';
+
+const BARS = [
+    { key: 'casesVsWater', label: 'Cases vs Water Contamination', color: '#0B5C78' },
+    { key: 'casesVsHumidity', label: 'Cases vs Relative Humidity', color: '#159A7E' },
+    { key: 'casesVsRainfall', label: 'Cases vs Rainfall', color: '#DC2626' },
+];
 
 const CorrelationPanel = () => {
     const [correlations, setCorrelations] = useState(null);
@@ -20,32 +26,32 @@ const CorrelationPanel = () => {
     if (!correlations) return null;
 
     return (
-        <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 mt-6">
-            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <BarChart className="w-3 h-3" /> Statistical Correlations
-            </h3>
-            <div className="space-y-3">
-                <CorrelationItem label="Cases vs Water Contamination" value={correlations.casesVsWater} color="bg-blue-500" />
-                <CorrelationItem label="Cases vs Humidity" value={correlations.casesVsHumidity} color="bg-emerald-500" />
-                <CorrelationItem label="Cases vs Rainfall" value={correlations.casesVsRainfall} color="bg-cyan-500" />
+        <div className="bg-[#F8FAFB] border border-[#E2E8F0] rounded-lg p-4 mt-4">
+            <span className="app-mono text-[11px] font-semibold text-[#8593A6] uppercase tracking-widest mb-3 flex items-center gap-2">
+                <BarChart3 className="w-3.5 h-3.5" /> Multi-Vector Correlative Factors
+            </span>
+            <div className="space-y-3 mt-3">
+                {BARS.map((b) => {
+                    const value = correlations[b.key];
+                    if (value === undefined) return null;
+                    return (
+                        <div key={b.key}>
+                            <div className="flex justify-between items-center text-sm mb-1">
+                                <span className="text-[#0F172A] font-medium">{b.label}</span>
+                                <span className="app-mono text-xs font-semibold" style={{ color: b.color }}>{value.toFixed(2)} Pearson</span>
+                            </div>
+                            <div className="h-2 w-full bg-[#E2E8F0] rounded-full overflow-hidden">
+                                <div
+                                    className="h-full rounded-full transition-all duration-1000"
+                                    style={{ width: `${value * 100}%`, backgroundColor: b.color }}
+                                />
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
 };
-
-const CorrelationItem = ({ label, value, color }) => (
-    <div className="space-y-1">
-        <div className="flex justify-between text-[10px] text-slate-300">
-            <span>{label}</span>
-            <span className="font-mono">{value.toFixed(2)}</span>
-        </div>
-        <div className="h-1.5 w-full bg-slate-700 rounded-full overflow-hidden">
-            <div
-                className={`h-full ${color} transition-all duration-1000`}
-                style={{ width: `${value * 100}%` }}
-            ></div>
-        </div>
-    </div>
-);
 
 export default CorrelationPanel;
