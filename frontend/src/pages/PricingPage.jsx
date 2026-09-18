@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Zap, Building2, HeartPulse, Network, RefreshCw, Clock, Database, ShieldCheck, Radio, ArrowRight } from 'lucide-react';
+import { Check, X, Zap, Building2, HeartPulse, Network, RefreshCw, Clock, Database, ShieldCheck, Radio, ArrowRight } from 'lucide-react';
 import MarketingNav from '../components/MarketingNav';
 import MarketingFooter from '../components/MarketingFooter';
 
@@ -8,33 +8,71 @@ const TIERS = [
     {
         name: 'Starter',
         icon: Building2,
-        price: '$0',
-        period: 'forever',
-        description: 'For a single facility piloting',
-        featuresHeading: 'Included Surveillance',
-        features: ['1 hospital account', 'Live risk dashboard', 'Admissions tracking', '48h forecasts', 'Community support'],
-        cta: 'Start free',
+        price: '₹4,499',
+        period: '/month',
+        description: 'For 1 Hospital',
+        featuresHeading: 'Included',
+        features: [
+            '48-hour risk prediction',
+            'IoT environmental monitoring',
+            'Temperature & humidity monitoring',
+            'Rainfall monitoring',
+            'Moisture monitoring',
+            'Risk scoring',
+            'Hotspot & clustering intelligence',
+            'Environmental intelligence',
+            'In-platform alerts',
+            'Hospital dashboard',
+            'Standard support',
+        ],
+        excluded: 'Inventory Intelligence is not included.',
+        addons: [
+            { label: 'Pod', value: '₹399/pod/month' },
+            { label: 'Installation', value: '₹999/pod one-time' },
+        ],
+        cta: 'Get started',
         highlighted: false,
     },
     {
-        name: 'Professional',
+        name: 'Pro',
         icon: HeartPulse,
-        price: '$249',
-        period: '/mo',
-        description: 'For hospital networks',
+        price: '₹14,449',
+        period: '/month',
+        description: 'Up to 4 Hospitals / Network',
         featuresHeading: 'Everything in Starter, plus:',
-        features: ['Water quality monitoring', 'IoT integration', 'Risk heatmaps', 'Automated alerts', 'Scenario simulator', 'Priority support'],
-        cta: 'Start free trial',
+        features: [
+            'Multi-hospital dashboard',
+            'Cross-hospital analytics',
+            'Network-level risk intelligence',
+            'Centralized monitoring',
+            'Centralized alerts',
+            'Priority support',
+        ],
+        addons: [
+            { label: 'Additional Hospital', value: '₹2,999/month per hospital' },
+            { label: 'Pod', value: '₹349/pod/month' },
+            { label: 'Installation', value: '₹999/pod one-time' },
+        ],
+        cta: 'Get started',
         highlighted: true,
     },
     {
         name: 'Enterprise',
         icon: Network,
         price: 'Custom',
-        period: 'annual contract',
-        description: 'For regional health systems',
-        featuresHeading: 'Everything in Professional, plus:',
-        features: ['Multi-facility rollout', 'Custom ML tuning', 'Dedicated onboarding', 'SLA uptime guarantee', 'Enterprise SSO', '24/7 dedicated support'],
+        period: '',
+        description: 'For large healthcare networks and specialized deployments',
+        featuresHeading: 'Built around your deployment',
+        features: [
+            'Custom number of hospitals',
+            'Custom IoT deployment',
+            'Custom integrations',
+            'Custom analytics & solutions',
+            'Dedicated implementation',
+            'Flexible SLA & support',
+            'Government & large healthcare network deployments',
+        ],
+        footnote: 'Contact us for customized pricing',
         cta: 'Contact sales',
         highlighted: false,
     },
@@ -119,7 +157,31 @@ const PricingPage = () => {
                                                 <span>{f}</span>
                                             </li>
                                         ))}
+                                        {tier.excluded && (
+                                            <li className="flex items-center gap-2.5 text-sm text-[#8593A6]">
+                                                <X className="w-[18px] h-[18px] text-[#CBD5E1] shrink-0" />
+                                                <span>{tier.excluded}</span>
+                                            </li>
+                                        )}
                                     </ul>
+
+                                    {tier.addons && (
+                                        <div className="mt-6 pt-5 border-t border-[#F1F5F9]">
+                                            <p className="text-xs uppercase tracking-wider font-semibold text-[#8593A6] mb-3">Add-ons</p>
+                                            <ul className="space-y-2">
+                                                {tier.addons.map((a) => (
+                                                    <li key={a.label} className="flex items-center justify-between text-sm">
+                                                        <span className="text-[#475569]">{a.label}</span>
+                                                        <span className="font-semibold text-[#0F172A]">{a.value}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+
+                                    {tier.footnote && (
+                                        <p className="mt-6 pt-5 border-t border-[#F1F5F9] text-sm text-[#475569]">{tier.footnote}</p>
+                                    )}
                                 </div>
                                 <div className="mt-8 pt-6">
                                     <Link
@@ -138,8 +200,8 @@ const PricingPage = () => {
                     </div>
 
                     <p className="text-sm text-[#475569] text-center max-w-2xl mx-auto mt-10">
-                        Prices shown are illustrative. Public health departments and academic institutions may qualify for
-                        reduced pricing — get in touch to discuss your deployment.
+                        All prices in INR. IoT pods and installation are billed separately per the add-ons listed under each plan.
+                        Public health departments and academic institutions may qualify for reduced pricing — get in touch to discuss your deployment.
                     </p>
 
                     {/* Platform at a glance */}
