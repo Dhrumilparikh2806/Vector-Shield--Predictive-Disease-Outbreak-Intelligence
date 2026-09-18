@@ -5,9 +5,9 @@ import { useAuth } from '../context/AuthContext';
 import logoMark from '../assets/logo-mark.png';
 
 const PLANS = [
-    { id: 'starter', name: 'Starter', price: '$0', period: 'forever', blurb: 'Single facility pilot' },
-    { id: 'professional', name: 'Professional', price: '$249', period: '/mo', blurb: 'Hospital networks', popular: true },
-    { id: 'enterprise', name: 'Enterprise', price: 'Custom', period: 'annual', blurb: 'Regional health systems' },
+    { id: 'starter', name: 'Starter', price: '₹4,499', period: '/mo', blurb: '1 hospital' },
+    { id: 'professional', name: 'Pro', price: '₹14,449', period: '/mo', blurb: 'Up to 4 hospitals', popular: true },
+    { id: 'enterprise', name: 'Enterprise', price: 'Custom', period: '', blurb: 'Large networks' },
 ];
 
 const SignupPage = () => {
