@@ -194,6 +194,11 @@ const InventoryIntelligencePage = () => {
                         </div>
                     </div>
 
+                    <p className="text-[11px] text-[#8593A6] mb-2 flex items-start gap-1.5">
+                        <Info className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <span>Status compares days of cover against each item's resupply lead time, not just the 48h forecast — stock can exceed 48h demand and still be Critical if it would run out before a reorder placed today arrives.</span>
+                    </p>
+
                     <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-sm overflow-hidden">
                         <div className="overflow-x-auto max-h-[560px] overflow-y-auto">
                             <table className="w-full text-sm">
@@ -202,7 +207,7 @@ const InventoryIntelligencePage = () => {
                                         <th className="px-4 py-2.5 font-semibold">Facility / Item</th>
                                         <th className="px-3 py-2.5 font-semibold text-right">Stock</th>
                                         <th className="px-3 py-2.5 font-semibold text-right">Demand (48h)</th>
-                                        <th className="px-3 py-2.5 font-semibold text-right">Cover</th>
+                                        <th className="px-3 py-2.5 font-semibold text-right">Cover vs. Lead Time</th>
                                         <th className="px-3 py-2.5 font-semibold text-right">Reorder</th>
                                         <th className="px-4 py-2.5 font-semibold text-right">Status</th>
                                     </tr>
@@ -221,7 +226,10 @@ const InventoryIntelligencePage = () => {
                                                 </td>
                                                 <td className="px-3 py-2.5 text-right app-mono text-[#0F172A]">{r.current_stock.toLocaleString()}</td>
                                                 <td className="px-3 py-2.5 text-right app-mono text-[#475569]">{r.projected_demand_48h.toLocaleString()}</td>
-                                                <td className="px-3 py-2.5 text-right app-mono" style={{ color: URGENCY_META[r.urgency].color }}>{r.days_of_cover}d</td>
+                                                <td className="px-3 py-2.5 text-right app-mono">
+                                                    <span style={{ color: URGENCY_META[r.urgency].color }}>{r.days_of_cover}d</span>
+                                                    <span className="text-[#8593A6]"> / {r.lead_time_days}d lead</span>
+                                                </td>
                                                 <td className="px-3 py-2.5 text-right app-mono font-semibold text-[#0F172A]">
                                                     {r.recommended_reorder_qty > 0 ? `+${r.recommended_reorder_qty.toLocaleString()}` : '—'}
                                                 </td>
