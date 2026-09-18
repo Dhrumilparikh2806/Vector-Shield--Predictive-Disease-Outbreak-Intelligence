@@ -57,10 +57,22 @@ class SimulationService:
             digest = hashlib.md5(city.encode('utf-8')).digest()
             seed = int.from_bytes(digest[:4], 'big')
             rng = random.Random(seed)
-            # Start at a staggered phase and random step so cities differ
-            start_phase = rng.choice(self.phases)
+            # Start at a staggered phase and random step so cities differ.
+            # Weighted by each phase's average duration so a fresh restart
+            # immediately reflects the intended steady-state mix (~74% calm)
+            # instead of a uniform 25% chance of starting mid-outbreak.
+            start_phase = rng.choices(
+                self.phases, weights=[14, 4, 3, 5.5], k=1  # baseline, growth, peak, decay
+            )[0]
             start_step = rng.randint(0, rng.randint(0, 2))
-            duration = rng.randint(3, 6)
+            if start_phase == "baseline":
+                duration = rng.randint(10, 18)
+            elif start_phase == "growth":
+                duration = rng.randint(3, 5)
+            elif start_phase == "peak":
+                duration = rng.randint(2, 4)
+            else:
+                duration = rng.randint(4, 7)
             self.city_states[city] = {
                 "phase": start_phase,
                 "step": start_step,
@@ -78,15 +90,19 @@ class SimulationService:
             state["phase"] = self.phase_next.get(state["phase"], "baseline")
             state["step"] = 0
             next_phase = state["phase"]
-            # Longer durations for growth/peak to allow sustained outbreaks
+            # Baseline dominates the cycle so most cities are calm most of the
+            # time (~74% baseline+decay, ~26% growth+peak) - a rotating minority
+            # of active hotspots at any moment, not a network-wide crisis. The
+            # previous ratios (66% elevated) meant risk drifted toward
+            # universally Critical/High over any sustained uptime.
             if next_phase == "baseline":
-                state["duration"] = rng.randint(2, 4)
+                state["duration"] = rng.randint(10, 18)
             elif next_phase == "growth":
-                state["duration"] = rng.randint(5, 8)
+                state["duration"] = rng.randint(3, 5)
             elif next_phase == "peak":
-                state["duration"] = rng.randint(6, 10)
+                state["duration"] = rng.randint(2, 4)
             elif next_phase == "decay":
-                state["duration"] = rng.randint(3, 6)
+                state["duration"] = rng.randint(4, 7)
 
         phase = state["phase"]
         # Return admission delta based on current phase (deterministic via rng)
